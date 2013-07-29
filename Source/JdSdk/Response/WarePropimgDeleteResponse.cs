@@ -1,0 +1,44 @@
+#region head comment
+/*
+Code generate by JdSdkTool.
+2013-06-03 12:29:13.08687 +08:00
+*/
+#endregion
+
+using System;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using JdSdk.Domain;
+
+namespace JdSdk.Response
+{
+    /// <summary>
+    /// 通过api 根据商品Id，销售属性值Id删除图片 Response
+    /// </summary>
+    public class WarePropimgDeleteResponse : JdResponse
+    {
+        /// <summary>
+        /// 图片Id
+        /// </summary>
+        [XmlElement("image_id")]
+        [JsonProperty("image_id")]
+        public String ImageId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 更改时间
+        /// </summary>
+        [XmlElement("created")]
+        [JsonProperty("created")]
+        public String Created
+        {
+            get;
+            set;
+        }
+
+    }
+}

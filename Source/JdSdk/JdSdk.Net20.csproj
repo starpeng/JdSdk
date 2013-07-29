@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3113D66-9A77-487A-99F8-528C0F763C60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JdSdk</RootNamespace>
+    <AssemblyName>JdSdk</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\NET20\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>..\Build\NET20\JdSdk.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\NET20\</OutputPath>
+    <DefineConstants>TRACE;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>JdSdk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessToken.cs" />
+    <Compile Include="Domains\ActivitySafVo.cs" />
+    <Compile Include="Domains\AdwordCoupon.cs" />
+    <Compile Include="Domains\AdwordGiftSku.cs" />
+    <Compile Include="Domains\AdwordResponse.cs" />
+    <Compile Include="Domains\AdZoneVo.cs" />
+    <Compile Include="Domains\AttributeValue.cs" />
+    <Compile Include="Domains\EffectReportSafVo.cs" />
+    <Compile Include="Domains\FavoriteWare.cs" />
+    <Compile Include="Domains\GoodSafVo.cs" />
+    <Compile Include="Domains\MasterBillVo.cs" />
+    <Compile Include="Domains\OverviewVo.cs" />
+    <Compile Include="Domains\PriceChanges.cs" />
+    <Compile Include="Domains\PromoteWare.cs" />
+    <Compile Include="Domains\PromoteWareDetail.cs" />
+    <Compile Include="Domains\PromotionInfo.cs" />
+    <Compile Include="Domains\Region.cs" />
+    <Compile Include="Domains\ShopCategory.cs" />
+    <Compile Include="Domains\ShopSafVo.cs" />
+    <Compile Include="Domains\SkuInfo.cs" />
+    <Compile Include="Domains\SoplOrLbpOrderPrintData.cs" />
+    <Compile Include="Domains\SopOrderPrintData.cs" />
+    <Compile Include="Domains\UnionActivityimg.cs" />
+    <Compile Include="Domains\VenderInfoResult.cs" />
+    <Compile Include="Domains\WareAttribute.cs" />
+    <Compile Include="Domains\WareCategory.cs" />
+    <Compile Include="Domains\WareImg.cs" />
+    <Compile Include="Domains\WarePropimg.cs" />
+    <Compile Include="Domains\WindowAdvDetail.cs" />
+    <Compile Include="Domains\GoodsVO.cs" />
+    <Compile Include="Domains\JosGoodsVO.cs" />
+    <Compile Include="Domains\PromotionGoodsVO .cs" />
+    <Compile Include="Domains\PromotionShopVO.cs" />
+    <Compile Include="Domains\PromotionActivityVO .cs" />
+    <Compile Include="Domains\PromotionPlanVO .cs" />
+    <Compile Include="Domains\JosActivityImgVO.cs" />
+    <Compile Include="Domains\UnionPlanActivity.cs" />
+    <Compile Include="Domains\AdvDetailVo.cs" />
+    <Compile Include="Domains\PlanListVO .cs" />
+    <Compile Include="Domains\PlanVO.cs" />
+    <Compile Include="Domains\UnionCategoryCommision.cs" />
+    <Compile Include="Domains\UnionPlan.cs" />
+    <Compile Include="Request\OrderLbpWaybillUpdateRequest.cs" />
+    <Compile Include="Request\OrderSoplWaybillUpdateRequest.cs" />
+    <Compile Include="Request\OverseasOrderSopDeliveryRequest.cs" />
+    <Compile Include="Request\OverseasOrderSopOutstorageRequest.cs" />
+    <Compile Include="Parser\DateTimeConverter.cs" />
+    <Compile Include="DefaultJdClient.cs" />
+    <Compile Include="DefaultJdLogger.cs" />
+    <Compile Include="Domains\AfterSearch.cs" />
+    <Compile Include="Domains\ApiCompanyCustom.cs" />
+    <Compile Include="Domains\attribute.cs" />
+    <Compile Include="Domains\AttValue.cs" />
+    <Compile Include="Domains\Category.cs" />
+    <Compile Include="Domains\Consignee.cs" />
+    <Compile Include="Domains\CouponDetail.cs" />
+    <Compile Include="Domains\Field.cs" />
+    <Compile Include="Domains\ItemInfo.cs" />
+    <Compile Include="Domains\LogisticsCompany.cs" />
+    <Compile Include="Domains\OrderDetail.cs" />
+    <Compile Include="Domains\OrderInfo.cs" />
+    <Compile Include="Domains\OrderItem.cs" />
+    <Compile Include="Domains\OrderPrintData.cs" />
+    <Compile Include="Domains\OrderSearch.cs" />
+    <Compile Include="Domains\PrintResult.cs" />
+    <Compile Include="Domains\Promotion.cs" />
+    <Compile Include="Domains\PromotionProduct.cs" />
+    <Compile Include="Domains\PromotionSearch.cs" />
+    <Compile Include="Domains\ReturnInfo.cs" />
+    <Compile Include="Domains\ReturnItem.cs" />
+    <Compile Include="Domains\Sku.cs" />
+    <Compile Include="Domains\UserInfo.cs" />
+    <Compile Include="Domains\Ware.cs" />
+    <Compile Include="Enums\MemberLevel.cs" />
+    <Compile Include="Enums\SalesPromotionStatus.cs" />
+    <Compile Include="Enums\SalesPromotion.cs" />
+    <Compile Include="Enums\ApproveStatus.cs" />
+    <Compile Include="IJdClient.cs" />
+    <Compile Include="IJdLogger.cs" />
+    <Compile Include="IJdRequest.cs" />
+    <Compile Include="IJdUploadRequest.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonBinaryType.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonBinaryWriter.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonObjectId.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonReader.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonToken.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonType.cs" />
+    <Compile Include="Newtonsoft.Json\Bson\BsonWriter.cs" />
+    <Compile Include="Newtonsoft.Json\ConstructorHandling.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\BinaryConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\BsonObjectIdConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\CustomCreationConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\DataSetConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\DataTableConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\DateTimeConverterBase.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\EntityKeyMemberConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\ExpandoObjectConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\IsoDateTimeConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\JavaScriptDateTimeConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\KeyValuePairConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\RegexConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\StringEnumConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\VersionConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Converters\XmlNodeConverter.cs" />
+    <Compile Include="Newtonsoft.Json\DateFormatHandling.cs" />
+    <Compile Include="Newtonsoft.Json\DateParseHandling.cs" />
+    <Compile Include="Newtonsoft.Json\DateTimeZoneHandling.cs" />
+    <Compile Include="Newtonsoft.Json\DefaultValueHandling.cs" />
+    <Compile Include="Newtonsoft.Json\FormatterAssemblyStyle.cs" />
+    <Compile Include="Newtonsoft.Json\Formatting.cs" />
+    <Compile Include="Newtonsoft.Json\IJsonLineInfo.cs" />
+    <Compile Include="Newtonsoft.Json\JsonArrayAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonConstructorAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonContainerAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonConvert.cs" />
+    <Compile Include="Newtonsoft.Json\JsonConverter.cs" />
+    <Compile Include="Newtonsoft.Json\JsonConverterAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonConverterCollection.cs" />
+    <Compile Include="Newtonsoft.Json\JsonDictionaryAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonException.cs" />
+    <Compile Include="Newtonsoft.Json\JsonIgnoreAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonObjectAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonPosition.cs" />
+    <Compile Include="Newtonsoft.Json\JsonPropertyAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\JsonReader.cs" />
+    <Compile Include="Newtonsoft.Json\JsonReaderException.cs" />
+    <Compile Include="Newtonsoft.Json\JsonSerializationException.cs" />
+    <Compile Include="Newtonsoft.Json\JsonSerializer.cs" />
+    <Compile Include="Newtonsoft.Json\JsonSerializerSettings.cs" />
+    <Compile Include="Newtonsoft.Json\JsonTextReader.cs" />
+    <Compile Include="Newtonsoft.Json\JsonTextWriter.cs" />
+    <Compile Include="Newtonsoft.Json\JsonToken.cs" />
+    <Compile Include="Newtonsoft.Json\JsonValidatingReader.cs" />
+    <Compile Include="Newtonsoft.Json\JsonWriter.cs" />
+    <Compile Include="Newtonsoft.Json\JsonWriterException.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\Extensions.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\IJEnumerable.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JArray.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JConstructor.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JContainer.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JEnumerable.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JObject.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JPath.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JProperty.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JPropertyDescriptor.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JPropertyKeyedCollection.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JRaw.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JToken.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JTokenEqualityComparer.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JTokenReader.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JTokenType.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JTokenWriter.cs" />
+    <Compile Include="Newtonsoft.Json\Linq\JValue.cs" />
+    <Compile Include="Newtonsoft.Json\MemberSerialization.cs" />
+    <Compile Include="Newtonsoft.Json\MissingMemberHandling.cs" />
+    <Compile Include="Newtonsoft.Json\NullValueHandling.cs" />
+    <Compile Include="Newtonsoft.Json\ObjectCreationHandling.cs" />
+    <Compile Include="Newtonsoft.Json\PreserveReferencesHandling.cs" />
+    <Compile Include="Newtonsoft.Json\ReferenceLoopHandling.cs" />
+    <Compile Include="Newtonsoft.Json\Required.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\Extensions.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchema.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaBuilder.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaConstants.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaException.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaGenerator.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaModel.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaModelBuilder.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaNode.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaNodeCollection.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaResolver.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaType.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\JsonSchemaWriter.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\UndefinedSchemaIdHandling.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\ValidationEventArgs.cs" />
+    <Compile Include="Newtonsoft.Json\Schema\ValidationEventHandler.cs" />
+    <Compile Include="Newtonsoft.Json\SerializationBinder.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\CachedAttributeGetter.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\CamelCasePropertyNamesContractResolver.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\DefaultContractResolver.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\DefaultReferenceResolver.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\DefaultSerializationBinder.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\DynamicValueProvider.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\ErrorContext.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\ErrorEventArgs.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\IContractResolver.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\IReferenceResolver.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\IValueProvider.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonArrayContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonContainerContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonDictionaryContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonDynamicContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonFormatterConverter.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonISerializableContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonLinqContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonObjectContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonPrimitiveContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonProperty.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonPropertyCollection.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonSerializerInternalBase.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonSerializerInternalReader.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonSerializerInternalWriter.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonSerializerProxy.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonStringContract.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\JsonTypeReflector.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\LateBoundMetadataTypeAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\ObjectConstructor.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\OnErrorAttribute.cs" />
+    <Compile Include="Newtonsoft.Json\Serialization\ReflectionValueProvider.cs" />
+    <Compile Include="Newtonsoft.Json\StreamingContext.cs" />
+    <Compile Include="Newtonsoft.Json\TypeNameHandling.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\Base64Encoder.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\BidirectionalDictionary.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\CollectionUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\CollectionWrapper.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ConvertUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DateTimeUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DictionaryWrapper.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DynamicProxy.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DynamicProxyMetaObject.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DynamicReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DynamicUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\DynamicWrapper.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\EnumUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\EnumValue.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\EnumValues.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ILGeneratorExtensions.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\JavaScriptUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\LateBoundReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\LinqBridge.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ListWrapper.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\MathUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\MethodCall.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\MiscellaneousUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ReflectionUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\StringBuffer.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\StringReference.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\StringUtils.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ThreadSafeStore.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\TypeExtensions.cs" />
+    <Compile Include="Newtonsoft.Json\Utilities\ValidationUtils.cs" />
+    <Compile Include="Newtonsoft.Json\WriteState.cs" />
+    <Compile Include="OAuth.cs" />
+    <Compile Include="Parser\IJdParser.cs" />
+    <Compile Include="Parser\JdAttribute.cs" />
+    <Compile Include="Parser\JdJsonParser.cs" />
+    <Compile Include="Parser\JdXmlParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JdDictionary.cs" />
+    <Compile Include="JdException.cs" />
+    <Compile Include="JdObject.cs" />
+    <Compile Include="JdResponse.cs" />
+    <Compile Include="Request\AfterSearchRequest.cs" />
+    <Compile Include="Request\AfterStateUpdateRequest.cs" />
+    <Compile Include="Request\DeliveryLogisticsGetRequest.cs" />
+    <Compile Include="Request\JingdongAnotherbuyrecommendWareGetRequest.cs" />
+    <Compile Include="Request\JingdongCombinerecommendWareGetRequest.cs" />
+    <Compile Include="Request\JingdongRegioninfoGetRequest.cs" />
+    <Compile Include="Request\JingdongSellerVenderInfoGetRequest.cs" />
+    <Compile Include="Request\JingdongTuiguangCatGetRequest.cs" />
+    <Compile Include="Request\JingdongTuiguangHomepageGetRequest.cs" />
+    <Compile Include="Request\JingdongTuiguangWaresDetailGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionActivityCodeGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionAdvdetailGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionGoodsCodeGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionMasterAccountGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionMasterBillSearchRequest.cs" />
+    <Compile Include="Request\JingdongUnionPlandetailGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionPlanlistSearchRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotionactivityQueryRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotiongoodQueryRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotiongoodUpdateRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotionreportQueryRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotionshopQueryRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotionshopUpdateRequest.cs" />
+    <Compile Include="Request\JingdongUnionReportOverviewSearchRequest.cs" />
+    <Compile Include="Request\JingdongUnionReportWindowSearchRequest.cs" />
+    <Compile Include="Request\JingdongUnionShopCodeGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionZoneCodeGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionZoneInfoGetRequest.cs" />
+    <Compile Include="Request\JingdongUserbrowsebuyrecommendWareGetRequest.cs" />
+    <Compile Include="Request\JingdongWareattributesGetRequest.cs" />
+    <Compile Include="Request\JingdongWarecategoryGetRequest.cs" />
+    <Compile Include="Request\JingdongWareGetRequest.cs" />
+    <Compile Include="Request\JingdongWarePriceGetRequest.cs" />
+    <Compile Include="Request\JingdongWarePromotionInfoGetRequest.cs" />
+    <Compile Include="Request\JingdongWareSearchRequest.cs" />
+    <Compile Include="Request\JingdongWaresSearchbycidRequest.cs" />
+    <Compile Include="Request\OrderGetRequest.cs" />
+    <Compile Include="Request\OrderLbpOutstorageRequest.cs" />
+    <Compile Include="Request\OrderLbpPrintDataGetRequest.cs" />
+    <Compile Include="Request\OrderPrintDataGetRequest.cs" />
+    <Compile Include="Request\OrderPrintRequest.cs" />
+    <Compile Include="Request\OrderSearchRequest.cs" />
+    <Compile Include="Request\OrderSoplOutstorageRequest.cs" />
+    <Compile Include="Request\OrderSoplPrintDataGetRequest.cs" />
+    <Compile Include="Request\OrderSopOutstorageRequest.cs" />
+    <Compile Include="Request\OrderSopPrintDataGetRequest.cs" />
+    <Compile Include="Request\OrderSopWaybillUpdateRequest.cs" />
+    <Compile Include="Request\OrderVenderRemarkUpdateRequest.cs" />
+    <Compile Include="Request\PromotionSearchRequest.cs" />
+    <Compile Include="Request\SellercatAddRequest.cs" />
+    <Compile Include="Request\SellercatDeleteRequest.cs" />
+    <Compile Include="Request\SellercatsGetRequest.cs" />
+    <Compile Include="Request\SellercatUpdateRequest.cs" />
+    <Compile Include="Request\SkuCustomGetRequest.cs" />
+    <Compile Include="Request\SkuPriceUpdateRequest.cs" />
+    <Compile Include="Request\SkuStockUpdateRequest.cs" />
+    <Compile Include="Request\WareAddRequest.cs" />
+    <Compile Include="Request\WarecatsGetRequest.cs" />
+    <Compile Include="Request\WareDeleteRequest.cs" />
+    <Compile Include="Request\WareDelistingGetRequest.cs" />
+    <Compile Include="Request\WareGetAttributeRequest.cs" />
+    <Compile Include="Request\WareGetAttvalueRequest.cs" />
+    <Compile Include="Request\WareGetRequest.cs" />
+    <Compile Include="Request\WareListingGetRequest.cs" />
+    <Compile Include="Request\WarePropimgAddRequest.cs" />
+    <Compile Include="Request\WarePropimgDeleteRequest.cs" />
+    <Compile Include="Request\WarePropimgsGetRequest.cs" />
+    <Compile Include="Request\WarePropimgUpdateRequest.cs" />
+    <Compile Include="Request\WareSkuAddRequest.cs" />
+    <Compile Include="Request\WareSkuDeleteRequest.cs" />
+    <Compile Include="Request\WareSkuGetRequest.cs" />
+    <Compile Include="Request\WareSkusGetRequest.cs" />
+    <Compile Include="Request\WareSkuUpdateRequest.cs" />
+    <Compile Include="Request\WaresListGetRequest.cs" />
+    <Compile Include="Request\WaresSearchRequest.cs" />
+    <Compile Include="Request\WareUpdateDelistingRequest.cs" />
+    <Compile Include="Request\WareUpdateListingRequest.cs" />
+    <Compile Include="Request\WareUpdateRequest.cs" />
+    <Compile Include="Response\AfterSearchResponse.cs" />
+    <Compile Include="Response\AfterStateUpdateResponse.cs" />
+    <Compile Include="Response\DeliveryLogisticsGetResponse.cs" />
+    <Compile Include="Response\JingdongAnotherbuyrecommendWareGetResponse.cs" />
+    <Compile Include="Response\JingdongCombinerecommendWareGetResponse.cs" />
+    <Compile Include="Response\JingdongRegioninfoGetResponse.cs" />
+    <Compile Include="Response\JingdongSellerVenderInfoGetResponse.cs" />
+    <Compile Include="Response\JingdongTuiguangCatGetResponse.cs" />
+    <Compile Include="Response\JingdongTuiguangHomepageGetResponse.cs" />
+    <Compile Include="Response\JingdongTuiguangWaresDetailGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionActivityCodeGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionAdvdetailGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionGoodsCodeGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionMasterAccountGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionMasterBillSearchResponse.cs" />
+    <Compile Include="Response\JingdongUnionPlandetailGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionPlanlistSearchResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotionactivityQueryResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotiongoodQueryResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotiongoodUpdateResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotionreportQueryResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotionshopQueryResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotionshopUpdateResponse.cs" />
+    <Compile Include="Response\JingdongUnionReportOverviewSearchResponse.cs" />
+    <Compile Include="Response\JingdongUnionReportWindowSearchResponse.cs" />
+    <Compile Include="Response\JingdongUnionShopCodeGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionZoneCodeGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionZoneInfoGetResponse.cs" />
+    <Compile Include="Response\JingdongUserbrowsebuyrecommendWareGetResponse.cs" />
+    <Compile Include="Response\JingdongWareattributesGetResponse.cs" />
+    <Compile Include="Response\JingdongWarecategoryGetResponse.cs" />
+    <Compile Include="Response\JingdongWareGetResponse.cs" />
+    <Compile Include="Response\JingdongWarePriceGetResponse.cs" />
+    <Compile Include="Response\JingdongWarePromotionInfoGetResponse.cs" />
+    <Compile Include="Response\JingdongWareSearchResponse.cs" />
+    <Compile Include="Response\JingdongWaresSearchbycidResponse.cs" />
+    <Compile Include="Response\OrderGetResponse.cs" />
+    <Compile Include="Response\OrderLbpOutstorageResponse.cs" />
+    <Compile Include="Response\OrderLbpPrintDataGetResponse.cs" />
+    <Compile Include="Response\OrderLbpWaybillUpdateResponse.cs" />
+    <Compile Include="Response\OrderPrintDataGetResponse.cs" />
+    <Compile Include="Response\OrderPrintResponse.cs" />
+    <Compile Include="Response\OrderSearchResponse.cs" />
+    <Compile Include="Response\OrderSoplOutstorageResponse.cs" />
+    <Compile Include="Response\OrderSoplPrintDataGetResponse.cs" />
+    <Compile Include="Response\OrderSoplWaybillUpdateResponse.cs" />
+    <Compile Include="Response\OrderSopOutstorageResponse.cs" />
+    <Compile Include="Response\OrderSopPrintDataGetResponse.cs" />
+    <Compile Include="Response\OrderSopWaybillUpdateResponse.cs" />
+    <Compile Include="Response\OrderVenderRemarkUpdateResponse.cs" />
+    <Compile Include="Response\OverseasOrderSopDeliveryResponse.cs" />
+    <Compile Include="Response\OverseasOrderSopOutstorageResponse.cs" />
+    <Compile Include="Response\PromotionSearchResponse.cs" />
+    <Compile Include="Response\SellercatAddResponse.cs" />
+    <Compile Include="Response\SellercatDeleteResponse.cs" />
+    <Compile Include="Response\SellercatsGetResponse.cs" />
+    <Compile Include="Response\SellercatUpdateResponse.cs" />
+    <Compile Include="Response\SkuCustomGetResponse.cs" />
+    <Compile Include="Response\SkuPriceUpdateResponse.cs" />
+    <Compile Include="Response\SkuStockUpdateResponse.cs" />
+    <Compile Include="Response\WareAddResponse.cs" />
+    <Compile Include="Response\WarecatsGetResponse.cs" />
+    <Compile Include="Response\WareDeleteResponse.cs" />
+    <Compile Include="Response\WareDelistingGetResponse.cs" />
+    <Compile Include="Response\WareGetAttributeResponse.cs" />
+    <Compile Include="Response\WareGetAttvalueResponse.cs" />
+    <Compile Include="Response\WareGetResponse.cs" />
+    <Compile Include="Response\WareListingGetResponse.cs" />
+    <Compile Include="Response\WarePropimgAddResponse.cs" />
+    <Compile Include="Response\WarePropimgDeleteResponse.cs" />
+    <Compile Include="Response\WarePropimgsGetResponse.cs" />
+    <Compile Include="Response\WarePropimgUpdateResponse.cs" />
+    <Compile Include="Response\WareSkuAddResponse.cs" />
+    <Compile Include="Response\WareSkuDeleteResponse.cs" />
+    <Compile Include="Response\WareSkuGetResponse.cs" />
+    <Compile Include="Response\WareSkusGetResponse.cs" />
+    <Compile Include="Response\WareSkuUpdateResponse.cs" />
+    <Compile Include="Response\WaresListGetResponse.cs" />
+    <Compile Include="Response\WaresSearchResponse.cs" />
+    <Compile Include="Response\WareUpdateDelistingResponse.cs" />
+    <Compile Include="Response\WareUpdateListingResponse.cs" />
+    <Compile Include="Response\WareUpdateResponse.cs" />
+    <Compile Include="Util\FileItem.cs" />
+    <Compile Include="Util\RequestValidator.cs" />
+    <Compile Include="Util\JdUtils.cs" />
+    <Compile Include="Util\WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JdSdk.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
