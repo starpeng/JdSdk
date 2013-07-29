@@ -3,7 +3,13 @@ JdSdk
 
 京东开放平台.NET版sdk 
 
+[最新版下载](https://github.com/starpeng/JdSdk/releases/download/1.0.7/JdSdk.NET.1.0.7.zip "1.0.7")
+
+
+
+
 交流QQ群：[236361019](http://qun.qq.com/#jointhegroup/gid/236361019 "236361019")
+
 
 
 ## 更新记录 ##
