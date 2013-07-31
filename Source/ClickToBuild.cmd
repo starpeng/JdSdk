@@ -1,5 +1,5 @@
 @echo off
-@title ERP≥Ã–Ú±‡“Î
+@title JdSdk±‡“Î
 if "%WindowsSdkDir%" neq "" goto build
 if exist "%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\vcvarsall.bat" goto initialize2k8on64
 if exist "%ProgramFiles%\Microsoft Visual Studio 10.0\VC\vcvarsall.bat" goto initialize2k8
