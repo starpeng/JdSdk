@@ -1,9 +1,9 @@
-JdSdk
+﻿JdSdk
 =====
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.0.8.zip "1.0.8")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.0.9.zip "1.0.9")
 
 
 
@@ -14,11 +14,15 @@ JdSdk
 
 ## 更新记录 ##
 
+- 1.0.9
+> 增加13个直通车接口
+
+
 - 1.0.8
 > 修正获取上下架商品接口的错误
 
-- 1.0.7
 
+- 1.0.7
 
 > ####新增接口
 > 商家信息接口 jingdong.seller.vender.info.get  
