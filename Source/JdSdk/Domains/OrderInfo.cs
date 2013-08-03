@@ -216,5 +216,50 @@ namespace JdSdk.Domain
             set;
         }
 
+
+        /// <summary>
+        /// 换货订单标识 0:不是换货订单,1:换货订单(默认不返回)
+        /// </summary>
+        [XmlElement("return_order")]
+        [JsonProperty("return_order")]
+        public String ReturnOrder
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 商家订单备注（不大于500字符）
+        /// </summary>
+        [XmlElement("vender_remark")]
+        [JsonProperty("vender_remark")]
+        public String VenderRemark
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 即买家的账号信息
+        /// </summary>
+        [XmlElement("pin")]
+        [JsonProperty("pin")]
+        public String Pin
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 订单更新时间
+        /// </summary>
+        [XmlElement("pin")]
+        [JsonProperty("pin")]
+        public String Modified
+        {
+            get;
+            set;
+        }
+
     }
 }

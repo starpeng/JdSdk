@@ -1,4 +1,4 @@
-#region CopyRight
+﻿#region CopyRight
 /**************************************************************
    Copyright (c) 2012 StarPeng. All rights reserved.
    CLR版本        :    4.0.30319.269
@@ -55,6 +55,7 @@ using System;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.9.0")]
 [assembly: AssemblyFileVersion("1.0.9.0")]
+
 
 
 

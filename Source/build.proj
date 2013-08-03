@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <!-- Initialization -->
+
+    <PropertyGroup>
+        <BuildFolder>$(MSBuildProjectDirectory)\Build</BuildFolder>
+        <ReleaseFolder>$(MSBuildProjectDirectory)\..\Releases</ReleaseFolder>
+        <!--<BuildPlatform Condition="$(ProgramW6432) != ''">x64</BuildPlatform>
+        <BuildPlatform Condition="$(BuildPlatform) == ''">x86</BuildPlatform>-->
+        <Version>1.0.9</Version>
+    </PropertyGroup>
+
+    <Import Project="$(MSBuildProjectDirectory)\libs\msbuild\MSBuild.Community.Tasks.Targets"/>
+
+    <!-- Coordinating Targets -->
+
+    <Target Name ="Build">
+        <CallTarget Targets="Clean"/>
+        <CallTarget Targets="Compile"/>
+        <CallTarget Targets="Package"/>
+    </Target>
+
+    <!-- Clean -->
+
+    <Target Name="Clean">
+        <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net20.sln" Targets="Clean" />
+        <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net35.sln" Targets="Clean" />
+        <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net40.sln" Targets="Clean" />
+        <RemoveDir Directories="$(BuildFolder)" ContinueOnError="true"/>
+    </Target>
+
+    <Target Name ="Compile">
+        <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net20.sln" Targets="Build" Properties="Configuration=Release;" />
+        <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net35.sln" Targets="Build" Properties="Configuration=Release;" />
+        <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net40.sln" Targets="Build" Properties="Configuration=Release;" />
+    </Target>
+
+    <Target Name="Package">
+        <ItemGroup>
+            <Zip-Exclude Include="
+                $(BuildFolder)\*\*.pdb;
+                " />
+            <Zip-Deploy Include="$(BuildFolder)\**\*" Exclude="@(Zip-Exclude)"/>
+        </ItemGroup>
+
+        <MakeDir Directories="$(ReleaseFolder);"/>
+        <Zip Files="@(Zip-Deploy)" WorkingDirectory="$(BuildFolder)" ZipFileName="$(ReleaseFolder)\JdSdk.NET $(Version).zip" />
+    </Target>
+
+</Project>

@@ -19,3 +19,4 @@ TestResults
 *.userprefs
 .DS_Store
 /Source/JdSdk/*.vspscc
+/Source/Build
