@@ -60,74 +60,222 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessToken.cs" />
-    <Compile Include="Domains\ActivitySafVo.cs" />
-    <Compile Include="Domains\AdvDetailVo.cs" />
-    <Compile Include="Domains\AdwordCoupon.cs" />
-    <Compile Include="Domains\AdwordGiftSku.cs" />
-    <Compile Include="Domains\AdwordResponse.cs" />
-    <Compile Include="Domains\AdZoneVo.cs" />
-    <Compile Include="Domains\AttributeValue.cs" />
-    <Compile Include="Domains\EffectReportSafVo.cs" />
-    <Compile Include="Domains\FavoriteWare.cs" />
-    <Compile Include="Domains\GoodSafVo.cs" />
-    <Compile Include="Domains\GoodsVO.cs" />
-    <Compile Include="Domains\JosActivityImgVO.cs" />
-    <Compile Include="Domains\JosGoodsVO.cs" />
-    <Compile Include="Domains\MasterBillVo.cs" />
-    <Compile Include="Domains\OverviewVo.cs" />
-    <Compile Include="Domains\PlanListVO .cs" />
-    <Compile Include="Domains\PlanVO.cs" />
-    <Compile Include="Domains\PriceChanges.cs" />
-    <Compile Include="Domains\PromoteWare.cs" />
-    <Compile Include="Domains\PromoteWareDetail.cs" />
-    <Compile Include="Domains\PromotionActivityVO .cs" />
-    <Compile Include="Domains\PromotionGoodsVO .cs" />
-    <Compile Include="Domains\PromotionInfo.cs" />
-    <Compile Include="Domains\PromotionPlanVO .cs" />
-    <Compile Include="Domains\PromotionShopVO.cs" />
-    <Compile Include="Domains\Region.cs" />
-    <Compile Include="Domains\ShopCategory.cs" />
-    <Compile Include="Domains\ShopSafVo.cs" />
-    <Compile Include="Domains\SkuInfo.cs" />
-    <Compile Include="Domains\SoplOrLbpOrderPrintData.cs" />
-    <Compile Include="Domains\SopOrderPrintData.cs" />
-    <Compile Include="Domains\UnionActivityimg.cs" />
-    <Compile Include="Domains\UnionCategoryCommision.cs" />
-    <Compile Include="Domains\UnionPlan.cs" />
-    <Compile Include="Domains\UnionPlanActivity.cs" />
-    <Compile Include="Domains\VenderInfoResult.cs" />
-    <Compile Include="Domains\WareAttribute.cs" />
-    <Compile Include="Domains\WareCategory.cs" />
-    <Compile Include="Domains\WareImg.cs" />
-    <Compile Include="Domains\WarePropimg.cs" />
-    <Compile Include="Domains\WindowAdvDetail.cs" />
+    <Compile Include="Domains\AccountVO.cs" />
+    <Compile Include="Domains\ActivitySafVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AdvDetailVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AdwordCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AdwordGiftSku.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AdwordResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AdZoneVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AfterSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ApiCompanyCustom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\attribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AttributeValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\AttValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\BillDetailVO.cs" />
+    <Compile Include="Domains\BillVO.cs" />
+    <Compile Include="Domains\Category.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\CommodityInfo.cs" />
+    <Compile Include="Domains\CommoditySpu.cs" />
+    <Compile Include="Domains\Consignee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\CouponDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\EffectReportSafVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\FavoriteWare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\Field.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\GoodSafVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\GoodsVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\IncomeExpenseVO.cs" />
+    <Compile Include="Domains\ItemInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\JosActivityImgVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\JosGoodsInfo.cs" />
+    <Compile Include="Domains\JosGoodsVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\JosSkuInfo.cs" />
+    <Compile Include="Domains\KeywordGroup.cs" />
+    <Compile Include="Domains\LogisticsCompany.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\MasterBillVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\OrderDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\OrderInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\OrderItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\OrderPrintData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\OrderSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\OverviewVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PageInfo.cs" />
+    <Compile Include="Domains\PlanDetailInfo.cs" />
+    <Compile Include="Domains\PlanListVO .cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PlanVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PopDetailJos.cs" />
+    <Compile Include="Domains\PriceChanges.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PrintResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromoteWare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromoteWareDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\Promotion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionActivityVO .cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionGoodsVO .cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionPlanVO .cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromotionShopVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\QueryPlanReturnInfo.cs" />
+    <Compile Include="Domains\RankReturnJO.cs" />
+    <Compile Include="Domains\Region.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ReturnInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ReturnItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ScheduleVOJos.cs" />
+    <Compile Include="Domains\SelectedKeywordInfo.cs" />
+    <Compile Include="Domains\ShopCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ShopSafVo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\Sku.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\SkuInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\SoplOrLbpOrderPrintData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\SopOrderPrintData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\SpaceInfo.cs" />
+    <Compile Include="Domains\SpacePageInfo.cs" />
+    <Compile Include="Domains\UnionActivityimg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\UnionCategoryCommision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\UnionPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\UnionPlanActivity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\UserInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\VenderInfoResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\Ware.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WareAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WareCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WareImg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WarePropimg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WindowAdvDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Parser\DateTimeConverter.cs" />
     <Compile Include="DefaultJdClient.cs" />
     <Compile Include="DefaultJdLogger.cs" />
-    <Compile Include="Domains\AfterSearch.cs" />
-    <Compile Include="Domains\ApiCompanyCustom.cs" />
-    <Compile Include="Domains\attribute.cs" />
-    <Compile Include="Domains\AttValue.cs" />
-    <Compile Include="Domains\Category.cs" />
-    <Compile Include="Domains\Consignee.cs" />
-    <Compile Include="Domains\CouponDetail.cs" />
-    <Compile Include="Domains\Field.cs" />
-    <Compile Include="Domains\ItemInfo.cs" />
-    <Compile Include="Domains\LogisticsCompany.cs" />
-    <Compile Include="Domains\OrderDetail.cs" />
-    <Compile Include="Domains\OrderInfo.cs" />
-    <Compile Include="Domains\OrderItem.cs" />
-    <Compile Include="Domains\OrderPrintData.cs" />
-    <Compile Include="Domains\OrderSearch.cs" />
-    <Compile Include="Domains\PrintResult.cs" />
-    <Compile Include="Domains\Promotion.cs" />
-    <Compile Include="Domains\PromotionProduct.cs" />
-    <Compile Include="Domains\PromotionSearch.cs" />
-    <Compile Include="Domains\ReturnInfo.cs" />
-    <Compile Include="Domains\ReturnItem.cs" />
-    <Compile Include="Domains\Sku.cs" />
-    <Compile Include="Domains\UserInfo.cs" />
-    <Compile Include="Domains\Ware.cs" />
     <Compile Include="Enums\MemberLevel.cs" />
     <Compile Include="Enums\SalesPromotionStatus.cs" />
     <Compile Include="Enums\SalesPromotion.cs" />
@@ -314,6 +462,19 @@
     <Compile Include="Request\DeliveryLogisticsGetRequest.cs" />
     <Compile Include="Request\JingdongAnotherbuyrecommendWareGetRequest.cs" />
     <Compile Include="Request\JingdongCombinerecommendWareGetRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheAccountGetRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheAccountIncomeExpenseSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheBillDetailsSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheBillSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheGoodsGetRequest.cs" />
+    <Compile Include="Request\JingdongKuaichePopGetRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnBidRankGetRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnKeywordgroupListSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnPlanDetailGetRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnPlanListSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnScheduleBidDetailSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnSpaceInfoSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnSpacePageByTypeSearchRequest.cs" />
     <Compile Include="Request\JingdongRegioninfoGetRequest.cs" />
     <Compile Include="Request\JingdongSellerVenderInfoGetRequest.cs" />
     <Compile Include="Request\JingdongTuiguangCatGetRequest.cs" />
@@ -396,6 +557,19 @@
     <Compile Include="Response\DeliveryLogisticsGetResponse.cs" />
     <Compile Include="Response\JingdongAnotherbuyrecommendWareGetResponse.cs" />
     <Compile Include="Response\JingdongCombinerecommendWareGetResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheAccountGetResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheAccountIncomeExpenseSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheBillDetailsSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheBillSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheGoodsGetResponse.cs" />
+    <Compile Include="Response\JingdongKuaichePopGetResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnBidRankGetResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnKeywordgroupListSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnPlanDetailGetResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnPlanListSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnScheduleBidDetailSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnSpaceInfoSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnSpacePageByTypeSearchResponse.cs" />
     <Compile Include="Response\JingdongRegioninfoGetResponse.cs" />
     <Compile Include="Response\JingdongSellerVenderInfoGetResponse.cs" />
     <Compile Include="Response\JingdongTuiguangCatGetResponse.cs" />
