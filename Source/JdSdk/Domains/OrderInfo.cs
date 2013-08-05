@@ -1,4 +1,4 @@
-#region head comment
+﻿#region head comment
 /*
 Code generate by JdSdkTool.
 2013-01-31 10:56:47:853 +08:00
@@ -253,8 +253,8 @@ namespace JdSdk.Domain
         /// <summary>
         /// 订单更新时间
         /// </summary>
-        [XmlElement("pin")]
-        [JsonProperty("pin")]
+        [XmlElement("modified")]
+        [JsonProperty("modified")]
         public String Modified
         {
             get;
