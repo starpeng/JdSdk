@@ -252,7 +252,7 @@ namespace JdSdk.Domain
         /// <example>Delete</example>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Int64> Status
+        public String Status
         {
             get;
             set;
