@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("zone_id")]
         [JsonProperty("zone_id")]
-        public Nullable<Decimal> ZoneId
+        public Nullable<Int64> ZoneId
         {
             get;
             set;
@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("union_id")]
         [JsonProperty("union_id")]
-        public Nullable<Decimal> UnionId
+        public Nullable<Int64> UnionId
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("web_id")]
         [JsonProperty("web_id")]
-        public Nullable<Decimal> WebId
+        public Nullable<Int64> WebId
         {
             get;
             set;
@@ -124,7 +124,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("size_id")]
         [JsonProperty("size_id")]
-        public Nullable<Decimal> SizeId
+        public Nullable<Int64> SizeId
         {
             get;
             set;
@@ -147,7 +147,7 @@ namespace JdSdk.Domain
         /// <example>1,2</example>
         [XmlElement("promotion_type")]
         [JsonProperty("promotion_type")]
-        public Nullable<Decimal> PromotionType
+        public Nullable<Int64> PromotionType
         {
             get;
             set;
@@ -159,7 +159,7 @@ namespace JdSdk.Domain
         /// <example>1,2</example>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;

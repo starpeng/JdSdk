@@ -56,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("in_out_type")]
         [JsonProperty("in_out_type")]
-        public Nullable<Decimal> InOutType
+        public Nullable<Int64> InOutType
         {
             get;
             set;

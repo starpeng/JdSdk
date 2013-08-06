@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_index")]
         [JsonProperty("page_index")]
-        public Nullable<Decimal> PageIndex
+        public Nullable<Int64> PageIndex
         {
             get;
             set;
@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_total")]
         [JsonProperty("page_total")]
-        public Nullable<Decimal> PageTotal
+        public Nullable<Int64> PageTotal
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_size")]
         [JsonProperty("page_size")]
-        public Nullable<Decimal> PageSize
+        public Nullable<Int64> PageSize
         {
             get;
             set;

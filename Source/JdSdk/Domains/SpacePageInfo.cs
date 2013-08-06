@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Decimal> Id
+        public Nullable<Int64> Id
         {
             get;
             set;
@@ -56,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("parent_id")]
         [JsonProperty("parent_id")]
-        public Nullable<Decimal> ParentId
+        public Nullable<Int64> ParentId
         {
             get;
             set;
@@ -78,7 +78,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;

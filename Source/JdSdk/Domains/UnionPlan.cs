@@ -100,7 +100,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;

@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("pop_id")]
         [JsonProperty("pop_id")]
-        public Nullable<Decimal> PopId
+        public Nullable<Int64> PopId
         {
             get;
             set;
@@ -81,7 +81,7 @@ namespace JdSdk.Domain
         /// <example>1/11/9/6/10/-1</example>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;

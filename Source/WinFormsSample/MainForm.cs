@@ -267,18 +267,18 @@ namespace WinFormsSample
             return GetWareList(null, null, null, null, page, pageSize, out totalCount, false);
         }
 
-        public List<Ware> GetWareList(Nullable<Decimal> cid, Nullable<Decimal> startPrice, Nullable<Decimal> endPrice, String title)
+        public List<Ware> GetWareList(Nullable<Int64> cid, Nullable<Decimal> startPrice, Nullable<Decimal> endPrice, String title)
         {
             Decimal totalCount = 0;
             return GetWareList(cid, startPrice, endPrice, title, 1, 100, out totalCount, true);
         }
 
-        public List<Ware> GetWareList(Nullable<Decimal> cid, Nullable<Decimal> startPrice, Nullable<Decimal> endPrice, String title, Int32 page, Int32 pageSize, out Decimal totalCount)
+        public List<Ware> GetWareList(Nullable<Int64> cid, Nullable<Decimal> startPrice, Nullable<Decimal> endPrice, String title, Int32 page, Int32 pageSize, out Decimal totalCount)
         {
             return GetWareList(cid, startPrice, endPrice, title, 1, 100, out totalCount, false);
         }
 
-        public List<Ware> GetWareList(Nullable<Decimal> cid, Nullable<Decimal> startPrice, Nullable<Decimal> endPrice, String title, Int32 page, Int32 pageSize, out Decimal totalCount, bool recursive)
+        public List<Ware> GetWareList(Nullable<Int64> cid, Nullable<Decimal> startPrice, Nullable<Decimal> endPrice, String title, Int32 page, Int32 pageSize, out Decimal totalCount, bool recursive)
         {
             try
             {

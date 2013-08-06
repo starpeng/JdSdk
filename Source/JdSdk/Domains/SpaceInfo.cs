@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Decimal> Id
+        public Nullable<Int64> Id
         {
             get;
             set;
@@ -56,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_id")]
         [JsonProperty("page_id")]
-        public Nullable<Decimal> PageId
+        public Nullable<Int64> PageId
         {
             get;
             set;
@@ -111,7 +111,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;
@@ -122,7 +122,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;

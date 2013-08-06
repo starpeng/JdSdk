@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("categoryLevel1Id")]
         [JsonProperty("categoryLevel1Id")]
-        public Nullable<Decimal> CategoryLevel1Id
+        public Nullable<Int64> CategoryLevel1Id
         {
             get;
             set;
@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("categoryLevel2Id")]
         [JsonProperty("categoryLevel2Id")]
-        public Nullable<Decimal> CategoryLevel2Id
+        public Nullable<Int64> CategoryLevel2Id
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("categoryLevel3Id")]
         [JsonProperty("categoryLevel3Id")]
-        public Nullable<Decimal> CategoryLevel3Id
+        public Nullable<Int64> CategoryLevel3Id
         {
             get;
             set;

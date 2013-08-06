@@ -24,7 +24,7 @@ namespace JdSdk.Domain
         /// <example>1</example>
         [XmlElement("region_id")]
         [JsonProperty("region_id")]
-        public Nullable<Decimal> RegionId
+        public Nullable<Int64> RegionId
         {
             get;
             set;

@@ -26,7 +26,7 @@ namespace JdSdk.Request
         /// <example>1002</example>
         [XmlElement("cid")]
         [JsonProperty("cid")]
-        public Decimal Cid
+        public Int64 Cid
         {
             get;
             set;

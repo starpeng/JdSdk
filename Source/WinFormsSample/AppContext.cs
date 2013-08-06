@@ -29,7 +29,7 @@ namespace WinFormsSample
         private const String APPSECRET_SETTING = "AppSecret";
         private static Configuration _config;
 
-        public readonly static String ServerURL = "http://gw.api.360buy.com/routerjson";
+        public readonly static String ServerURL = "http://gw.api.sandbox.360buy.com/routerjson";
 
         static AppContext()
         {

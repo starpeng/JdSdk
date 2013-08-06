@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("plan_id")]
         [JsonProperty("plan_id")]
-        public Nullable<Decimal> PlanId
+        public Nullable<Int64> PlanId
         {
             get;
             set;

@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("promoType")]
         [JsonProperty("promoType")]
-        public Nullable<Decimal> PromoType
+        public Nullable<Int64> PromoType
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("extType")]
         [JsonProperty("extType")]
-        public Nullable<Decimal> ExtType
+        public Nullable<Int64> ExtType
         {
             get;
             set;
@@ -56,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("fullRefundType")]
         [JsonProperty("fullRefundType")]
-        public Nullable<Decimal> FullRefundType
+        public Nullable<Int64> FullRefundType
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("userLevel")]
         [JsonProperty("userLevel")]
-        public Nullable<Decimal> UserLevel
+        public Nullable<Int64> UserLevel
         {
             get;
             set;
@@ -78,7 +78,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("minNum")]
         [JsonProperty("minNum")]
-        public Nullable<Decimal> MinNum
+        public Nullable<Int64> MinNum
         {
             get;
             set;
@@ -89,7 +89,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("maxNum")]
         [JsonProperty("maxNum")]
-        public Nullable<Decimal> MaxNum
+        public Nullable<Int64> MaxNum
         {
             get;
             set;
@@ -100,7 +100,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("limitUserType")]
         [JsonProperty("limitUserType")]
-        public Nullable<Decimal> LimitUserType
+        public Nullable<Int64> LimitUserType
         {
             get;
             set;
@@ -166,7 +166,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("needNum")]
         [JsonProperty("needNum")]
-        public Nullable<Decimal> NeedNum
+        public Nullable<Int64> NeedNum
         {
             get;
             set;
@@ -177,7 +177,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("deliverNum")]
         [JsonProperty("deliverNum")]
-        public Nullable<Decimal> DeliverNum
+        public Nullable<Int64> DeliverNum
         {
             get;
             set;
@@ -232,7 +232,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("score")]
         [JsonProperty("score")]
-        public Nullable<Decimal> Score
+        public Nullable<Int64> Score
         {
             get;
             set;
@@ -243,7 +243,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("promoEndTime")]
         [JsonProperty("promoEndTime")]
-        public Nullable<Decimal> PromoEndTime
+        public Nullable<Int64> PromoEndTime
         {
             get;
             set;

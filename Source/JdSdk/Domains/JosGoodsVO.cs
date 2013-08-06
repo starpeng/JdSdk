@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public Nullable<Decimal> SkuId
+        public Nullable<Int64> SkuId
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("plan_id")]
         [JsonProperty("plan_id")]
-        public Nullable<Decimal> PlanId
+        public Nullable<Int64> PlanId
         {
             get;
             set;

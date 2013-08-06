@@ -24,7 +24,7 @@ namespace JdSdk.Domain
         /// <example>2323</example>
         [XmlElement("aid")]
         [JsonProperty("aid")]
-        public Nullable<Decimal> Aid
+        public Nullable<Int64> Aid
         {
             get;
             set;
@@ -83,7 +83,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("index_id")]
         [JsonProperty("index_id")]
-        public Nullable<Decimal> IndexId
+        public Nullable<Int64> IndexId
         {
             get;
             set;
@@ -95,7 +95,7 @@ namespace JdSdk.Domain
         /// <example>1</example>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;
@@ -117,7 +117,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("input_type")]
         [JsonProperty("input_type")]
-        public Nullable<Decimal> InputType
+        public Nullable<Int64> InputType
         {
             get;
             set;

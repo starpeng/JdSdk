@@ -34,7 +34,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("totalCount")]
         [JsonProperty("totalCount")]
-        public Nullable<Decimal> TotalCount
+        public Nullable<Int64> TotalCount
         {
             get;
             set;

@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("vender_id")]
         [JsonProperty("vender_id")]
-        public Nullable<Decimal> VenderId
+        public Nullable<Int64> VenderId
         {
             get;
             set;
@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("col_type")]
         [JsonProperty("col_type")]
-        public Nullable<Decimal> ColType
+        public Nullable<Int64> ColType
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("shop_id")]
         [JsonProperty("shop_id")]
-        public Nullable<Decimal> ShopId
+        public Nullable<Int64> ShopId
         {
             get;
             set;

@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Decimal> Id
+        public Nullable<Int64> Id
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("space_id")]
         [JsonProperty("space_id")]
-        public Nullable<Decimal> SpaceId
+        public Nullable<Int64> SpaceId
         {
             get;
             set;
@@ -56,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;
@@ -100,7 +100,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;
@@ -188,7 +188,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("show_type")]
         [JsonProperty("show_type")]
-        public Nullable<Decimal> ShowType
+        public Nullable<Int64> ShowType
         {
             get;
             set;

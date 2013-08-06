@@ -67,7 +67,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("giftType")]
         [JsonProperty("giftType")]
-        public Nullable<Decimal> GiftType
+        public Nullable<Int64> GiftType
         {
             get;
             set;

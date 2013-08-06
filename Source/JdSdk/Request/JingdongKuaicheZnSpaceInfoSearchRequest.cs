@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_id")]
         [JsonProperty("page_id")]
-        public Nullable<Decimal> PageId
+        public Nullable<Int64> PageId
         {
             get;
             set;

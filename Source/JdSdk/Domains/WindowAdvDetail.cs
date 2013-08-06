@@ -69,7 +69,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("clickNum")]
         [JsonProperty("clickNum")]
-        public Nullable<Decimal> ClickNum
+        public Nullable<Int64> ClickNum
         {
             get;
             set;
@@ -102,7 +102,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("itemNum")]
         [JsonProperty("itemNum")]
-        public Nullable<Decimal> ItemNum
+        public Nullable<Int64> ItemNum
         {
             get;
             set;

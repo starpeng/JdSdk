@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("code")]
         [JsonProperty("code")]
-        public Nullable<Decimal> Code
+        public Nullable<Int64> Code
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("wp_id")]
         [JsonProperty("wp_id")]
-        public Nullable<Decimal> WpId
+        public Nullable<Int64> WpId
         {
             get;
             set;

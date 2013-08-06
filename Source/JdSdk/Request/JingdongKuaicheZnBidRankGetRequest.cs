@@ -36,7 +36,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("cid")]
         [JsonProperty("cid")]
-        public Nullable<Decimal> Cid
+        public Nullable<Int64> Cid
         {
             get;
             set;
@@ -47,7 +47,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("kwg_id")]
         [JsonProperty("kwg_id")]
-        public Nullable<Decimal> KwgId
+        public Nullable<Int64> KwgId
         {
             get;
             set;

@@ -21,8 +21,8 @@ namespace JdSdk.Response
         /// <summary>
         /// 商品信息
         /// </summary>
-        [XmlElement("wares")]
-        [JsonProperty("wares")]
+        [XmlElement("ware_infos")]
+        [JsonProperty("ware_infos")]
         public List<Ware> Wares
         {
             get;

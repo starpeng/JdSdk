@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("report_unionId")]
         [JsonProperty("report_unionId")]
-        public Nullable<Decimal> ReportUnionId
+        public Nullable<Int64> ReportUnionId
         {
             get;
             set;
@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("report_orderNo")]
         [JsonProperty("report_orderNo")]
-        public Nullable<Decimal> ReportOrderNo
+        public Nullable<Int64> ReportOrderNo
         {
             get;
             set;
@@ -100,7 +100,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("report_skuId")]
         [JsonProperty("report_skuId")]
-        public Nullable<Decimal> ReportSkuId
+        public Nullable<Int64> ReportSkuId
         {
             get;
             set;
@@ -122,7 +122,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("report_itemNum")]
         [JsonProperty("report_itemNum")]
-        public Nullable<Decimal> ReportItemNum
+        public Nullable<Int64> ReportItemNum
         {
             get;
             set;

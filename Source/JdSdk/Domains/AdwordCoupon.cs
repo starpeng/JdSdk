@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;

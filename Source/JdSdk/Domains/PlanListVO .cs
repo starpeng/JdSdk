@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("totalCount")]
         [JsonProperty("totalCount")]
-        public Nullable<Decimal> TotalCount
+        public Nullable<Int64> TotalCount
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("totalPage")]
         [JsonProperty("totalPage")]
-        public Nullable<Decimal> TotalPage
+        public Nullable<Int64> TotalPage
         {
             get;
             set;

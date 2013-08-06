@@ -24,7 +24,7 @@ namespace JdSdk.Domain
         /// <example>2323</example>
         [XmlElement("aid")]
         [JsonProperty("aid")]
-        public Nullable<Decimal> Aid
+        public Nullable<Int64> Aid
         {
             get;
             set;

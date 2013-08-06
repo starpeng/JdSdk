@@ -35,7 +35,7 @@ namespace JdSdk.Response
         /// <example>1,2</example>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;

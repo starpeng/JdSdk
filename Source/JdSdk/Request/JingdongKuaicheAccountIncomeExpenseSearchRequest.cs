@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("in_out_type")]
         [JsonProperty("in_out_type")]
-        public Nullable<Decimal> InOutType
+        public Nullable<Int64> InOutType
         {
             get;
             set;
@@ -36,7 +36,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;
@@ -47,7 +47,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("check_type")]
         [JsonProperty("check_type")]
-        public Nullable<Decimal> CheckType
+        public Nullable<Int64> CheckType
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_index")]
         [JsonProperty("page_index")]
-        public Nullable<Decimal> PageIndex
+        public Nullable<Int64> PageIndex
         {
             get;
             set;
@@ -69,7 +69,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_size")]
         [JsonProperty("page_size")]
-        public Nullable<Decimal> PageSize
+        public Nullable<Int64> PageSize
         {
             get;
             set;

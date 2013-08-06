@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("bill_id")]
         [JsonProperty("bill_id")]
-        public Nullable<Decimal> BillId
+        public Nullable<Int64> BillId
         {
             get;
             set;
@@ -34,7 +34,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("union_id")]
         [JsonProperty("union_id")]
-        public Nullable<Decimal> UnionId
+        public Nullable<Int64> UnionId
         {
             get;
             set;
@@ -169,7 +169,7 @@ namespace JdSdk.Domain
         /// <example>0/1/2</example>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;

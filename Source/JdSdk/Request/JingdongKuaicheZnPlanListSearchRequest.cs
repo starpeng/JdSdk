@@ -47,7 +47,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Decimal> Status
+        public Nullable<Int64> Status
         {
             get;
             set;
@@ -91,7 +91,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_size")]
         [JsonProperty("page_size")]
-        public Nullable<Decimal> PageSize
+        public Nullable<Int64> PageSize
         {
             get;
             set;
@@ -102,7 +102,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_index")]
         [JsonProperty("page_index")]
-        public Nullable<Decimal> PageIndex
+        public Nullable<Int64> PageIndex
         {
             get;
             set;

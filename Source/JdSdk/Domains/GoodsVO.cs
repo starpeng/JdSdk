@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("skuId")]
         [JsonProperty("skuId")]
-        public Nullable<Decimal> SkuId
+        public Nullable<Int64> SkuId
         {
             get;
             set;

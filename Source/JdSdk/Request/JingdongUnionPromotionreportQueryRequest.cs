@@ -50,7 +50,7 @@ namespace JdSdk.Request
         /// <example>1</example>
         [XmlElement("pageIndex")]
         [JsonProperty("pageIndex")]
-        public Decimal PageIndex
+        public Int64 PageIndex
         {
             get;
             set;
@@ -62,7 +62,7 @@ namespace JdSdk.Request
         /// <example>20</example>
         [XmlElement("pageSize")]
         [JsonProperty("pageSize")]
-        public Decimal PageSize
+        public Int64 PageSize
         {
             get;
             set;

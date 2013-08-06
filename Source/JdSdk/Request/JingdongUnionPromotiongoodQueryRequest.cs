@@ -36,7 +36,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("categoryId")]
         [JsonProperty("categoryId")]
-        public Nullable<Decimal> CategoryId
+        public Nullable<Int64> CategoryId
         {
             get;
             set;
@@ -71,7 +71,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("pageIndex")]
         [JsonProperty("pageIndex")]
-        public Decimal PageIndex
+        public Int64 PageIndex
         {
             get;
             set;
@@ -82,7 +82,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("pageSize")]
         [JsonProperty("pageSize")]
-        public Decimal PageSize
+        public Int64 PageSize
         {
             get;
             set;

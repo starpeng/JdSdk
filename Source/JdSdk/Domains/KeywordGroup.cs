@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("wgroup_id")]
         [JsonProperty("wgroup_id")]
-        public Nullable<Decimal> WgroupId
+        public Nullable<Int64> WgroupId
         {
             get;
             set;
@@ -56,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("search_num")]
         [JsonProperty("search_num")]
-        public Nullable<Decimal> SearchNum
+        public Nullable<Int64> SearchNum
         {
             get;
             set;
@@ -100,7 +100,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Decimal> Type
+        public Nullable<Int64> Type
         {
             get;
             set;
