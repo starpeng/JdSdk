@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.0.9.zip "1.0.9")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.0.zip "1.1.0")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
@@ -13,6 +13,9 @@
 
 
 ## 更新记录 ##
+
+- 1.1.0
+> 将部分京东文档中为Number，明显为整形字段的由原来的Decimal替换成换成Int64。
 
 - 1.0.9
 > 增加13个直通车接口
