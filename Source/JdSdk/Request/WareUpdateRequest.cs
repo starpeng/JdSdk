@@ -33,7 +33,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 店内分类  (保留字段)
+        /// 自定义店内分类  (保留字段)
         /// </summary>
         [XmlElement("shop_category")]
         [JsonProperty("shop_category")]
@@ -82,6 +82,17 @@ namespace JdSdk.Request
         [XmlElement("item_num")]
         [JsonProperty("item_num")]
         public String ItemNum
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// sku外部id
+        /// </summary>
+        [XmlElement("outer_id")]
+        [JsonProperty("outer_id")]
+        public String OuterId
         {
             get;
             set;
@@ -232,7 +243,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 商品属性列表,多组之间用"|"分隔，格式:aid:vid  或 aid:vid|aid1:vid1 或 aid1:vid1 （需要从类目服务接口获取）
+        /// 商品属性列表,多组之间用"|"分隔，格式:aid:vid  或 aid:vid|aid1:vid1 或 aid1:vid1 （需要从类目服务接口获取）,如果有属性是可输入的话，则用字段input_str填入属性的值
         /// </summary>
         /// <example>3205:22101|3205:22102</example>
         [XmlElement("attributes")]
@@ -421,56 +432,99 @@ namespace JdSdk.Request
             set;
         }
 
+        /// <summary>
+        /// 用户自行输入的类目属性ID串 结构："pid1|pid2|pid3",属性的pid调用360buy.ware.get.attribute取得, 输入类型input_type=3即输入
+        /// </summary>
+        /// <example>1132632|12142|876231</example>
+        [XmlElement("input_pids")]
+        [JsonProperty("input_pids")]
+        public String InputPids
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 用户自行输入的属性值,结构:"输入值|输入值2|输入值3"
+        /// </summary>
+        /// <example>内容1|内容2|内容3</example>
+        [XmlElement("input_strs")]
+        [JsonProperty("input_strs")]
+        public String InputStrs
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 库存数(针对FBP输入无效)
+        /// </summary>
+        [XmlElement("stock_num")]
+        [JsonProperty("stock_num")]
+        public String StockNum
+        {
+            get;
+            set;
+        }
+
         public String ApiName
         {
-            get{ return "360buy.ware.update"; }
+            get { return "360buy.ware.update"; }
         }
 
         public String GetParamJson()
         {
             Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("shop_category" ,this.ShopCategory);
-            paramters.Add("title" ,this.Title);
-            paramters.Add("upc_code" ,this.UpcCode);
-            paramters.Add("option_type" ,this.OptionType);
-            paramters.Add("item_num" ,this.ItemNum);
-            paramters.Add("producter" ,this.Producter);
-            paramters.Add("wrap" ,this.Wrap);
-            paramters.Add("length" ,this.Length);
-            paramters.Add("wide" ,this.Wide);
-            paramters.Add("high" ,this.High);
-            paramters.Add("weight" ,this.Weight);
-            paramters.Add("cost_price" ,this.CostPrice);
-            paramters.Add("market_price" ,this.MarketPrice);
-            paramters.Add("jd_price" ,this.JdPrice);
-            paramters.Add("notes" ,this.Notes);
-            paramters.Add("pack_listing" ,this.PackListing);
-            paramters.Add("service" ,this.Service);
-            paramters.Add("property_alias" ,this.PropertyAlias);
-            paramters.Add("attributes" ,this.Attributes);
-            paramters.Add("sku_prices" ,this.SkuPrices);
-            paramters.Add("sku_properties" ,this.SkuProperties);
-            paramters.Add("sku_stocks" ,this.SkuStocks);
-            paramters.Add("trade_no" ,this.TradeNo);
-            paramters.Add("is_pay_first" ,this.IsPayFirst);
-            paramters.Add("is_can_vat" ,this.IsCanVat);
-            paramters.Add("is_imported" ,this.IsImported);
-            paramters.Add("is_health_product" ,this.IsHealthProduct);
-            paramters.Add("is_shelf_life" ,this.IsShelfLife);
-            paramters.Add("shelf_life_days" ,this.ShelfLifeDays);
-            paramters.Add("is_serial_no" ,this.IsSerialNo);
-            paramters.Add("is_appliances_card" ,this.IsAppliancesCard);
-            paramters.Add("is_special_wet" ,this.IsSpecialWet);
-            paramters.Add("ware_big_small_model" ,this.WareBigSmallModel);
-            paramters.Add("ware_pack_type" ,this.WarePackType);
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("shop_category", this.ShopCategory);
+            paramters.Add("title", this.Title);
+            paramters.Add("upc_code", this.UpcCode);
+            paramters.Add("option_type", this.OptionType);
+            paramters.Add("item_num", this.ItemNum);
+            paramters.Add("outer_id", this.OuterId);
+            paramters.Add("producter", this.Producter);
+            paramters.Add("wrap", this.Wrap);
+            paramters.Add("length", this.Length);
+            paramters.Add("wide", this.Wide);
+            paramters.Add("high", this.High);
+            paramters.Add("weight", this.Weight);
+            paramters.Add("cost_price", this.CostPrice);
+            paramters.Add("market_price", this.MarketPrice);
+            paramters.Add("jd_price", this.JdPrice);
+            paramters.Add("notes", this.Notes);
+            paramters.Add("pack_listing", this.PackListing);
+            paramters.Add("service", this.Service);
+            paramters.Add("property_alias", this.PropertyAlias);
+            paramters.Add("attributes", this.Attributes);
+            paramters.Add("sku_prices", this.SkuPrices);
+            paramters.Add("sku_properties", this.SkuProperties);
+            paramters.Add("sku_stocks", this.SkuStocks);
+            paramters.Add("trade_no", this.TradeNo);
+            paramters.Add("is_pay_first", this.IsPayFirst);
+            paramters.Add("is_can_vat", this.IsCanVat);
+            paramters.Add("is_imported", this.IsImported);
+            paramters.Add("is_health_product", this.IsHealthProduct);
+            paramters.Add("is_shelf_life", this.IsShelfLife);
+            paramters.Add("shelf_life_days", this.ShelfLifeDays);
+            paramters.Add("is_serial_no", this.IsSerialNo);
+            paramters.Add("is_appliances_card", this.IsAppliancesCard);
+            paramters.Add("is_special_wet", this.IsSpecialWet);
+            paramters.Add("ware_big_small_model", this.WareBigSmallModel);
+            paramters.Add("ware_pack_type", this.WarePackType);
+            paramters.Add("input_pids", this.InputPids);
+            paramters.Add("input_strs", this.InputStrs);
+            paramters.Add("stock_num", this.StockNum);
             return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
         }
 
         public void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
+            RequestValidator.ValidateRequired("title", this.Title);
+            RequestValidator.ValidateRequired("weight", this.Weight);
+            RequestValidator.ValidateRequired("market_price", this.MarketPrice);
+            RequestValidator.ValidateRequired("jd_price", this.JdPrice);
+            RequestValidator.ValidateRequired("notes", this.Notes);
         }
-
     }
 }

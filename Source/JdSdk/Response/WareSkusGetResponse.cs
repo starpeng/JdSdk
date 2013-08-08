@@ -21,9 +21,9 @@ namespace JdSdk.Response
         /// <summary>
         /// Sku
         /// </summary>
-        [XmlElement("sku")]
-        [JsonProperty("sku")]
-        public Sku Sku
+        [XmlElement("skus")]
+        [JsonProperty("skus")]
+        public List<Sku> Skus
         {
             get;
             set;
