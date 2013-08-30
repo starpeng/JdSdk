@@ -98,6 +98,7 @@
     <Compile Include="Domains\SpaceInfo.cs" />
     <Compile Include="Domains\SpacePageInfo.cs" />
     <Compile Include="Domains\UnionActivityimg.cs" />
+    <Compile Include="Domains\VatInvoiceInfo.cs" />
     <Compile Include="Domains\VenderInfoResult.cs" />
     <Compile Include="Domains\WareAttribute.cs" />
     <Compile Include="Domains\WareCategory.cs" />

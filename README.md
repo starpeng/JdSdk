@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.0.zip "1.1.0")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.1.zip "1.1.1")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
@@ -13,6 +13,10 @@
 
 
 ## 更新记录 ##
+
+- 1.1.1
+> 360buy.order.search，360buy.order.get支持返回运单号、物流公司、增值税发票
+
 
 - 1.1.0
 > 将部分京东文档中为Number，明显为整形字段的由原来的Decimal替换成换成Int64。

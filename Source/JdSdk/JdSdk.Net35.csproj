@@ -252,6 +252,7 @@
     <Compile Include="Domains\UserInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\VatInvoiceInfo.cs" />
     <Compile Include="Domains\VenderInfoResult.cs">
       <SubType>Code</SubType>
     </Compile>

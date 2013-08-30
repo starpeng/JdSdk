@@ -261,5 +261,59 @@ namespace JdSdk.Domain
             set;
         }
 
+        /// <summary>
+        /// 余额支付金额
+        /// </summary>
+        [XmlElement("balance_used")]
+        [JsonProperty("balance_used")]
+        public String BalanceUsed
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 付款确认时间 如果没有付款时间 默认返回0001-01-01 00:00:00
+        /// </summary>
+        [XmlElement("payment_confirm_time")]
+        [JsonProperty("payment_confirm_time")]
+        public String PaymentConfirmTime
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 物流公司ID，多个物流公司以|分隔
+        /// </summary>
+        [XmlElement("logistics_id")]
+        [JsonProperty("logistics_id")]
+        public String LogisticsId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 运单号，当物流公司是厂家自送时运单号可为空，不同物流公司的运单号用|分隔，如果同一物流公司有多个运单号，则用英文逗号分隔
+        /// </summary>
+        [XmlElement("waybill")]
+        [JsonProperty("waybill")]
+        public String Waybill
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 增值税发票
+        /// </summary>
+        [XmlElement("vat_invoice_info")]
+        [JsonProperty("vat_invoice_info")]
+        public VatInvoiceInfo VatInvoiceInfo
+        {
+            get;
+            set;
+        }
     }
 }

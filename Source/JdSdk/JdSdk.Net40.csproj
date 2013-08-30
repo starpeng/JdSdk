@@ -136,6 +136,7 @@
     <Compile Include="Domains\UnionPlan.cs" />
     <Compile Include="Domains\UnionPlanActivity.cs" />
     <Compile Include="Domains\UserInfo.cs" />
+    <Compile Include="Domains\VatInvoiceInfo.cs" />
     <Compile Include="Domains\VenderInfoResult.cs" />
     <Compile Include="Domains\Ware.cs" />
     <Compile Include="Domains\WareAttribute.cs" />
