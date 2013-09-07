@@ -1,0 +1,55 @@
+#region head comment
+/*
+Code generate by JdSdkTool.
+2013-09-07 15:01:51.00248 +08:00
+*/
+#endregion
+
+using System;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using JdSdk.Domain;
+
+namespace JdSdk.Response
+{
+    /// <summary>
+    /// 订单取消 Response
+    /// </summary>
+    public class JingdongLogisticsOrderDeleteResponse : JdResponse
+    {
+        /// <summary>
+        /// 处理结果code 1:为成功,其他均为错误
+        /// </summary>
+        [XmlElement("process_code")]
+        [JsonProperty("process_code")]
+        public Int64 ProcessCode
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 处理状态含义
+        /// </summary>
+        [XmlElement("process_status")]
+        [JsonProperty("process_status")]
+        public String ProcessStatus
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 处理错误信息
+        /// </summary>
+        [XmlElement("error_message")]
+        [JsonProperty("error_message")]
+        public String ErrorMessage
+        {
+            get;
+            set;
+        }
+
+    }
+}

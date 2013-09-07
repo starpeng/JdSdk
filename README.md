@@ -1,9 +1,9 @@
-﻿JdSdk
+JdSdk
 =====
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.1.zip "1.1.1")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.2.zip "1.1.2")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
@@ -14,6 +14,25 @@
 
 ## 更新记录 ##
 
+- 1.1.2
+> 京东快车 13个接口  
+> 促销服务14个接口  
+> 物流服务19个接口  
+> 地址库接口共5个  
+> 京东快车新增4接口  
+> 图片空间6接口  
+> 订购关系查询 jingdong.vas.subscribe.get  
+> 获取预分配的运单号jingdong.etms.waybillcode.get  
+> 提交运单信息 jingdong.etms.waybill.send  
+> 获取类目信息 jingdong.union.categoryinfo.search  
+> 保存计划信息 jingdong.union.plan.save  
+> 获取计划基本信息 jingdong.union.planbaseinfo.get  
+> 根据pin返回供应商简码和三级分类列表 jingdong.userCategory3.info.get
+> 若干接口同步修改
+  
+  
+    
+  
 - 1.1.1
 > 360buy.order.search，360buy.order.get支持返回运单号、物流公司、增值税发票
 

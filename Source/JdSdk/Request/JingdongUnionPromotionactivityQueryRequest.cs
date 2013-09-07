@@ -67,7 +67,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 页码
+        /// 页码，当输入页码小于1时候默认pageIndex为1
         /// </summary>
         [XmlElement("pageIndex")]
         [JsonProperty("pageIndex")]
@@ -78,7 +78,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 每页条数,上限为20
+        /// 每页条数，当输入条数小于1时候默认pageSize为10
         /// </summary>
         [XmlElement("pageSize")]
         [JsonProperty("pageSize")]

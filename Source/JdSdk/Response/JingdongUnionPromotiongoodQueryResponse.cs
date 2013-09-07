@@ -14,7 +14,7 @@ using JdSdk.Domain;
 namespace JdSdk.Response
 {
     /// <summary>
-    /// 查询相关的商品推广数据 Response
+    /// 查询相关的商品推广数据（查询若无结果或者没输入查询条件则返回默认商品推广数据） Response
     /// </summary>
     public class JingdongUnionPromotiongoodQueryResponse : JdResponse
     {

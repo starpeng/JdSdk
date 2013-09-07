@@ -63,7 +63,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 商品价格
+        /// 商品价格，返回结果负数不做处理
         /// </summary>
         [XmlElement("good_price")]
         [JsonProperty("good_price")]
@@ -107,7 +107,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 商品主图素材URL,如果为null和设置field时没有设置该属性则在结果中不显示
+        /// 商品主图素材URL,如果为null和设置field时没有设置该属性则在结果中不显示，字段为空不做特殊处理
         /// </summary>
         [XmlElement("good_materialUrl")]
         [JsonProperty("good_materialUrl")]

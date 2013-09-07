@@ -108,7 +108,7 @@ namespace JdSdk.Request
 
         public void Validate()
         {
-            RequestValidator.ValidateRequired("sku_id", this.SkuId);
+            //RequestValidator.ValidateRequired("sku_id", this.SkuId);
             RequestValidator.ValidateRequired("price", this.Price);
         }
 

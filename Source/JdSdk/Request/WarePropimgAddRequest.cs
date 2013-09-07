@@ -18,7 +18,7 @@ namespace JdSdk.Request
     /// <summary>
     /// 通过api 根据商品Id，销售属性值Id增加图片 Request
     /// </summary>
-    public class WarePropimgAddRequest : IJdRequest<WarePropimgAddResponse>
+    public class WarePropimgAddRequest : IJdUploadRequest<WarePropimgAddResponse>
     {
         /// <summary>
         /// 商品的id
@@ -61,7 +61,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("image")]
         [JsonProperty("image")]
-        public Byte[] Image
+        public FileItem Image
         {
             get;
             set;
@@ -74,11 +74,10 @@ namespace JdSdk.Request
 
         public String GetParamJson()
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
+            Dictionary<String, Object> paramters = new Dictionary<String, Object>();
             paramters.Add("ware_id" ,this.WareId);
             paramters.Add("attribute_value_id" ,this.AttributeValueId);
             paramters.Add("is_main_pic" ,this.IsMainPic);
-            paramters.Add("image" ,this.Image);
             return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
         }
 
@@ -89,5 +88,11 @@ namespace JdSdk.Request
             RequestValidator.ValidateRequired("image", this.Image);
         }
 
+        public IDictionary<String, FileItem> GetFileParameters()
+        {
+            Dictionary<String, FileItem> paramters = new Dictionary<String, FileItem>();
+            paramters.Add("image", this.Image);
+            return paramters;
+        }
     }
 }

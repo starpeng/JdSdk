@@ -20,6 +20,11 @@ namespace JdSdk.Request
     /// </summary>
     public class JingdongUnionPromotiongoodUpdateRequest : IJdRequest<JingdongUnionPromotiongoodUpdateResponse>
     {
+        public JingdongUnionPromotiongoodUpdateRequest()
+        {
+            throw new Exception("此接口已下线！");
+        }
+
         /// <summary>
         /// 商品的SKU ID,如果skuId不填或者没有相匹配的店铺信息则返回默认的推广数据
         /// </summary>
@@ -45,14 +50,14 @@ namespace JdSdk.Request
 
         public String ApiName
         {
-            get{ return "jingdong.union.promotiongood.update"; }
+            get { return "jingdong.union.promotiongood.update"; }
         }
 
         public String GetParamJson()
         {
             Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("skuid" ,this.SkuId);
-            paramters.Add("fields" ,this.Fields);
+            paramters.Add("skuid", this.SkuId);
+            paramters.Add("fields", this.Fields);
             return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
         }
 

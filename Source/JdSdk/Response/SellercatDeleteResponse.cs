@@ -18,5 +18,15 @@ namespace JdSdk.Response
     /// </summary>
     public class SellercatDeleteResponse : JdResponse
     {
+        /// <summary>
+        /// 删除时间
+        /// </summary>
+        [XmlElement("created")]
+        [JsonProperty("created")]
+        public String Created
+        {
+            get;
+            set;
+        }
     }
 }

@@ -60,7 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessToken.cs" />
-    <Compile Include="Domains\AccountVO.cs" />
+    <Compile Include="Domains\AccountVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ActivityModeVO.cs" />
     <Compile Include="Domains\ActivitySafVo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,9 +73,11 @@
     <Compile Include="Domains\AdwordCoupon.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\AdwordCouponList.cs" />
     <Compile Include="Domains\AdwordGiftSku.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\AdwordGiftSkuList.cs" />
     <Compile Include="Domains\AdwordResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,13 +99,25 @@
     <Compile Include="Domains\AttValue.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\BillDetailVO.cs" />
-    <Compile Include="Domains\BillVO.cs" />
+    <Compile Include="Domains\BillDetailVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\BillVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\BuyToBuyWidsList.cs" />
+    <Compile Include="Domains\CarriersDetail.cs" />
     <Compile Include="Domains\Category.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\CommodityInfo.cs" />
-    <Compile Include="Domains\CommoditySpu.cs" />
+    <Compile Include="Domains\CategoryCommisionVO.cs" />
+    <Compile Include="Domains\CmsActivityWare.cs" />
+    <Compile Include="Domains\CommodityInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\CommoditySpu.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\Consignee.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -122,25 +139,40 @@
     <Compile Include="Domains\GoodsVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\IncomeExpenseVO.cs" />
+    <Compile Include="Domains\ImgzoneCategory.cs" />
+    <Compile Include="Domains\ImgzoneImgInfo.cs" />
+    <Compile Include="Domains\IncomeExpenseVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\Item.cs" />
     <Compile Include="Domains\ItemInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\ItemInfoitem.cs" />
+    <Compile Include="Domains\JavautilHashMap.cs" />
     <Compile Include="Domains\JosActivityImgVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\JosGoodsInfo.cs" />
+    <Compile Include="Domains\JosGoodsInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\JosGoodsVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\JosSkuInfo.cs" />
-    <Compile Include="Domains\KeywordGroup.cs" />
+    <Compile Include="Domains\JosSkuInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\KeywordGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\KeywordVO.cs" />
     <Compile Include="Domains\LogisticsCompany.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\MasterBillVo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\MaterialVO.cs" />
     <Compile Include="Domains\OrderDetail.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -150,30 +182,43 @@
     <Compile Include="Domains\OrderItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\OrderPackageDetail.cs" />
     <Compile Include="Domains\OrderPrintData.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\OrderSearch.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\OrderSearchInfo.cs" />
+    <Compile Include="Domains\OrderStatusDetail.cs" />
+    <Compile Include="Domains\OtherInstoreOrderDetail.cs" />
     <Compile Include="Domains\OverviewVo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\PageInfo.cs" />
-    <Compile Include="Domains\PlanDetailInfo.cs" />
+    <Compile Include="Domains\PageInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PlanDetailInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PlanInfo.cs" />
+    <Compile Include="Domains\PlanInfoVO.cs" />
     <Compile Include="Domains\PlanListVO .cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\PlanVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\PopDetailJos.cs" />
+    <Compile Include="Domains\PopDetailJos.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\PriceChanges.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\PrintResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\ProcessResult.cs" />
     <Compile Include="Domains\PromoteWare.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -192,6 +237,7 @@
     <Compile Include="Domains\PromotionInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\PromotionInfoList.cs" />
     <Compile Include="Domains\PromotionPlanVO .cs">
       <SubType>Code</SubType>
     </Compile>
@@ -204,19 +250,41 @@
     <Compile Include="Domains\PromotionShopVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\QueryPlanReturnInfo.cs" />
-    <Compile Include="Domains\RankReturnJO.cs" />
+    <Compile Include="Domains\PromotionVO.cs" />
+    <Compile Include="Domains\QueryPlanReturnInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\RankReturnJO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ReceivingTask.cs" />
     <Compile Include="Domains\Region.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\ResponseOrderOtherDetail.cs" />
+    <Compile Include="Domains\ResponseOrderStatus.cs" />
+    <Compile Include="Domains\ResponseReturnOrder.cs" />
+    <Compile Include="Domains\ResponseStock.cs" />
+    <Compile Include="Domains\ResultInfoDTO.cs" />
+    <Compile Include="Domains\ResultNojson.cs" />
+    <Compile Include="Domains\ResultStatus.cs" />
+    <Compile Include="Domains\ResultVO.cs" />
     <Compile Include="Domains\ReturnInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\ReturnItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\ScheduleVOJos.cs" />
-    <Compile Include="Domains\SelectedKeywordInfo.cs" />
+    <Compile Include="Domains\SafBiztypeDTO.cs" />
+    <Compile Include="Domains\SafWoOperDTO.cs" />
+    <Compile Include="Domains\SafWorkInfoDTO.cs" />
+    <Compile Include="Domains\SafWorkPage.cs" />
+    <Compile Include="Domains\ScheduleVOJos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\SelectedKeywordInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\ShopCategory.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -235,8 +303,13 @@
     <Compile Include="Domains\SopOrderPrintData.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\SpaceInfo.cs" />
-    <Compile Include="Domains\SpacePageInfo.cs" />
+    <Compile Include="Domains\SpaceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\SpacePageInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\StockDetail.cs" />
     <Compile Include="Domains\UnionActivityimg.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -249,10 +322,14 @@
     <Compile Include="Domains\UnionPlanActivity.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\UserCategory3Dto.cs" />
+    <Compile Include="Domains\UserCategory3InfoDto.cs" />
     <Compile Include="Domains\UserInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\VatInvoiceInfo.cs" />
+    <Compile Include="Domains\VatInvoiceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\VenderInfoResult.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -265,6 +342,7 @@
     <Compile Include="Domains\WareCategory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\WarehouseDetail.cs" />
     <Compile Include="Domains\WareImg.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -274,6 +352,7 @@
     <Compile Include="Domains\WindowAdvDetail.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\WorkOrderResponse.cs" />
     <Compile Include="Parser\DateTimeConverter.cs" />
     <Compile Include="DefaultJdClient.cs" />
     <Compile Include="DefaultJdLogger.cs" />
@@ -458,196 +537,718 @@
     <Compile Include="JdException.cs" />
     <Compile Include="JdObject.cs" />
     <Compile Include="JdResponse.cs" />
-    <Compile Include="Request\AfterSearchRequest.cs" />
-    <Compile Include="Request\AfterStateUpdateRequest.cs" />
-    <Compile Include="Request\DeliveryLogisticsGetRequest.cs" />
-    <Compile Include="Request\JingdongAnotherbuyrecommendWareGetRequest.cs" />
-    <Compile Include="Request\JingdongCombinerecommendWareGetRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheAccountGetRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheAccountIncomeExpenseSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheBillDetailsSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheBillSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheGoodsGetRequest.cs" />
-    <Compile Include="Request\JingdongKuaichePopGetRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnBidRankGetRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnKeywordgroupListSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnPlanDetailGetRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnPlanListSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnScheduleBidDetailSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnSpaceInfoSearchRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnSpacePageByTypeSearchRequest.cs" />
-    <Compile Include="Request\JingdongRegioninfoGetRequest.cs" />
-    <Compile Include="Request\JingdongSellerVenderInfoGetRequest.cs" />
-    <Compile Include="Request\JingdongTuiguangCatGetRequest.cs" />
-    <Compile Include="Request\JingdongTuiguangHomepageGetRequest.cs" />
-    <Compile Include="Request\JingdongTuiguangWaresDetailGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionActivityCodeGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionAdvdetailGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionGoodsCodeGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionMasterAccountGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionMasterBillSearchRequest.cs" />
-    <Compile Include="Request\JingdongUnionPlandetailGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionPlanlistSearchRequest.cs" />
-    <Compile Include="Request\JingdongUnionPromotionactivityQueryRequest.cs" />
-    <Compile Include="Request\JingdongUnionPromotiongoodQueryRequest.cs" />
-    <Compile Include="Request\JingdongUnionPromotiongoodUpdateRequest.cs" />
-    <Compile Include="Request\JingdongUnionPromotionreportQueryRequest.cs" />
-    <Compile Include="Request\JingdongUnionPromotionshopQueryRequest.cs" />
-    <Compile Include="Request\JingdongUnionPromotionshopUpdateRequest.cs" />
-    <Compile Include="Request\JingdongUnionReportOverviewSearchRequest.cs" />
-    <Compile Include="Request\JingdongUnionReportWindowSearchRequest.cs" />
-    <Compile Include="Request\JingdongUnionShopCodeGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionZoneCodeGetRequest.cs" />
-    <Compile Include="Request\JingdongUnionZoneInfoGetRequest.cs" />
-    <Compile Include="Request\JingdongUserbrowsebuyrecommendWareGetRequest.cs" />
-    <Compile Include="Request\JingdongWareattributesGetRequest.cs" />
-    <Compile Include="Request\JingdongWarecategoryGetRequest.cs" />
-    <Compile Include="Request\JingdongWareGetRequest.cs" />
-    <Compile Include="Request\JingdongWarePriceGetRequest.cs" />
-    <Compile Include="Request\JingdongWarePromotionInfoGetRequest.cs" />
-    <Compile Include="Request\JingdongWareSearchRequest.cs" />
-    <Compile Include="Request\JingdongWaresSearchbycidRequest.cs" />
-    <Compile Include="Request\OrderGetRequest.cs" />
-    <Compile Include="Request\OrderLbpOutstorageRequest.cs" />
-    <Compile Include="Request\OrderLbpPrintDataGetRequest.cs" />
-    <Compile Include="Request\OrderLbpWaybillUpdateRequest.cs" />
-    <Compile Include="Request\OrderPrintDataGetRequest.cs" />
-    <Compile Include="Request\OrderPrintRequest.cs" />
-    <Compile Include="Request\OrderSearchRequest.cs" />
-    <Compile Include="Request\OrderSoplOutstorageRequest.cs" />
-    <Compile Include="Request\OrderSoplPrintDataGetRequest.cs" />
-    <Compile Include="Request\OrderSoplWaybillUpdateRequest.cs" />
-    <Compile Include="Request\OrderSopOutstorageRequest.cs" />
-    <Compile Include="Request\OrderSopPrintDataGetRequest.cs" />
-    <Compile Include="Request\OrderSopWaybillUpdateRequest.cs" />
-    <Compile Include="Request\OrderVenderRemarkUpdateRequest.cs" />
-    <Compile Include="Request\OverseasOrderSopDeliveryRequest.cs" />
-    <Compile Include="Request\OverseasOrderSopOutstorageRequest.cs" />
-    <Compile Include="Request\PromotionSearchRequest.cs" />
-    <Compile Include="Request\SellercatAddRequest.cs" />
-    <Compile Include="Request\SellercatDeleteRequest.cs" />
-    <Compile Include="Request\SellercatsGetRequest.cs" />
-    <Compile Include="Request\SellercatUpdateRequest.cs" />
-    <Compile Include="Request\SkuCustomGetRequest.cs" />
-    <Compile Include="Request\SkuPriceUpdateRequest.cs" />
-    <Compile Include="Request\SkuStockUpdateRequest.cs" />
-    <Compile Include="Request\WareAddRequest.cs" />
-    <Compile Include="Request\WarecatsGetRequest.cs" />
-    <Compile Include="Request\WareDeleteRequest.cs" />
-    <Compile Include="Request\WareDelistingGetRequest.cs" />
-    <Compile Include="Request\WareGetAttributeRequest.cs" />
-    <Compile Include="Request\WareGetAttvalueRequest.cs" />
-    <Compile Include="Request\WareGetRequest.cs" />
-    <Compile Include="Request\WareListingGetRequest.cs" />
-    <Compile Include="Request\WarePropimgAddRequest.cs" />
-    <Compile Include="Request\WarePropimgDeleteRequest.cs" />
-    <Compile Include="Request\WarePropimgsGetRequest.cs" />
-    <Compile Include="Request\WarePropimgUpdateRequest.cs" />
-    <Compile Include="Request\WareSkuAddRequest.cs" />
-    <Compile Include="Request\WareSkuDeleteRequest.cs" />
-    <Compile Include="Request\WareSkuGetRequest.cs" />
-    <Compile Include="Request\WareSkusGetRequest.cs" />
-    <Compile Include="Request\WareSkuUpdateRequest.cs" />
-    <Compile Include="Request\WaresListGetRequest.cs" />
-    <Compile Include="Request\WaresSearchRequest.cs" />
-    <Compile Include="Request\WareUpdateDelistingRequest.cs" />
-    <Compile Include="Request\WareUpdateListingRequest.cs" />
-    <Compile Include="Request\WareUpdateRequest.cs" />
-    <Compile Include="Response\AfterSearchResponse.cs" />
-    <Compile Include="Response\AfterStateUpdateResponse.cs" />
-    <Compile Include="Response\DeliveryLogisticsGetResponse.cs" />
-    <Compile Include="Response\JingdongAnotherbuyrecommendWareGetResponse.cs" />
-    <Compile Include="Response\JingdongCombinerecommendWareGetResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheAccountGetResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheAccountIncomeExpenseSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheBillDetailsSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheBillSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheGoodsGetResponse.cs" />
-    <Compile Include="Response\JingdongKuaichePopGetResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnBidRankGetResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnKeywordgroupListSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnPlanDetailGetResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnPlanListSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnScheduleBidDetailSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnSpaceInfoSearchResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnSpacePageByTypeSearchResponse.cs" />
-    <Compile Include="Response\JingdongRegioninfoGetResponse.cs" />
-    <Compile Include="Response\JingdongSellerVenderInfoGetResponse.cs" />
-    <Compile Include="Response\JingdongTuiguangCatGetResponse.cs" />
-    <Compile Include="Response\JingdongTuiguangHomepageGetResponse.cs" />
-    <Compile Include="Response\JingdongTuiguangWaresDetailGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionActivityCodeGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionAdvdetailGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionGoodsCodeGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionMasterAccountGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionMasterBillSearchResponse.cs" />
-    <Compile Include="Response\JingdongUnionPlandetailGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionPlanlistSearchResponse.cs" />
-    <Compile Include="Response\JingdongUnionPromotionactivityQueryResponse.cs" />
-    <Compile Include="Response\JingdongUnionPromotiongoodQueryResponse.cs" />
-    <Compile Include="Response\JingdongUnionPromotiongoodUpdateResponse.cs" />
-    <Compile Include="Response\JingdongUnionPromotionreportQueryResponse.cs" />
-    <Compile Include="Response\JingdongUnionPromotionshopQueryResponse.cs" />
-    <Compile Include="Response\JingdongUnionPromotionshopUpdateResponse.cs" />
-    <Compile Include="Response\JingdongUnionReportOverviewSearchResponse.cs" />
-    <Compile Include="Response\JingdongUnionReportWindowSearchResponse.cs" />
-    <Compile Include="Response\JingdongUnionShopCodeGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionZoneCodeGetResponse.cs" />
-    <Compile Include="Response\JingdongUnionZoneInfoGetResponse.cs" />
-    <Compile Include="Response\JingdongUserbrowsebuyrecommendWareGetResponse.cs" />
-    <Compile Include="Response\JingdongWareattributesGetResponse.cs" />
-    <Compile Include="Response\JingdongWarecategoryGetResponse.cs" />
-    <Compile Include="Response\JingdongWareGetResponse.cs" />
-    <Compile Include="Response\JingdongWarePriceGetResponse.cs" />
-    <Compile Include="Response\JingdongWarePromotionInfoGetResponse.cs" />
-    <Compile Include="Response\JingdongWareSearchResponse.cs" />
-    <Compile Include="Response\JingdongWaresSearchbycidResponse.cs" />
-    <Compile Include="Response\OrderGetResponse.cs" />
-    <Compile Include="Response\OrderLbpOutstorageResponse.cs" />
-    <Compile Include="Response\OrderLbpPrintDataGetResponse.cs" />
-    <Compile Include="Response\OrderLbpWaybillUpdateResponse.cs" />
-    <Compile Include="Response\OrderPrintDataGetResponse.cs" />
-    <Compile Include="Response\OrderPrintResponse.cs" />
-    <Compile Include="Response\OrderSearchResponse.cs" />
-    <Compile Include="Response\OrderSoplOutstorageResponse.cs" />
-    <Compile Include="Response\OrderSoplPrintDataGetResponse.cs" />
-    <Compile Include="Response\OrderSoplWaybillUpdateResponse.cs" />
-    <Compile Include="Response\OrderSopOutstorageResponse.cs" />
-    <Compile Include="Response\OrderSopPrintDataGetResponse.cs" />
-    <Compile Include="Response\OrderSopWaybillUpdateResponse.cs" />
-    <Compile Include="Response\OrderVenderRemarkUpdateResponse.cs" />
-    <Compile Include="Response\OverseasOrderSopDeliveryResponse.cs" />
-    <Compile Include="Response\OverseasOrderSopOutstorageResponse.cs" />
-    <Compile Include="Response\PromotionSearchResponse.cs" />
-    <Compile Include="Response\SellercatAddResponse.cs" />
-    <Compile Include="Response\SellercatDeleteResponse.cs" />
-    <Compile Include="Response\SellercatsGetResponse.cs" />
-    <Compile Include="Response\SellercatUpdateResponse.cs" />
-    <Compile Include="Response\SkuCustomGetResponse.cs" />
-    <Compile Include="Response\SkuPriceUpdateResponse.cs" />
-    <Compile Include="Response\SkuStockUpdateResponse.cs" />
-    <Compile Include="Response\WareAddResponse.cs" />
-    <Compile Include="Response\WarecatsGetResponse.cs" />
-    <Compile Include="Response\WareDeleteResponse.cs" />
-    <Compile Include="Response\WareDelistingGetResponse.cs" />
-    <Compile Include="Response\WareGetAttributeResponse.cs" />
-    <Compile Include="Response\WareGetAttvalueResponse.cs" />
-    <Compile Include="Response\WareGetResponse.cs" />
-    <Compile Include="Response\WareListingGetResponse.cs" />
-    <Compile Include="Response\WarePropimgAddResponse.cs" />
-    <Compile Include="Response\WarePropimgDeleteResponse.cs" />
-    <Compile Include="Response\WarePropimgsGetResponse.cs" />
-    <Compile Include="Response\WarePropimgUpdateResponse.cs" />
-    <Compile Include="Response\WareSkuAddResponse.cs" />
-    <Compile Include="Response\WareSkuDeleteResponse.cs" />
-    <Compile Include="Response\WareSkuGetResponse.cs" />
-    <Compile Include="Response\WareSkusGetResponse.cs" />
-    <Compile Include="Response\WareSkuUpdateResponse.cs" />
-    <Compile Include="Response\WaresListGetResponse.cs" />
-    <Compile Include="Response\WaresSearchResponse.cs" />
-    <Compile Include="Response\WareUpdateDelistingResponse.cs" />
-    <Compile Include="Response\WareUpdateListingResponse.cs" />
-    <Compile Include="Response\WareUpdateResponse.cs" />
+    <Compile Include="Request\AfterSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\AfterStateUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\DeliveryLogisticsGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAnotherbuyrecommendWareGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAreaCityGetRequest.cs" />
+    <Compile Include="Request\JingdongAreaCountyGetRequest.cs" />
+    <Compile Include="Request\JingdongAreaIpQueryRequest.cs" />
+    <Compile Include="Request\JingdongAreaProvinceGetRequest.cs" />
+    <Compile Include="Request\JingdongAreaTownGetRequest.cs" />
+    <Compile Include="Request\JingdongCombinerecommendWareGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongEtmsWaybillcodeGetRequest.cs" />
+    <Compile Include="Request\JingdongEtmsWaybillSendRequest.cs" />
+    <Compile Include="Request\JingdongImgzoneCategoryAddRequest.cs" />
+    <Compile Include="Request\JingdongImgzoneCategoryQueryRequest.cs" />
+    <Compile Include="Request\JingdongImgzoneCategoryUpdateRequest.cs" />
+    <Compile Include="Request\JingdongImgzonePictureDeleteRequest.cs" />
+    <Compile Include="Request\JingdongImgzonePictureIsreferencedRequest.cs" />
+    <Compile Include="Request\JingdongImgzonePictureQueryRequest.cs" />
+    <Compile Include="Request\JingdongImgzonePictureReplaceRequest.cs" />
+    <Compile Include="Request\JingdongImgzonePictureUpdateRequest.cs" />
+    <Compile Include="Request\JingdongImgzonePictureUploadRequest.cs" />
+    <Compile Include="Request\JingdongImgzoneUserinfoQueryRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheAccountGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheAccountIncomeExpenseSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheBillDetailsSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheBillSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheGoodsGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaichePopGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnBidRankGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnKeywordgroupListSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnMaterialLabelsSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnPlanChannelCreateRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnPlanDetailGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnPlanListSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnPlanSearchCreateRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnScheduleBidDetailSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnScheduleFindScheduleCanUseRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnSpaceInfoSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnSpacePageByTypeSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongLogisticsCarriersListRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOrderAddRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOrderDeleteRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOrderGetRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOrderSearchRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOtherInstoreAddRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOtherInstoreQueryRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOtherOutstoreAddRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsOtherOutstoreQueryRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsPoAddRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsPoGetRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsReturnorderAddRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsReturnorderCancelRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsReturnorderQueryRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsSkuAddRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsSkuQueryRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsSkuUpdateRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsStockSearchRequest.cs" />
+    <Compile Include="Request\JingdongLogisticsWarehouseListRequest.cs" />
+    <Compile Include="Request\JingdongRegioninfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongRestWorkorderReplyRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionActivitymodeAddRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionActivitymodeGetRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionAddRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionCheckRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionCommitRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionDeleteRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionGetRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionListRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionPropAddRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionPropListRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionResumeRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionSkuAddRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionSkuListRequest.cs" />
+    <Compile Include="Request\JingdongSellerPromotionSuspendRequest.cs" />
+    <Compile Include="Request\JingdongSellerVenderInfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongTuiguangCatGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongTuiguangHomepageGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongTuiguangWaresDetailGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionActivityCodeGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionAdvdetailGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionCategoryinfoSearchRequest.cs" />
+    <Compile Include="Request\JingdongUnionGoodsCodeGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionMasterAccountGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionMasterBillSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPlanbaseinfoGetRequest.cs" />
+    <Compile Include="Request\JingdongUnionPlandetailGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPlanlistSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPlanSaveRequest.cs" />
+    <Compile Include="Request\JingdongUnionPromotionactivityQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPromotiongoodQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPromotiongoodUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPromotionreportQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPromotionshopQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionPromotionshopUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionReportOverviewSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionReportWindowSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionShopCodeGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionZoneCodeGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUnionZoneInfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUserbrowsebuyrecommendWareGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongUserCategory3InfoGetRequest.cs" />
+    <Compile Include="Request\JingdongVasSubscribeGetRequest.cs" />
+    <Compile Include="Request\JingdongWareattributesGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareBrowsetobuyListGetRequest.cs" />
+    <Compile Include="Request\JingdongWareBuytobuyListGetRequest.cs" />
+    <Compile Include="Request\JingdongWarecategoryGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareCombineListGetRequest.cs" />
+    <Compile Include="Request\JingdongWareGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWarePacksGetRequest.cs" />
+    <Compile Include="Request\JingdongWarePriceGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWarePromotionInfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWaresSearchbycidRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWaresSearchRequest.cs" />
+    <Compile Include="Request\JingdongWosSubbiztypelistGetRequest.cs" />
+    <Compile Include="Request\JingdongWosWorkinfoGetRequest.cs" />
+    <Compile Include="Request\JingdongWosWorklistGetRequest.cs" />
+    <Compile Include="Request\OrderFbpGetRequest.cs" />
+    <Compile Include="Request\OrderFbpSearchRequest.cs" />
+    <Compile Include="Request\OrderGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderLbpOutstorageRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderLbpPrintDataGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderLbpWaybillUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderPrintDataGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderPrintRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSoplOutstorageRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSoplPrintDataGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSoplWaybillUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSopOutstorageRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSopPrintDataGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderSopWaybillUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OrderVenderRemarkUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OverseasOrderSopDeliveryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\OverseasOrderSopOutstorageRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\PromotionSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SellercatAddRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SellercatDeleteRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SellercatsGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SellercatUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SkuCustomGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SkuPriceUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\SkuStockUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareAddRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WarecatsGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareDeleteRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareDelistingGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareGetAttributeRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareGetAttvalueRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareListingGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WarePropimgAddRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WarePropimgDeleteRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WarePropimgsGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WarePropimgsSearchRequest.cs" />
+    <Compile Include="Request\WarePropimgUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareSkuAddRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareSkuDeleteRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareSkuGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareSkusGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareSkuUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WaresListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WaresSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareUpdateDelistingRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareUpdateListingRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\AfterSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\AfterStateUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\DeliveryLogisticsGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAnotherbuyrecommendWareGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAreaCityGetResponse.cs" />
+    <Compile Include="Response\JingdongAreaCountyGetResponse.cs" />
+    <Compile Include="Response\JingdongAreaIpQueryResponse.cs" />
+    <Compile Include="Response\JingdongAreaProvinceGetResponse.cs" />
+    <Compile Include="Response\JingdongAreaTownGetResponse.cs" />
+    <Compile Include="Response\JingdongCombinerecommendWareGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongEtmsWaybillcodeGetResponse.cs" />
+    <Compile Include="Response\JingdongEtmsWaybillSendResponse.cs" />
+    <Compile Include="Response\JingdongImgzoneCategoryAddResponse.cs" />
+    <Compile Include="Response\JingdongImgzoneCategoryQueryResponse.cs" />
+    <Compile Include="Response\JingdongImgzoneCategoryUpdateResponse.cs" />
+    <Compile Include="Response\JingdongImgzonePictureDeleteResponse.cs" />
+    <Compile Include="Response\JingdongImgzonePictureIsreferencedResponse.cs" />
+    <Compile Include="Response\JingdongImgzonePictureQueryResponse.cs" />
+    <Compile Include="Response\JingdongImgzonePictureReplaceResponse.cs" />
+    <Compile Include="Response\JingdongImgzonePictureUpdateResponse.cs" />
+    <Compile Include="Response\JingdongImgzonePictureUploadResponse.cs" />
+    <Compile Include="Response\JingdongImgzoneUserinfoQueryResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheAccountGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheAccountIncomeExpenseSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheBillDetailsSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheBillSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheGoodsGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaichePopGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnBidRankGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnKeywordgroupListSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnMaterialLabelsSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnPlanChannelCreateResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnPlanDetailGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnPlanListSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnPlanSearchCreateResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnScheduleBidDetailSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnScheduleFindScheduleCanUseResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnSpaceInfoSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnSpacePageByTypeSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongLogisticsCarriersListResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOrderAddResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOrderDeleteResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOrderGetResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOrderSearchResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOtherInstoreAddResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOtherInstoreQueryResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOtherOutstoreAddResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsOtherOutstoreQueryResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsPoAddResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsPoGetResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsReturnorderAddResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsReturnorderCancelResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsReturnorderQueryResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsSkuAddResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsSkuQueryResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsSkuUpdateResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsStockSearchResponse.cs" />
+    <Compile Include="Response\JingdongLogisticsWarehouseListResponse.cs" />
+    <Compile Include="Response\JingdongRegioninfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongRestWorkorderReplyResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionActivitymodeAddResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionActivitymodeGetResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionAddResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionCheckResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionCommitResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionDeleteResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionGetResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionListResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionPropAddResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionPropListResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionResumeResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionSkuAddResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionSkuListResponse.cs" />
+    <Compile Include="Response\JingdongSellerPromotionSuspendResponse.cs" />
+    <Compile Include="Response\JingdongSellerVenderInfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongTuiguangCatGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongTuiguangHomepageGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongTuiguangWaresDetailGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionActivityCodeGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionAdvdetailGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionCategoryinfoSearchResponse.cs" />
+    <Compile Include="Response\JingdongUnionGoodsCodeGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionMasterAccountGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionMasterBillSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPlanbaseinfoGetResponse.cs" />
+    <Compile Include="Response\JingdongUnionPlandetailGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPlanlistSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPlanSaveResponse.cs" />
+    <Compile Include="Response\JingdongUnionPromotionactivityQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPromotiongoodQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPromotiongoodUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPromotionreportQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPromotionshopQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionPromotionshopUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionReportOverviewSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionReportWindowSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionShopCodeGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionZoneCodeGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUnionZoneInfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUserbrowsebuyrecommendWareGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongUserCategory3InfoGetResponse.cs" />
+    <Compile Include="Response\JingdongVasSubscribeGetResponse.cs" />
+    <Compile Include="Response\JingdongWareattributesGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareBrowsetobuyListGetResponse.cs" />
+    <Compile Include="Response\JingdongWareBuytobuyListGetResponse.cs" />
+    <Compile Include="Response\JingdongWarecategoryGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareCombineListGetResponse.cs" />
+    <Compile Include="Response\JingdongWareGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWarePacksGetResponse.cs" />
+    <Compile Include="Response\JingdongWarePriceGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWarePromotionInfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWaresSearchbycidResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWaresSearchResponse.cs" />
+    <Compile Include="Response\JingdongWosSubbiztypelistGetResponse.cs" />
+    <Compile Include="Response\JingdongWosWorkinfoGetResponse.cs" />
+    <Compile Include="Response\JingdongWosWorklistGetResponse.cs" />
+    <Compile Include="Response\OrderFbpGetResponse.cs" />
+    <Compile Include="Response\OrderFbpSearchResponse.cs" />
+    <Compile Include="Response\OrderGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderLbpOutstorageResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderLbpPrintDataGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderLbpWaybillUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderPrintDataGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderPrintResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSoplOutstorageResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSoplPrintDataGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSoplWaybillUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSopOutstorageResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSopPrintDataGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderSopWaybillUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OrderVenderRemarkUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OverseasOrderSopDeliveryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\OverseasOrderSopOutstorageResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\PromotionSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SellercatAddResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SellercatDeleteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SellercatsGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SellercatUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SkuCustomGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SkuPriceUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\SkuStockUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareAddResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WarecatsGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareDeleteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareDelistingGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareGetAttributeResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareGetAttvalueResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareListingGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WarePropimgAddResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WarePropimgDeleteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WarePropimgsGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WarePropimgsSearchResponse.cs" />
+    <Compile Include="Response\WarePropimgUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareSkuAddResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareSkuDeleteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareSkuGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareSkusGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareSkuUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WaresListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WaresSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareUpdateDelistingResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareUpdateListingResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Util\FileItem.cs" />
     <Compile Include="Util\RequestValidator.cs" />
     <Compile Include="Util\JdUtils.cs" />

@@ -8,7 +8,7 @@
         <ReleaseFolder>$(MSBuildProjectDirectory)\..\Releases</ReleaseFolder>
         <!--<BuildPlatform Condition="$(ProgramW6432) != ''">x64</BuildPlatform>
         <BuildPlatform Condition="$(BuildPlatform) == ''">x86</BuildPlatform>-->
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
     </PropertyGroup>
 
     <Import Project="$(MSBuildProjectDirectory)\libs\msbuild\MSBuild.Community.Tasks.Targets"/>
@@ -34,6 +34,7 @@
         <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net20.sln" Targets="Build" Properties="Configuration=Release;" />
         <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net35.sln" Targets="Build" Properties="Configuration=Release;" />
         <MSBuild Projects="$(MSBuildProjectDirectory)\JdSdk.Net40.sln" Targets="Build" Properties="Configuration=Release;" />
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\Readme.txt"   DestinationFolder="$(BuildFolder)" />
     </Target>
 
     <Target Name="Package">
@@ -41,7 +42,7 @@
             <Zip-Exclude Include="
                 $(BuildFolder)\*\*.pdb;
                 " />
-            <Zip-Deploy Include="$(BuildFolder)\**\*" Exclude="@(Zip-Exclude)"/>
+            <Zip-Deploy Include="$(BuildFolder)\**\*;"  Exclude="@(Zip-Exclude)"/>
         </ItemGroup>
 
         <MakeDir Directories="$(ReleaseFolder);"/>

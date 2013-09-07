@@ -1,0 +1,44 @@
+#region head comment
+/*
+Code generate by JdSdkTool.
+2013-09-07 15:01:41.29393 +08:00
+*/
+#endregion
+
+using System;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using JdSdk.Domain;
+
+namespace JdSdk.Response
+{
+    /// <summary>
+    /// 根据商品Id，检索商品主图 Response
+    /// </summary>
+    public class WarePropimgsSearchResponse : JdResponse
+    {
+        /// <summary>
+        /// 图片信息
+        /// </summary>
+        [XmlElement("propimgs")]
+        [JsonProperty("propimgs")]
+        public List<WarePropimg> Propimgs
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 图片信息数量
+        /// </summary>
+        [XmlElement("total")]
+        [JsonProperty("total")]
+        public Int64 Total
+        {
+            get;
+            set;
+        }
+
+    }
+}

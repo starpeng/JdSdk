@@ -444,7 +444,7 @@ namespace JdSdk.Domain
         /// <example>1100000015</example>
         [XmlElement("skus")]
         [JsonProperty("skus")]
-        public Sku Skus
+        public List<Sku> Skus
         {
             get;
             set;
@@ -524,6 +524,17 @@ namespace JdSdk.Domain
         [XmlElement("shop_categorys")]
         [JsonProperty("shop_categorys")]
         public String ShopCategorys 
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 价格
+        /// </summary>
+        [XmlElement("price")]
+        [JsonProperty("price")]
+        public String Price
         {
             get;
             set;
