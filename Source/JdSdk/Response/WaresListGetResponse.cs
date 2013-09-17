@@ -1,4 +1,4 @@
-#region head comment
+﻿#region head comment
 /*
 Code generate by JdSdkTool.
 2013-06-03 12:29:14.30394 +08:00
@@ -21,8 +21,8 @@ namespace JdSdk.Response
         /// <summary>
         /// 商品信息
         /// </summary>
-        [XmlElement("ware_infos")]
-        [JsonProperty("ware_infos")]
+        [XmlElement("wares")]
+        [JsonProperty("wares")]
         public List<Ware> Wares
         {
             get;
