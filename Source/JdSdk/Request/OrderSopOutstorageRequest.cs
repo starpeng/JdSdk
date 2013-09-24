@@ -86,7 +86,7 @@ namespace JdSdk.Request
         {
             RequestValidator.ValidateRequired("order_id", this.OrderId);
             RequestValidator.ValidateRequired("logistics_id", this.LogisticsId);
-            RequestValidator.ValidateRequired("trade_no", this.TradeNo);
+            //RequestValidator.ValidateRequired("trade_no", this.TradeNo);
         }
 
     }

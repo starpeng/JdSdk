@@ -115,7 +115,7 @@ namespace JdSdk.Request
             RequestValidator.ValidateRequired("ware_id", this.WareId);
             RequestValidator.ValidateRequired("jd_price", this.JdPrice);
             RequestValidator.ValidateRequired("stock_num", this.StockNum);
-            RequestValidator.ValidateRequired("trade_no", this.TradeNo);
+            //RequestValidator.ValidateRequired("trade_no", this.TradeNo);
         }
 
     }

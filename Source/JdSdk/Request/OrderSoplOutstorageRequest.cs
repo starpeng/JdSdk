@@ -122,7 +122,7 @@ namespace JdSdk.Request
             RequestValidator.ValidateRequired("order_id", this.OrderId);
             RequestValidator.ValidateRequired("send_type", this.SendType);
             RequestValidator.ValidateRequired("package_num", this.PackageNum);
-            RequestValidator.ValidateRequired("trade_no", this.TradeNo);
+            //RequestValidator.ValidateRequired("trade_no", this.TradeNo);
         }
 
     }
