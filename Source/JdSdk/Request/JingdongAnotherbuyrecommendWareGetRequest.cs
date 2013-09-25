@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public String WareId
+        public Int64 WareId
         {
             get;
             set;

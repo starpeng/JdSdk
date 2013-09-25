@@ -306,15 +306,7 @@ namespace WinFormsSample
                         list.AddRange(GetWareList(cid, startPrice, endPrice, title, ++page, pageSize, out totalCount, true));
                     }
 
-                    if (response.Total.HasValue)
-                    {
-                        totalCount = response.Total.Value;
-                    }
-                    else
-                    {
-                        totalCount = 0;
-                    }
-
+                    totalCount = response.Total;
                     return list;
                 }
                 else

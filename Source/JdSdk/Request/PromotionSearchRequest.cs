@@ -80,7 +80,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public String WareId
+        public Int64 WareId
         {
             get;
             set;
@@ -135,7 +135,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public String SkuId
+        public Int64 SkuId
         {
             get;
             set;

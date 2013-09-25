@@ -23,7 +23,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public String SkuId
+        public Int64 SkuId
         {
             get;
             set;
@@ -78,7 +78,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public String WareId
+        public Int64 WareId
         {
             get;
             set;
@@ -89,7 +89,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("item_total")]
         [JsonProperty("item_total")]
-        public String ItemTotal
+        public Int64 ItemTotal
         {
             get;
             set;

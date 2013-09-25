@@ -24,7 +24,7 @@ namespace JdSdk.Domain
         /// <example>String</example>
         [XmlElement("skuId")]
         [JsonProperty("skuId")]
-        public String SkuId 
+        public Int64 SkuId 
         {
             get;
             set;

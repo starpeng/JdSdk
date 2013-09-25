@@ -24,7 +24,7 @@ namespace JdSdk.Domain
         /// <example>1100000015</example>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public String WareId
+        public Int64 WareId
         {
             get;
             set;

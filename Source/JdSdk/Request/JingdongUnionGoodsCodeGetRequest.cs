@@ -26,7 +26,7 @@ namespace JdSdk.Request
         /// <example>30442010</example>
         [XmlElement("good_id")]
         [JsonProperty("good_id")]
-        public Decimal GoodId
+        public Int64 GoodId
         {
             get;
             set;

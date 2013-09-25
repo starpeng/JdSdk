@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("Zone_id")]
         [JsonProperty("Zone_id")]
-        public Decimal ZoneId
+        public Int64 ZoneId
         {
             get;
             set;

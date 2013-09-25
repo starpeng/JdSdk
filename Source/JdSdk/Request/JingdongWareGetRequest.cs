@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public Decimal WareId
+        public Int64 WareId
         {
             get;
             set;
@@ -36,7 +36,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("region_id")]
         [JsonProperty("region_id")]
-        public Decimal RegionId
+        public Int64 RegionId
         {
             get;
             set;

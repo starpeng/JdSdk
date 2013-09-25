@@ -25,7 +25,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public String SkuId
+        public Int64 SkuId
         {
             get;
             set;
