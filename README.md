@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.4.zip "1.1.4")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.5.zip "1.1.5")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
@@ -13,6 +13,11 @@
 
 
 ## 更新记录 ##
+
+-1.1.5
+> 修改一些数据类型。  
+> 根据ware_id 商品编号 修改商品信息接口，去掉部分参数的必须验证   
+
 -1.1.4
 > SOP,LBP,SOPL服务接口中的流水号设置为非必须参数。  
 
