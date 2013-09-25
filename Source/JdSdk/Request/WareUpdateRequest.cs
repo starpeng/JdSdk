@@ -26,7 +26,7 @@ namespace JdSdk.Request
         /// <example>1354</example>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public String WareId
+        public Int64 WareId
         {
             get;
             set;
@@ -520,11 +520,11 @@ namespace JdSdk.Request
         public void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
-            RequestValidator.ValidateRequired("title", this.Title);
-            RequestValidator.ValidateRequired("weight", this.Weight);
-            RequestValidator.ValidateRequired("market_price", this.MarketPrice);
-            RequestValidator.ValidateRequired("jd_price", this.JdPrice);
-            RequestValidator.ValidateRequired("notes", this.Notes);
+            //RequestValidator.ValidateRequired("title", this.Title);
+            //RequestValidator.ValidateRequired("weight", this.Weight);
+            //RequestValidator.ValidateRequired("market_price", this.MarketPrice);
+            //RequestValidator.ValidateRequired("jd_price", this.JdPrice);
+            //RequestValidator.ValidateRequired("notes", this.Notes);
         }
     }
 }
