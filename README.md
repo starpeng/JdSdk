@@ -8,8 +8,8 @@
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
 
-交流QQ群：[236361019](http://qun.qq.com/#jointhegroup/gid/236361019 "236361019")
-
+交流QQ群：[236361019](http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab "236361019")
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="SDK交流" title="SDK交流"></a>
 
 
 ## 更新记录 ##
