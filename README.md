@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.5.zip "1.1.5")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.6.zip "1.1.6")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
@@ -13,6 +13,10 @@
 
 
 ## 更新记录 ##
+-1.1.6
+>SkuStockUpdateResponse 更改SkuId为可空类型  
+>优惠明细CouponDetail.SkuId改为String类型  
+
 
 -1.1.5
 > 修改一些数据类型。  
