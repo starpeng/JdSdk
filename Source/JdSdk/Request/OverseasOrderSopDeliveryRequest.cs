@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 输入单个订单id，进行发货操作 Request
     /// </summary>
-    public class OverseasOrderSopDeliveryRequest : IJdRequest<OverseasOrderSopDeliveryResponse>
+    public class OverseasOrderSopDeliveryRequest : JdRequestBase<OverseasOrderSopDeliveryResponse>
     {
         /// <summary>
         /// 订单id
@@ -67,22 +65,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.overseas.order.sop.delivery"; }
+            get { return "360buy.overseas.order.sop.delivery"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("order_id" ,this.OrderId);
-            paramters.Add("logistics_id" ,this.LogisticsId);
-            paramters.Add("waybill" ,this.Waybill);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("order_id", this.OrderId);
+            paramters.Add("logistics_id", this.LogisticsId);
+            paramters.Add("waybill", this.Waybill);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("order_id", this.OrderId);
             RequestValidator.ValidateRequired("logistics_id", this.LogisticsId);

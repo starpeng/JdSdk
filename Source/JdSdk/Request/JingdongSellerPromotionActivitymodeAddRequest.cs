@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 限单品、赠品促销调用此接口，所有参数适用于单品促销，赠品促销只限设置单次最少购买数量有效（(多次调用时，最后一次规则有效)） Request
     /// </summary>
-    public class JingdongSellerPromotionActivitymodeAddRequest : IJdRequest<JingdongSellerPromotionActivitymodeAddResponse>
+    public class JingdongSellerPromotionActivitymodeAddRequest : JdRequestBase<JingdongSellerPromotionActivitymodeAddResponse>
     {
         /// <summary>
         /// 促销编号
@@ -80,23 +78,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.activitymode.add"; }
+            get { return "jingdong.seller.promotion.activitymode.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("promo_id" ,this.PromoId);
-            paramters.Add("num_bound" ,this.NumBound);
-            paramters.Add("freq_bound" ,this.FreqBound);
-            paramters.Add("per_max_num" ,this.PerMaxNum);
-            paramters.Add("per_min_num" ,this.PerMinNum);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("promo_id", this.PromoId);
+            paramters.Add("num_bound", this.NumBound);
+            paramters.Add("freq_bound", this.FreqBound);
+            paramters.Add("per_max_num", this.PerMaxNum);
+            paramters.Add("per_min_num", this.PerMinNum);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("promo_id", this.PromoId);
         }

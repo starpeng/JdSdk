@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询站长的结算单信息 Request
     /// </summary>
-    public class JingdongUnionMasterBillSearchRequest : IJdRequest<JingdongUnionMasterBillSearchResponse>
+    public class JingdongUnionMasterBillSearchRequest : JdRequestBase<JingdongUnionMasterBillSearchResponse>
     {
         /// <summary>
         /// 页码
@@ -66,22 +64,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.master.bill.search"; }
+            get { return "jingdong.union.master.bill.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("page_index" ,this.PageIndex);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("start_date" ,this.StartDate);
-            paramters.Add("end_date" ,this.EndDate);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("page_index", this.PageIndex);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("start_date", this.StartDate);
+            paramters.Add("end_date", this.EndDate);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("page_index", this.PageIndex);
             RequestValidator.ValidateRequired("page_size", this.PageSize);

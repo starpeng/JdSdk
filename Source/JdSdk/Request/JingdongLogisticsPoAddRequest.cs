@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 采购订单 Request
     /// </summary>
-    public class JingdongLogisticsPoAddRequest : IJdRequest<JingdongLogisticsPoAddResponse>
+    public class JingdongLogisticsPoAddRequest : JdRequestBase<JingdongLogisticsPoAddResponse>
     {
         /// <summary>
         /// 商家编号
@@ -130,28 +128,28 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.po.add"; }
+            get { return "jingdong.logistics.po.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("channels_seller_no" ,this.ChannelsSellerNo);
-            paramters.Add("po_no" ,this.PoNo);
-            paramters.Add("warehouse_no" ,this.WarehouseNo);
-            paramters.Add("expect_date" ,this.ExpectDate);
-            paramters.Add("supplier_name" ,this.SupplierName);
-            paramters.Add("supplier_no" ,this.SupplierNo);
-            paramters.Add("approver" ,this.Approver);
-            paramters.Add("goods_no" ,this.GoodsNo);
-            paramters.Add("expected_qty" ,this.ExpectedQty);
-            paramters.Add("goods_status" ,this.GoodsStatus);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("channels_seller_no", this.ChannelsSellerNo);
+            paramters.Add("po_no", this.PoNo);
+            paramters.Add("warehouse_no", this.WarehouseNo);
+            paramters.Add("expect_date", this.ExpectDate);
+            paramters.Add("supplier_name", this.SupplierName);
+            paramters.Add("supplier_no", this.SupplierNo);
+            paramters.Add("approver", this.Approver);
+            paramters.Add("goods_no", this.GoodsNo);
+            paramters.Add("expected_qty", this.ExpectedQty);
+            paramters.Add("goods_status", this.GoodsStatus);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("channels_seller_no", this.ChannelsSellerNo);
             RequestValidator.ValidateRequired("po_no", this.PoNo);

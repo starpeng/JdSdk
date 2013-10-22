@@ -6,8 +6,8 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -24,7 +24,7 @@ namespace JdSdk.Domain
         /// <example>String</example>
         [XmlElement("skuId")]
         [JsonProperty("skuId")]
-        public Int64 SkuId 
+        public Int64 SkuId
         {
             get;
             set;
@@ -36,7 +36,7 @@ namespace JdSdk.Domain
         /// <example>String</example>
         [XmlElement("promotionInfoList ")]
         [JsonProperty("promotionInfoList ")]
-        public List<PromotionInfo> PromotionInfoList  
+        public List<PromotionInfo> PromotionInfoList
         {
             get;
             set;

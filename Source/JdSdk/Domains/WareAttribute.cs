@@ -6,8 +6,8 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -47,7 +47,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("attributeValues")]
         [JsonProperty("attributeValues")]
-        public List< AttributeValue> AttributeValues
+        public List<AttributeValue> AttributeValues
         {
             get;
             set;

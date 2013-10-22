@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据商家计划编号查询商家计划基本信息 Request
     /// </summary>
-    public class JingdongUnionPlanbaseinfoGetRequest : IJdRequest<JingdongUnionPlanbaseinfoGetResponse>
+    public class JingdongUnionPlanbaseinfoGetRequest : JdRequestBase<JingdongUnionPlanbaseinfoGetResponse>
     {
         /// <summary>
         /// 计划编号
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.planbaseinfo.get"; }
+            get { return "jingdong.union.planbaseinfo.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("planid" ,this.PlanId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("planid", this.PlanId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("planId", this.PlanId);
         }

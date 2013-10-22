@@ -6,11 +6,7 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -19,21 +15,20 @@ namespace JdSdk.Request
     /// 获取联盟用户详细信息 Request
     /// <para>此接口无需输入应用级参数，但需要构建空参数360buy_param_json={}</para>
     /// </summary>
-    public class JingdongUnionMasterAccountGetRequest : IJdRequest<JingdongUnionMasterAccountGetResponse>
+    public class JingdongUnionMasterAccountGetRequest : JdRequestBase<JingdongUnionMasterAccountGetResponse>
     {
-
-        public String ApiName
+        public override String ApiName
         {
             get { return "jingdong.union.master.account.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<String, Object>();
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

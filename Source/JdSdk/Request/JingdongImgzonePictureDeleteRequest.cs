@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 删除图片 Request
     /// </summary>
-    public class JingdongImgzonePictureDeleteRequest : IJdRequest<JingdongImgzonePictureDeleteResponse>
+    public class JingdongImgzonePictureDeleteRequest : JdRequestBase<JingdongImgzonePictureDeleteResponse>
     {
         /// <summary>
         /// 图片ID，批量删除时ID间以半角逗号分隔，已被引用的图片不能删除
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.imgzone.picture.delete"; }
+            get { return "jingdong.imgzone.picture.delete"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("picture_ids" ,this.PictureIds);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("picture_ids", this.PictureIds);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("picture_ids", this.PictureIds);
         }

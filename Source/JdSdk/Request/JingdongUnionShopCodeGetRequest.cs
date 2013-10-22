@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据店铺ID查询店铺推广代码 Request
     /// </summary>
-    public class JingdongUnionShopCodeGetRequest : IJdRequest<JingdongUnionShopCodeGetResponse>
+    public class JingdongUnionShopCodeGetRequest : JdRequestBase<JingdongUnionShopCodeGetResponse>
     {
         /// <summary>
         /// 店铺ID
@@ -32,19 +30,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.shop.code.get"; }
+            get { return "jingdong.union.shop.code.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("shop_id" ,this.ShopId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("shop_id", this.ShopId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("shop_id", this.ShopId);
         }

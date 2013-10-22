@@ -6,11 +6,7 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -18,20 +14,20 @@ namespace JdSdk.Request
     /// <summary>
     /// 根据pin返回供应商简码和三级分类列表 Request
     /// </summary>
-    public class JingdongUserCategory3InfoGetRequest : IJdRequest<JingdongUserCategory3InfoGetResponse>
+    public class JingdongUserCategory3InfoGetRequest : JdRequestBase<JingdongUserCategory3InfoGetResponse>
     {
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.userCategory3.info.get"; }
+            get { return "jingdong.userCategory3.info.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

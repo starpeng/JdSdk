@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据退货单id 进行退货确认操作 Request
     /// </summary>
-    public class AfterStateUpdateRequest : IJdRequest<AfterStateUpdateResponse>
+    public class AfterStateUpdateRequest : JdRequestBase<AfterStateUpdateResponse>
     {
         /// <summary>
         /// 退货单ID
@@ -42,20 +40,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.after.state.update"; }
+            get { return "360buy.after.state.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("return_id" ,this.ReturnId);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("return_id", this.ReturnId);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("return_id", this.ReturnId);
             RequestValidator.ValidateRequired("trade_no", this.TradeNo);

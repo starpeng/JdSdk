@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     ///  Request
     /// </summary>
-    public class JingdongWarePromotionInfoGetRequest : IJdRequest<JingdongWarePromotionInfoGetResponse>
+    public class JingdongWarePromotionInfoGetRequest : JdRequestBase<JingdongWarePromotionInfoGetResponse>
     {
         /// <summary>
         /// 商品编号
@@ -53,21 +51,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.ware.promotionInfo.get"; }
+            get { return "jingdong.ware.promotionInfo.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("skuid" ,this.SkuId);
-            paramters.Add("website" ,this.WebSite);
-            paramters.Add("origin" ,this.Origin);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("skuid", this.SkuId);
+            paramters.Add("website", this.WebSite);
+            paramters.Add("origin", this.Origin);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("skuId", this.SkuId);
             RequestValidator.ValidateRequired("webSite", this.WebSite);

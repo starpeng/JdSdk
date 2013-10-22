@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询月账单明细 Request
     /// </summary>
-    public class JingdongKuaicheBillDetailsSearchRequest : IJdRequest<JingdongKuaicheBillDetailsSearchResponse>
+    public class JingdongKuaicheBillDetailsSearchRequest : JdRequestBase<JingdongKuaicheBillDetailsSearchResponse>
     {
         /// <summary>
         /// 结算单号
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.bill.details.search"; }
+            get { return "jingdong.kuaiche.bill.details.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("bill_no" ,this.BillNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("bill_no", this.BillNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("bill_no", this.BillNo);
         }

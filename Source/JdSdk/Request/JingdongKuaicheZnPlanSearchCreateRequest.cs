@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 创建搜索页推广 Request
     /// </summary>
-    public class JingdongKuaicheZnPlanSearchCreateRequest : IJdRequest<JingdongKuaicheZnPlanSearchCreateResponse>
+    public class JingdongKuaicheZnPlanSearchCreateRequest : JdRequestBase<JingdongKuaicheZnPlanSearchCreateResponse>
     {
         /// <summary>
         /// 投放计划内容
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.zn.plan.search.create"; }
+            get { return "jingdong.kuaiche.zn.plan.search.create"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("plan_info" ,this.PlanInfo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("plan_info", this.PlanInfo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("plan_info", this.PlanInfo);
         }

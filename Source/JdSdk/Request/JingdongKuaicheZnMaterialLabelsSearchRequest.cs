@@ -6,11 +6,7 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -18,19 +14,18 @@ namespace JdSdk.Request
     /// <summary>
     /// 获取标签信息 Request
     /// </summary>
-    public class JingdongKuaicheZnMaterialLabelsSearchRequest : IJdRequest<JingdongKuaicheZnMaterialLabelsSearchResponse>
+    public class JingdongKuaicheZnMaterialLabelsSearchRequest : JdRequestBase<JingdongKuaicheZnMaterialLabelsSearchResponse>
     {
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.zn.material.labels.search"; }
+            get { return "jingdong.kuaiche.zn.material.labels.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            return "{}";
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

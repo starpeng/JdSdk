@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     ///  Request
     /// </summary>
-    public class JingdongRestWorkorderReplyRequest : IJdRequest<JingdongRestWorkorderReplyResponse>
+    public class JingdongRestWorkorderReplyRequest : JdRequestBase<JingdongRestWorkorderReplyResponse>
     {
         /// <summary>
         /// 工单id
@@ -64,22 +62,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.rest.workorder.reply"; }
+            get { return "jingdong.rest.workorder.reply"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("work_id" ,this.WorkId);
-            paramters.Add("reply_content" ,this.ReplyContent);
-            paramters.Add("work_type" ,this.WorkType);
-            paramters.Add("work2_type" ,this.Work2Type);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("work_id", this.WorkId);
+            paramters.Add("reply_content", this.ReplyContent);
+            paramters.Add("work_type", this.WorkType);
+            paramters.Add("work2_type", this.Work2Type);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("work_id", this.WorkId);
             RequestValidator.ValidateRequired("reply_content", this.ReplyContent);

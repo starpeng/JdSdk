@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询投放计划列表 Request
     /// </summary>
-    public class JingdongKuaicheZnPlanListSearchRequest : IJdRequest<JingdongKuaicheZnPlanListSearchResponse>
+    public class JingdongKuaicheZnPlanListSearchRequest : JdRequestBase<JingdongKuaicheZnPlanListSearchResponse>
     {
         /// <summary>
         /// 投放计划名称
@@ -108,26 +106,26 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.zn.plan.list.search"; }
+            get { return "jingdong.kuaiche.zn.plan.list.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("plan_name" ,this.PlanName);
-            paramters.Add("mode" ,this.Mode);
-            paramters.Add("status" ,this.Status);
-            paramters.Add("is_query_by_status" ,this.IsQueryByStatus);
-            paramters.Add("begin" ,this.Begin);
-            paramters.Add("end" ,this.End);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("page_index" ,this.PageIndex);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("plan_name", this.PlanName);
+            paramters.Add("mode", this.Mode);
+            paramters.Add("status", this.Status);
+            paramters.Add("is_query_by_status", this.IsQueryByStatus);
+            paramters.Add("begin", this.Begin);
+            paramters.Add("end", this.End);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("page_index", this.PageIndex);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

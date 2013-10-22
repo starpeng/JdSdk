@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace JdSdk
@@ -42,7 +40,6 @@ namespace JdSdk
         [JsonProperty("time")]
         public String Time
         {
-
             get;
             internal set;
         }
@@ -50,7 +47,6 @@ namespace JdSdk
         [JsonProperty("token_type")]
         public String TokenType
         {
-
             get;
             internal set;
         }

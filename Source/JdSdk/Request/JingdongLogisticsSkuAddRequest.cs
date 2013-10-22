@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 商品资料添加 Request
     /// </summary>
-    public class JingdongLogisticsSkuAddRequest : IJdRequest<JingdongLogisticsSkuAddResponse>
+    public class JingdongLogisticsSkuAddRequest : JdRequestBase<JingdongLogisticsSkuAddResponse>
     {
         /// <summary>
         /// 条码(外部系统商品唯一标识)
@@ -284,42 +282,42 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.sku.add"; }
+            get { return "jingdong.logistics.sku.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("bar_code" ,this.BarCode);
-            paramters.Add("sku_id" ,this.SkuId);
-            paramters.Add("name" ,this.Name);
-            paramters.Add("goods_abbreviation" ,this.GoodsAbbreviation);
-            paramters.Add("category_id" ,this.CategoryId);
-            paramters.Add("category_name" ,this.CategoryName);
-            paramters.Add("brand_no" ,this.BrandNo);
-            paramters.Add("brand_name" ,this.BrandName);
-            paramters.Add("format" ,this.Format);
-            paramters.Add("color" ,this.Color);
-            paramters.Add("size" ,this.Size);
-            paramters.Add("gross_weight" ,this.GrossWeight);
-            paramters.Add("net_weight" ,this.NetWeight);
-            paramters.Add("size_definition" ,this.SizeDefinition);
-            paramters.Add("suppliers_name" ,this.SuppliersName);
-            paramters.Add("manufacturer" ,this.Manufacturer);
-            paramters.Add("suppliers_no" ,this.SuppliersNo);
-            paramters.Add("product_area" ,this.ProductArea);
-            paramters.Add("length" ,this.Length);
-            paramters.Add("width" ,this.Width);
-            paramters.Add("height" ,this.Height);
-            paramters.Add("volume" ,this.Volume);
-            paramters.Add("is_safe" ,this.IsSafe);
-            paramters.Add("safe_date" ,this.SafeDate);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("bar_code", this.BarCode);
+            paramters.Add("sku_id", this.SkuId);
+            paramters.Add("name", this.Name);
+            paramters.Add("goods_abbreviation", this.GoodsAbbreviation);
+            paramters.Add("category_id", this.CategoryId);
+            paramters.Add("category_name", this.CategoryName);
+            paramters.Add("brand_no", this.BrandNo);
+            paramters.Add("brand_name", this.BrandName);
+            paramters.Add("format", this.Format);
+            paramters.Add("color", this.Color);
+            paramters.Add("size", this.Size);
+            paramters.Add("gross_weight", this.GrossWeight);
+            paramters.Add("net_weight", this.NetWeight);
+            paramters.Add("size_definition", this.SizeDefinition);
+            paramters.Add("suppliers_name", this.SuppliersName);
+            paramters.Add("manufacturer", this.Manufacturer);
+            paramters.Add("suppliers_no", this.SuppliersNo);
+            paramters.Add("product_area", this.ProductArea);
+            paramters.Add("length", this.Length);
+            paramters.Add("width", this.Width);
+            paramters.Add("height", this.Height);
+            paramters.Add("volume", this.Volume);
+            paramters.Add("is_safe", this.IsSafe);
+            paramters.Add("safe_date", this.SafeDate);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("bar_code", this.BarCode);
             RequestValidator.ValidateRequired("sku_id", this.SkuId);

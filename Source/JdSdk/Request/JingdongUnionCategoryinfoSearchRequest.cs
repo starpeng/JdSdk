@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据商家计划编号查询商家类目及佣金信息（计划编号为“”或null则只返回类目信息) Request
     /// </summary>
-    public class JingdongUnionCategoryinfoSearchRequest : IJdRequest<JingdongUnionCategoryinfoSearchResponse>
+    public class JingdongUnionCategoryinfoSearchRequest : JdRequestBase<JingdongUnionCategoryinfoSearchResponse>
     {
         /// <summary>
         /// 计划编号 ，输入null或输入&quot;&quot; f返回商家经营的分类;输入正确的编号返回分类和佣金比例
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.categoryinfo.search"; }
+            get { return "jingdong.union.categoryinfo.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("planid" ,this.PlanId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("planid", this.PlanId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("planId", this.PlanId);
         }

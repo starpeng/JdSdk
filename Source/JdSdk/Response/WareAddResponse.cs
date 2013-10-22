@@ -6,10 +6,10 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Xml.Serialization;
 using JdSdk.Domain;
+using Newtonsoft.Json;
 
 namespace JdSdk.Response
 {
@@ -45,7 +45,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("skus")]
         [JsonProperty("skus")]
-        public List< SkuInfo > Skus
+        public List<SkuInfo> Skus
         {
             get;
             set;
@@ -57,7 +57,7 @@ namespace JdSdk.Response
         /// <example>String</example>
         [XmlElement("input_pids")]
         [JsonProperty("input_pids")]
-        public String InputPids 
+        public String InputPids
         {
             get;
             set;
@@ -69,7 +69,7 @@ namespace JdSdk.Response
         /// <example>String</example>
         [XmlElement("input_strs")]
         [JsonProperty("input_strs")]
-        public String InputStrs 
+        public String InputStrs
         {
             get;
             set;

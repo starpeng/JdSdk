@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据条件检索订单信息 Request
     /// </summary>
-    public class OrderSearchRequest : IJdRequest<OrderSearchResponse>
+    public class OrderSearchRequest : JdRequestBase<OrderSearchResponse>
     {
         /// <summary>
         /// 开始时间 和 结束时间 不得相差超过1个月
@@ -91,24 +89,24 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.order.search"; }
+            get { return "360buy.order.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("start_date" ,this.StartDate);
-            paramters.Add("end_date" ,this.EndDate);
-            paramters.Add("order_state" ,this.OrderState);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("optional_fields" ,this.OptionalFields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("start_date", this.StartDate);
+            paramters.Add("end_date", this.EndDate);
+            paramters.Add("order_state", this.OrderState);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("optional_fields", this.OptionalFields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("order_state", this.OrderState);
             RequestValidator.ValidateRequired("page", this.Page);

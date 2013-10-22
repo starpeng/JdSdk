@@ -1,5 +1,4 @@
-﻿using System;
-using JdSdk.Request;
+﻿using JdSdk.Request;
 
 namespace JdSdk
 {

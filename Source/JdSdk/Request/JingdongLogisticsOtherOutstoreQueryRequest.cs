@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 其它出库单查询 Request
     /// </summary>
-    public class JingdongLogisticsOtherOutstoreQueryRequest : IJdRequest<JingdongLogisticsOtherOutstoreQueryResponse>
+    public class JingdongLogisticsOtherOutstoreQueryRequest : JdRequestBase<JingdongLogisticsOtherOutstoreQueryResponse>
     {
         /// <summary>
         /// josl出库单号
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.otherOutstore.query"; }
+            get { return "jingdong.logistics.otherOutstore.query"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("josl_outbound_no" ,this.JoslOutboundNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("josl_outbound_no", this.JoslOutboundNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("josl_outbound_no", this.JoslOutboundNo);
         }

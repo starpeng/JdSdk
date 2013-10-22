@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 搜索商品信息。 Request
     /// </summary>
-    public class JingdongWareGetRequest : IJdRequest<JingdongWareGetResponse>
+    public class JingdongWareGetRequest : JdRequestBase<JingdongWareGetResponse>
     {
         /// <summary>
         /// 商品id
@@ -53,21 +51,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.ware.get"; }
+            get { return "jingdong.ware.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("region_id" ,this.RegionId);
-            paramters.Add("fields" ,this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("region_id", this.RegionId);
+            paramters.Add("fields", this.Fields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
             RequestValidator.ValidateRequired("region_id", this.RegionId);

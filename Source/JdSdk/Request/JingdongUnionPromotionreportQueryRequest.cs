@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询站长的推广效果数据 Request
     /// </summary>
-    public class JingdongUnionPromotionreportQueryRequest : IJdRequest<JingdongUnionPromotionreportQueryResponse>
+    public class JingdongUnionPromotionreportQueryRequest : JdRequestBase<JingdongUnionPromotionreportQueryResponse>
     {
         /// <summary>
         /// 起始时间,日期格式:yyyy-MM-ddHH:mm:ss
@@ -80,23 +78,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.promotionreport.query"; }
+            get { return "jingdong.union.promotionreport.query"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("startdate" ,this.StartDate);
-            paramters.Add("enddate" ,this.EndDate);
-            paramters.Add("pageindex" ,this.PageIndex);
-            paramters.Add("pagesize" ,this.PageSize);
-            paramters.Add("fields" ,this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("startdate", this.StartDate);
+            paramters.Add("enddate", this.EndDate);
+            paramters.Add("pageindex", this.PageIndex);
+            paramters.Add("pagesize", this.PageSize);
+            paramters.Add("fields", this.Fields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("startDate", this.StartDate);
             RequestValidator.ValidateRequired("endDate", this.EndDate);

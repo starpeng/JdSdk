@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 退货入库单取消 Request
     /// </summary>
-    public class JingdongLogisticsReturnorderCancelRequest : IJdRequest<JingdongLogisticsReturnorderCancelResponse>
+    public class JingdongLogisticsReturnorderCancelRequest : JdRequestBase<JingdongLogisticsReturnorderCancelResponse>
     {
         /// <summary>
         /// 要取消的退货入库单号
@@ -44,20 +42,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.returnorder.cancel"; }
+            get { return "jingdong.logistics.returnorder.cancel"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("receipt_no" ,this.ReceiptNo);
-            paramters.Add("isv_source" ,this.IsvSource);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("receipt_no", this.ReceiptNo);
+            paramters.Add("isv_source", this.IsvSource);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("receipt_no", this.ReceiptNo);
         }

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 促销审核，只能对人工审核状态的促销进行审核 Request
     /// </summary>
-    public class JingdongSellerPromotionCheckRequest : IJdRequest<JingdongSellerPromotionCheckResponse>
+    public class JingdongSellerPromotionCheckRequest : JdRequestBase<JingdongSellerPromotionCheckResponse>
     {
         /// <summary>
         /// 促销编号
@@ -44,20 +42,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.check"; }
+            get { return "jingdong.seller.promotion.check"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("promo_id" ,this.PromoId);
-            paramters.Add("status" ,this.Status);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("promo_id", this.PromoId);
+            paramters.Add("status", this.Status);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("promo_id", this.PromoId);
             RequestValidator.ValidateRequired("status", this.Status);

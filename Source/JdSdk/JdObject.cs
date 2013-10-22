@@ -8,6 +8,5 @@ namespace JdSdk
     [Serializable]
     public abstract class JdObject
     {
-
     }
 }

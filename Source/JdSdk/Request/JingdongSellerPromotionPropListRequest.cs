@@ -6,11 +6,7 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -18,20 +14,20 @@ namespace JdSdk.Request
     /// <summary>
     /// 根据促销编号获取促销的道具列表 Request
     /// </summary>
-    public class JingdongSellerPromotionPropListRequest : IJdRequest<JingdongSellerPromotionPropListResponse>
+    public class JingdongSellerPromotionPropListRequest : JdRequestBase<JingdongSellerPromotionPropListResponse>
     {
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.prop.list"; }
+            get { return "jingdong.seller.promotion.prop.list"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

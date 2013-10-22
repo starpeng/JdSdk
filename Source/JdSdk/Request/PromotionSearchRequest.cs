@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据条件获取促销信息 Request
     /// </summary>
-    public class PromotionSearchRequest : IJdRequest<PromotionSearchResponse>
+    public class PromotionSearchRequest : JdRequestBase<PromotionSearchResponse>
     {
         /// <summary>
         /// 活动开始起始时间（格式是：2011-08-03)
@@ -163,31 +161,31 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.promotion.search"; }
+            get { return "360buy.promotion.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("time_begin_start" ,this.TimeBeginStart);
-            paramters.Add("time_begin_end" ,this.TimeBeginEnd);
-            paramters.Add("time_end_start" ,this.TimeEndStart);
-            paramters.Add("time_end_end" ,this.TimeEndEnd);
-            paramters.Add("evt_id" ,this.EvtId);
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("level_member" ,this.LevelMember);
-            paramters.Add("evt_type" ,this.EvtType);
-            paramters.Add("evt_status" ,this.EvtStatus);
-            paramters.Add("check_status" ,this.CheckStatus);
-            paramters.Add("sku_id" ,this.SkuId);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("time_begin_start", this.TimeBeginStart);
+            paramters.Add("time_begin_end", this.TimeBeginEnd);
+            paramters.Add("time_end_start", this.TimeEndStart);
+            paramters.Add("time_end_end", this.TimeEndEnd);
+            paramters.Add("evt_id", this.EvtId);
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("level_member", this.LevelMember);
+            paramters.Add("evt_type", this.EvtType);
+            paramters.Add("evt_status", this.EvtStatus);
+            paramters.Add("check_status", this.CheckStatus);
+            paramters.Add("sku_id", this.SkuId);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("sku_id", this.SkuId);
             RequestValidator.ValidateRequired("page", this.Page);

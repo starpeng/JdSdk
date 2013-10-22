@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据三级分类id，搜索商品数据 Request
     /// </summary>
-    public class JingdongWaresSearchbycidRequest : IJdRequest<JingdongWaresSearchbycidResponse>
+    public class JingdongWaresSearchbycidRequest : JdRequestBase<JingdongWaresSearchbycidResponse>
     {
         /// <summary>
         /// 类目id
@@ -64,22 +62,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.wares.searchbycid"; }
+            get { return "jingdong.wares.searchbycid"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cid" ,this.Cid);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("fields" ,this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("cid", this.Cid);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("fields", this.Fields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("cid", this.Cid);
         }

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 订购关系查询（根据购买用户名和收费项目代码获取订购关系时长） Request
     /// </summary>
-    public class JingdongVasSubscribeGetRequest : IJdRequest<JingdongVasSubscribeGetResponse>
+    public class JingdongVasSubscribeGetRequest : JdRequestBase<JingdongVasSubscribeGetResponse>
     {
         /// <summary>
         /// 用户名
@@ -42,20 +40,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.vas.subscribe.get"; }
+            get { return "jingdong.vas.subscribe.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("user_name" ,this.UserName);
-            paramters.Add("item_code" ,this.ItemCode);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("user_name", this.UserName);
+            paramters.Add("item_code", this.ItemCode);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("user_name", this.UserName);
             RequestValidator.ValidateRequired("item_code", this.ItemCode);

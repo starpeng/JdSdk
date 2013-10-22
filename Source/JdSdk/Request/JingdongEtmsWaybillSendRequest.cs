@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 提交运单信息 Request
     /// </summary>
-    public class JingdongEtmsWaybillSendRequest : IJdRequest<JingdongEtmsWaybillSendResponse>
+    public class JingdongEtmsWaybillSendRequest : JdRequestBase<JingdongEtmsWaybillSendResponse>
     {
         /// <summary>
         /// 运单号
@@ -417,53 +415,53 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.etms.waybill.send"; }
+            get { return "jingdong.etms.waybill.send"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("deliveryid" ,this.DeliveryId);
-            paramters.Add("saleplat" ,this.SalePlat);
-            paramters.Add("customerid" ,this.CustomerId);
-            paramters.Add("orderid" ,this.OrderId);
-            paramters.Add("selfprintwaybill" ,this.SelfPrintWayBill);
-            paramters.Add("pickmethod" ,this.PickMethod);
-            paramters.Add("packagerequired" ,this.PackageRequired);
-            paramters.Add("sendername" ,this.SenderName);
-            paramters.Add("senderaddress" ,this.SenderAddress);
-            paramters.Add("sendertel" ,this.SenderTel);
-            paramters.Add("sendermobile" ,this.SenderMobile);
-            paramters.Add("senderpostcode" ,this.SenderPostcode);
-            paramters.Add("receivename" ,this.ReceiveName);
-            paramters.Add("receiveaddress" ,this.ReceiveAddress);
-            paramters.Add("province" ,this.Province);
-            paramters.Add("city" ,this.City);
-            paramters.Add("county" ,this.County);
-            paramters.Add("town" ,this.Town);
-            paramters.Add("receivetel" ,this.ReceiveTel);
-            paramters.Add("receivemobile" ,this.ReceiveMobile);
-            paramters.Add("postcode" ,this.Postcode);
-            paramters.Add("packagecount" ,this.PackageCount);
-            paramters.Add("weight" ,this.Weight);
-            paramters.Add("vloumlong" ,this.VloumLong);
-            paramters.Add("vloumwidth" ,this.VloumWidth);
-            paramters.Add("vloumheight" ,this.VloumHeight);
-            paramters.Add("vloumn" ,this.Vloumn);
-            paramters.Add("description" ,this.Description);
-            paramters.Add("collectionvalue" ,this.CollectionValue);
-            paramters.Add("collectionmoney" ,this.CollectionMoney);
-            paramters.Add("guaranteevalue" ,this.GuaranteeValue);
-            paramters.Add("guaranteevalueamount" ,this.GuaranteeValueAmount);
-            paramters.Add("signreturn" ,this.SignReturn);
-            paramters.Add("aging" ,this.Aging);
-            paramters.Add("transtype" ,this.TransType);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("deliveryid", this.DeliveryId);
+            paramters.Add("saleplat", this.SalePlat);
+            paramters.Add("customerid", this.CustomerId);
+            paramters.Add("orderid", this.OrderId);
+            paramters.Add("selfprintwaybill", this.SelfPrintWayBill);
+            paramters.Add("pickmethod", this.PickMethod);
+            paramters.Add("packagerequired", this.PackageRequired);
+            paramters.Add("sendername", this.SenderName);
+            paramters.Add("senderaddress", this.SenderAddress);
+            paramters.Add("sendertel", this.SenderTel);
+            paramters.Add("sendermobile", this.SenderMobile);
+            paramters.Add("senderpostcode", this.SenderPostcode);
+            paramters.Add("receivename", this.ReceiveName);
+            paramters.Add("receiveaddress", this.ReceiveAddress);
+            paramters.Add("province", this.Province);
+            paramters.Add("city", this.City);
+            paramters.Add("county", this.County);
+            paramters.Add("town", this.Town);
+            paramters.Add("receivetel", this.ReceiveTel);
+            paramters.Add("receivemobile", this.ReceiveMobile);
+            paramters.Add("postcode", this.Postcode);
+            paramters.Add("packagecount", this.PackageCount);
+            paramters.Add("weight", this.Weight);
+            paramters.Add("vloumlong", this.VloumLong);
+            paramters.Add("vloumwidth", this.VloumWidth);
+            paramters.Add("vloumheight", this.VloumHeight);
+            paramters.Add("vloumn", this.Vloumn);
+            paramters.Add("description", this.Description);
+            paramters.Add("collectionvalue", this.CollectionValue);
+            paramters.Add("collectionmoney", this.CollectionMoney);
+            paramters.Add("guaranteevalue", this.GuaranteeValue);
+            paramters.Add("guaranteevalueamount", this.GuaranteeValueAmount);
+            paramters.Add("signreturn", this.SignReturn);
+            paramters.Add("aging", this.Aging);
+            paramters.Add("transtype", this.TransType);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("deliveryId", this.DeliveryId);
             RequestValidator.ValidateRequired("customerId", this.CustomerId);

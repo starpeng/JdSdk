@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据商家账号查询商家计划列表 Request
     /// </summary>
-    public class JingdongUnionPlanlistSearchRequest : IJdRequest<JingdongUnionPlanlistSearchResponse>
+    public class JingdongUnionPlanlistSearchRequest : JdRequestBase<JingdongUnionPlanlistSearchResponse>
     {
         /// <summary>
         /// 页码
@@ -42,20 +40,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.planlist.search"; }
+            get { return "jingdong.union.planlist.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("pageindex" ,this.PageIndex);
-            paramters.Add("pagesize" ,this.PageSize);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("pageindex", this.PageIndex);
+            paramters.Add("pagesize", this.PageSize);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("pageIndex", this.PageIndex);
             RequestValidator.ValidateRequired("pageSize", this.PageSize);

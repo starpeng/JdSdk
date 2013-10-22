@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 商家查询库存 Request
     /// </summary>
-    public class JingdongLogisticsStockSearchRequest : IJdRequest<JingdongLogisticsStockSearchResponse>
+    public class JingdongLogisticsStockSearchRequest : JdRequestBase<JingdongLogisticsStockSearchResponse>
     {
         /// <summary>
         /// 库房编号
@@ -53,21 +51,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.stock.search"; }
+            get { return "jingdong.logistics.stock.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("warehouse_no" ,this.WarehouseNo);
-            paramters.Add("goods_no" ,this.GoodsNo);
-            paramters.Add("current_page" ,this.CurrentPage);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("warehouse_no", this.WarehouseNo);
+            paramters.Add("goods_no", this.GoodsNo);
+            paramters.Add("current_page", this.CurrentPage);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("current_page", this.CurrentPage);
         }

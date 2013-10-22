@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 通过api 根据sku_id /outer_id修改库存接口，skuId和outerId 至少填一个，如果都有则以sku_id为准。 Request
     /// </summary>
-    public class SkuStockUpdateRequest : IJdRequest<SkuStockUpdateResponse>
+    public class SkuStockUpdateRequest : JdRequestBase<SkuStockUpdateResponse>
     {
         /// <summary>
         /// sku的id
@@ -67,22 +65,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.sku.stock.update"; }
+            get { return "360buy.sku.stock.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("sku_id" ,this.SkuId);
-            paramters.Add("outer_id" ,this.OuterId);
-            paramters.Add("quantity" ,this.Quantity);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("sku_id", this.SkuId);
+            paramters.Add("outer_id", this.OuterId);
+            paramters.Add("quantity", this.Quantity);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             //RequestValidator.ValidateRequired("sku_id", this.SkuId);
             RequestValidator.ValidateRequired("quantity", this.Quantity);

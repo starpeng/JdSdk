@@ -9,7 +9,6 @@ namespace JdSdk
     /// </summary>
     public class JdDictionary : Dictionary<string, string>
     {
-
         public JdDictionary() { }
 
         public JdDictionary(IDictionary<string, string> dictionary)

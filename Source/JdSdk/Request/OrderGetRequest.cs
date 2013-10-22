@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 输入单个订单id，得到所有相关订单信息 Request
     /// </summary>
-    public class OrderGetRequest : IJdRequest<OrderGetResponse>
+    public class OrderGetRequest : JdRequestBase<OrderGetResponse>
     {
         /// <summary>
         /// 订单id
@@ -55,21 +53,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.order.get"; }
+            get { return "360buy.order.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("order_id" ,this.OrderId);
-            paramters.Add("order_state" ,this.OrderState);
-            paramters.Add("optional_fields" ,this.OptionalFields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("order_id", this.OrderId);
+            paramters.Add("order_state", this.OrderState);
+            paramters.Add("optional_fields", this.OptionalFields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("order_id", this.OrderId);
         }

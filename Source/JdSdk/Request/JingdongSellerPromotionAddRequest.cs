@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 创建促销，支持单品促销、套装促销、赠品促销，添加促销信息如名称、时间、类型等。 Request
     /// </summary>
-    public class JingdongSellerPromotionAddRequest : IJdRequest<JingdongSellerPromotionAddResponse>
+    public class JingdongSellerPromotionAddRequest : JdRequestBase<JingdongSellerPromotionAddResponse>
     {
         /// <summary>
         /// 促销名称，字符串长度小于等于10
@@ -124,27 +122,27 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.add"; }
+            get { return "jingdong.seller.promotion.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("name" ,this.Name);
-            paramters.Add("type" ,this.Type);
-            paramters.Add("begin_time" ,this.BeginTime);
-            paramters.Add("end_time" ,this.EndTime);
-            paramters.Add("favor_mode" ,this.FavorMode);
-            paramters.Add("bound" ,this.Bound);
-            paramters.Add("member" ,this.Member);
-            paramters.Add("slogan" ,this.Slogan);
-            paramters.Add("comment" ,this.Comment);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("name", this.Name);
+            paramters.Add("type", this.Type);
+            paramters.Add("begin_time", this.BeginTime);
+            paramters.Add("end_time", this.EndTime);
+            paramters.Add("favor_mode", this.FavorMode);
+            paramters.Add("bound", this.Bound);
+            paramters.Add("member", this.Member);
+            paramters.Add("slogan", this.Slogan);
+            paramters.Add("comment", this.Comment);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("name", this.Name);
             RequestValidator.ValidateRequired("type", this.Type);

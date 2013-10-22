@@ -6,11 +6,7 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -18,21 +14,20 @@ namespace JdSdk.Request
     /// <summary>
     /// 经用户授权后，可以获得商家在快车系统的用户信息。 Request
     /// </summary>
-    public class JingdongKuaichePopGetRequest : IJdRequest<JingdongKuaichePopGetResponse>
+    public class JingdongKuaichePopGetRequest : JdRequestBase<JingdongKuaichePopGetResponse>
     {
-
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.pop.get"; }
+            get { return "jingdong.kuaiche.pop.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

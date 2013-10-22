@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 输入单个订单id，进行sopl出库操作 Request
     /// </summary>
-    public class OrderSoplOutstorageRequest : IJdRequest<OrderSoplOutstorageResponse>
+    public class OrderSoplOutstorageRequest : JdRequestBase<OrderSoplOutstorageResponse>
     {
         /// <summary>
         /// 订单id
@@ -99,25 +97,25 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.order.sopl.outstorage"; }
+            get { return "360buy.order.sopl.outstorage"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("order_id" ,this.OrderId);
-            paramters.Add("send_type" ,this.SendType);
-            paramters.Add("package_num" ,this.PackageNum);
-            paramters.Add("address_id" ,this.AddressId);
-            paramters.Add("logistics_id" ,this.LogisticsId);
-            paramters.Add("waybill" ,this.Waybill);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("order_id", this.OrderId);
+            paramters.Add("send_type", this.SendType);
+            paramters.Add("package_num", this.PackageNum);
+            paramters.Add("address_id", this.AddressId);
+            paramters.Add("logistics_id", this.LogisticsId);
+            paramters.Add("waybill", this.Waybill);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("order_id", this.OrderId);
             RequestValidator.ValidateRequired("send_type", this.SendType);

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// Fbp类型商家根据条件检索订单信息 Request
     /// </summary>
-    public class OrderFbpSearchRequest : IJdRequest<OrderFbpSearchResponse>
+    public class OrderFbpSearchRequest : JdRequestBase<OrderFbpSearchResponse>
     {
         /// <summary>
         /// FBP订单查询的开始时间(开始时间和结束时间，不得相差超过1个月。此时间针对订单修改的时间)
@@ -79,23 +77,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.order.fbp.search"; }
+            get { return "360buy.order.fbp.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("start_date" ,this.StartDate);
-            paramters.Add("end_date" ,this.EndDate);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("optional_fields" ,this.OptionalFields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("start_date", this.StartDate);
+            paramters.Add("end_date", this.EndDate);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("optional_fields", this.OptionalFields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("start_date", this.StartDate);
             RequestValidator.ValidateRequired("end_date", this.EndDate);

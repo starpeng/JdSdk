@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询图片 Request
     /// </summary>
-    public class JingdongImgzonePictureQueryRequest : IJdRequest<JingdongImgzonePictureQueryResponse>
+    public class JingdongImgzonePictureQueryRequest : JdRequestBase<JingdongImgzonePictureQueryResponse>
     {
         /// <summary>
         /// 图片ID
@@ -97,25 +95,25 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.imgzone.picture.query"; }
+            get { return "jingdong.imgzone.picture.query"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("picture_id" ,this.PictureId);
-            paramters.Add("picture_cate_id" ,this.PictureCateId);
-            paramters.Add("picture_name" ,this.PictureName);
-            paramters.Add("start_date" ,this.StartDate);
-            paramters.Add("end_date" ,this.EndDate);
-            paramters.Add("page_num" ,this.PageNum);
-            paramters.Add("page_size" ,this.PageSize);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("picture_id", this.PictureId);
+            paramters.Add("picture_cate_id", this.PictureCateId);
+            paramters.Add("picture_name", this.PictureName);
+            paramters.Add("start_date", this.StartDate);
+            paramters.Add("end_date", this.EndDate);
+            paramters.Add("page_num", this.PageNum);
+            paramters.Add("page_size", this.PageSize);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

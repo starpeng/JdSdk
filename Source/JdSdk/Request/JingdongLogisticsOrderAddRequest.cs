@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 客户订单 Request
     /// </summary>
-    public class JingdongLogisticsOrderAddRequest : IJdRequest<JingdongLogisticsOrderAddResponse>
+    public class JingdongLogisticsOrderAddRequest : JdRequestBase<JingdongLogisticsOrderAddResponse>
     {
         /// <summary>
         /// 商家编号
@@ -427,55 +425,55 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.order.add"; }
+            get { return "jingdong.logistics.order.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("channels_seller_no" ,this.ChannelsSellerNo);
-            paramters.Add("channels_outbound_no" ,this.ChannelsOutboundNo);
-            paramters.Add("warehouse_no" ,this.WarehouseNo);
-            paramters.Add("carriers_id" ,this.CarriersId);
-            paramters.Add("expect_date" ,this.ExpectDate);
-            paramters.Add("order_no" ,this.OrderNo);
-            paramters.Add("shop_no" ,this.ShopNo);
-            paramters.Add("consignee_name" ,this.ConsigneeName);
-            paramters.Add("address_province" ,this.AddressProvince);
-            paramters.Add("address_city" ,this.AddressCity);
-            paramters.Add("address_county" ,this.AddressCounty);
-            paramters.Add("address_town" ,this.AddressTown);
-            paramters.Add("address" ,this.Address);
-            paramters.Add("zip_code" ,this.ZipCode);
-            paramters.Add("phone" ,this.Phone);
-            paramters.Add("mobile" ,this.Mobile);
-            paramters.Add("receivable" ,this.Receivable);
-            paramters.Add("email" ,this.Email);
-            paramters.Add("buyer_remark" ,this.BuyerRemark);
-            paramters.Add("verify_remark" ,this.VerifyRemark);
-            paramters.Add("return_consignee_address" ,this.ReturnConsigneeAddress);
-            paramters.Add("return_consignee_name" ,this.ReturnConsigneeName);
-            paramters.Add("return_consignee_phone" ,this.ReturnConsigneePhone);
-            paramters.Add("station_no" ,this.StationNo);
-            paramters.Add("station_name" ,this.StationName);
-            paramters.Add("order_mark" ,this.OrderMark);
-            paramters.Add("shop_order_source" ,this.ShopOrderSource);
-            paramters.Add("shop_order_create_time" ,this.ShopOrderCreateTime);
-            paramters.Add("picker" ,this.Picker);
-            paramters.Add("picker_call" ,this.PickerCall);
-            paramters.Add("piker_id" ,this.PikerId);
-            paramters.Add("pack_type" ,this.PackType);
-            paramters.Add("goods_no" ,this.GoodsNo);
-            paramters.Add("sku_id" ,this.SkuId);
-            paramters.Add("shopgoodsno" ,this.ShopGoodsNo);
-            paramters.Add("qty" ,this.Qty);
-            paramters.Add("goods_status" ,this.GoodsStatus);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("channels_seller_no", this.ChannelsSellerNo);
+            paramters.Add("channels_outbound_no", this.ChannelsOutboundNo);
+            paramters.Add("warehouse_no", this.WarehouseNo);
+            paramters.Add("carriers_id", this.CarriersId);
+            paramters.Add("expect_date", this.ExpectDate);
+            paramters.Add("order_no", this.OrderNo);
+            paramters.Add("shop_no", this.ShopNo);
+            paramters.Add("consignee_name", this.ConsigneeName);
+            paramters.Add("address_province", this.AddressProvince);
+            paramters.Add("address_city", this.AddressCity);
+            paramters.Add("address_county", this.AddressCounty);
+            paramters.Add("address_town", this.AddressTown);
+            paramters.Add("address", this.Address);
+            paramters.Add("zip_code", this.ZipCode);
+            paramters.Add("phone", this.Phone);
+            paramters.Add("mobile", this.Mobile);
+            paramters.Add("receivable", this.Receivable);
+            paramters.Add("email", this.Email);
+            paramters.Add("buyer_remark", this.BuyerRemark);
+            paramters.Add("verify_remark", this.VerifyRemark);
+            paramters.Add("return_consignee_address", this.ReturnConsigneeAddress);
+            paramters.Add("return_consignee_name", this.ReturnConsigneeName);
+            paramters.Add("return_consignee_phone", this.ReturnConsigneePhone);
+            paramters.Add("station_no", this.StationNo);
+            paramters.Add("station_name", this.StationName);
+            paramters.Add("order_mark", this.OrderMark);
+            paramters.Add("shop_order_source", this.ShopOrderSource);
+            paramters.Add("shop_order_create_time", this.ShopOrderCreateTime);
+            paramters.Add("picker", this.Picker);
+            paramters.Add("picker_call", this.PickerCall);
+            paramters.Add("piker_id", this.PikerId);
+            paramters.Add("pack_type", this.PackType);
+            paramters.Add("goods_no", this.GoodsNo);
+            paramters.Add("sku_id", this.SkuId);
+            paramters.Add("shopgoodsno", this.ShopGoodsNo);
+            paramters.Add("qty", this.Qty);
+            paramters.Add("goods_status", this.GoodsStatus);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("channels_seller_no", this.ChannelsSellerNo);
             RequestValidator.ValidateRequired("channels_outbound_no", this.ChannelsOutboundNo);

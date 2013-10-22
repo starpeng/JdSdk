@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 添加图片分类 Request
     /// </summary>
-    public class JingdongImgzoneCategoryAddRequest : IJdRequest<JingdongImgzoneCategoryAddResponse>
+    public class JingdongImgzoneCategoryAddRequest : JdRequestBase<JingdongImgzoneCategoryAddResponse>
     {
         /// <summary>
         /// 分类名称，自动过滤特殊字符
@@ -42,20 +40,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.imgzone.category.add"; }
+            get { return "jingdong.imgzone.category.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cate_name" ,this.CateName);
-            paramters.Add("parent_cate_id" ,this.ParentCateId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("cate_name", this.CateName);
+            paramters.Add("parent_cate_id", this.ParentCateId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 通过api 根据ware_id 商品编号 修改商品信息 Request
     /// </summary>
-    public class WareUpdateRequest : IJdRequest<WareUpdateResponse>
+    public class WareUpdateRequest : JdRequestBase<WareUpdateResponse>
     {
         /// <summary>
         /// 商品id
@@ -467,14 +465,14 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
             get { return "360buy.ware.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
+
             paramters.Add("ware_id", this.WareId);
             paramters.Add("shop_category", this.ShopCategory);
             paramters.Add("title", this.Title);
@@ -514,10 +512,10 @@ namespace JdSdk.Request
             paramters.Add("input_pids", this.InputPids);
             paramters.Add("input_strs", this.InputStrs);
             paramters.Add("stock_num", this.StockNum);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
             //RequestValidator.ValidateRequired("title", this.Title);

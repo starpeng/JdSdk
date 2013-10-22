@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获取用户收支列表，只能获取最近一周，最近一个月，最近三个月的信息 Request
     /// </summary>
-    public class JingdongKuaicheAccountIncomeExpenseSearchRequest : IJdRequest<JingdongKuaicheAccountIncomeExpenseSearchResponse>
+    public class JingdongKuaicheAccountIncomeExpenseSearchRequest : JdRequestBase<JingdongKuaicheAccountIncomeExpenseSearchResponse>
     {
         /// <summary>
         /// 收支类型,1收入，2支出
@@ -75,23 +73,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.account.income_expense.search"; }
+            get { return "jingdong.kuaiche.account.income_expense.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("in_out_type" ,this.InOutType);
-            paramters.Add("type" ,this.Type);
-            paramters.Add("check_type" ,this.CheckType);
-            paramters.Add("page_index" ,this.PageIndex);
-            paramters.Add("page_size" ,this.PageSize);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("in_out_type", this.InOutType);
+            paramters.Add("type", this.Type);
+            paramters.Add("check_type", this.CheckType);
+            paramters.Add("page_index", this.PageIndex);
+            paramters.Add("page_size", this.PageSize);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

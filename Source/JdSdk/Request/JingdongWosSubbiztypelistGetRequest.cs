@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     ///  Request
     /// </summary>
-    public class JingdongWosSubbiztypelistGetRequest : IJdRequest<JingdongWosSubbiztypelistGetResponse>
+    public class JingdongWosSubbiztypelistGetRequest : JdRequestBase<JingdongWosSubbiztypelistGetResponse>
     {
         /// <summary>
         /// 一级业务类型ID    (通过jingdong.wos.workinfo.get接口send_biztype_id字段获取)
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.wos.subbiztypelist.get"; }
+            get { return "jingdong.wos.subbiztypelist.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("biztype_id" ,this.BiztypeId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("biztype_id", this.BiztypeId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("biztype_id", this.BiztypeId);
         }

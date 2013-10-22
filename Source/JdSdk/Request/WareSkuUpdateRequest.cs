@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 通过api 根据sku_id 修改sku Request
     /// </summary>
-    public class WareSkuUpdateRequest : IJdRequest<WareSkuUpdateResponse>
+    public class WareSkuUpdateRequest : JdRequestBase<WareSkuUpdateResponse>
     {
         /// <summary>
         /// sku的id
@@ -92,24 +90,24 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.sku.update"; }
+            get { return "360buy.ware.sku.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("sku_id" ,this.SkuId);
-            paramters.Add("outer_id" ,this.OuterId);
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("jd_price" ,this.JdPrice);
-            paramters.Add("stock_num" ,this.StockNum);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("sku_id", this.SkuId);
+            paramters.Add("outer_id", this.OuterId);
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("jd_price", this.JdPrice);
+            paramters.Add("stock_num", this.StockNum);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("sku_id", this.SkuId);
             RequestValidator.ValidateRequired("ware_id", this.WareId);

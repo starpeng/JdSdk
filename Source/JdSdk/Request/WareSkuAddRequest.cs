@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 通过api 增加sku信息 Request
     /// </summary>
-    public class WareSkuAddRequest : IJdRequest<WareSkuAddResponse>
+    public class WareSkuAddRequest : JdRequestBase<WareSkuAddResponse>
     {
         /// <summary>
         /// 商品id
@@ -79,23 +77,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.sku.add"; }
+            get { return "360buy.ware.sku.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("attributes" ,this.Attributes);
-            paramters.Add("jd_price" ,this.JdPrice);
-            paramters.Add("stock_num" ,this.StockNum);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("attributes", this.Attributes);
+            paramters.Add("jd_price", this.JdPrice);
+            paramters.Add("stock_num", this.StockNum);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
             RequestValidator.ValidateRequired("attributes", this.Attributes);

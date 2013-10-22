@@ -16,8 +16,6 @@
 #endregion CopyRight
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
@@ -28,7 +26,6 @@ namespace JdSdk.Domain
     /// </summary>
     public class StockDetail
     {
-
         /// <summary>
         /// 商品状态
         /// </summary>

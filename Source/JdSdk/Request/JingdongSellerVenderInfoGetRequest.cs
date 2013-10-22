@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询商家基本信息，包括商家编号、商家类型、店铺编号、店铺名称、主营类目编号。 Request
     /// </summary>
-    public class JingdongSellerVenderInfoGetRequest : IJdRequest<JingdongSellerVenderInfoGetResponse>
+    public class JingdongSellerVenderInfoGetRequest : JdRequestBase<JingdongSellerVenderInfoGetResponse>
     {
         /// <summary>
         /// ext_json_param暂时无意义。因此此接口无需输入应用级参数，但需要构建空参数360buy_param_json={}
@@ -31,18 +29,18 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.vender.info.get"; }
+            get { return "jingdong.seller.vender.info.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

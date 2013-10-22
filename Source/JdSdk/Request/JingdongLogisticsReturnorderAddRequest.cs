@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 退货入库单申请 Request
     /// </summary>
-    public class JingdongLogisticsReturnorderAddRequest : IJdRequest<JingdongLogisticsReturnorderAddResponse>
+    public class JingdongLogisticsReturnorderAddRequest : JdRequestBase<JingdongLogisticsReturnorderAddResponse>
     {
         /// <summary>
         /// ISV商家编号
@@ -140,28 +138,28 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.returnorder.add"; }
+            get { return "jingdong.logistics.returnorder.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("seller_no" ,this.SellerNo);
-            paramters.Add("warehouse_no" ,this.WarehouseNo);
-            paramters.Add("inbound_no" ,this.InboundNo);
-            paramters.Add("josl_outbound_no" ,this.JoslOutboundNo);
-            paramters.Add("expected_date" ,this.ExpectedDate);
-            paramters.Add("isv_source" ,this.IsvSource);
-            paramters.Add("approver" ,this.Approver);
-            paramters.Add("goods_no" ,this.GoodsNo);
-            paramters.Add("expected_qty" ,this.ExpectedQty);
-            paramters.Add("stock_mark" ,this.StockMark);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("seller_no", this.SellerNo);
+            paramters.Add("warehouse_no", this.WarehouseNo);
+            paramters.Add("inbound_no", this.InboundNo);
+            paramters.Add("josl_outbound_no", this.JoslOutboundNo);
+            paramters.Add("expected_date", this.ExpectedDate);
+            paramters.Add("isv_source", this.IsvSource);
+            paramters.Add("approver", this.Approver);
+            paramters.Add("goods_no", this.GoodsNo);
+            paramters.Add("expected_qty", this.ExpectedQty);
+            paramters.Add("stock_mark", this.StockMark);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("warehouse_no", this.WarehouseNo);
             RequestValidator.ValidateRequired("inbound_no", this.InboundNo);

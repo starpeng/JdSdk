@@ -17,11 +17,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 using Newtonsoft.Json;
-using System.Net;
-using System.Diagnostics;
-using System.IO;
 
 namespace JdSdk
 {

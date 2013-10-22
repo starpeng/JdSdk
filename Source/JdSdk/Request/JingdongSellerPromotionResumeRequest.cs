@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 重启促销，使暂停的促销重新生效，只能对暂停的促销进行重启操作。 Request
     /// </summary>
-    public class JingdongSellerPromotionResumeRequest : IJdRequest<JingdongSellerPromotionResumeResponse>
+    public class JingdongSellerPromotionResumeRequest : JdRequestBase<JingdongSellerPromotionResumeResponse>
     {
         /// <summary>
         /// 促销编号
@@ -32,19 +30,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.resume"; }
+            get { return "jingdong.seller.promotion.resume"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("promo_id" ,this.PromoId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("promo_id", this.PromoId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("promo_id", this.PromoId);
         }

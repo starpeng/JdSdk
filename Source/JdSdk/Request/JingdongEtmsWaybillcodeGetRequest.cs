@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获取预分配的运单号 Request
     /// </summary>
-    public class JingdongEtmsWaybillcodeGetRequest : IJdRequest<JingdongEtmsWaybillcodeGetResponse>
+    public class JingdongEtmsWaybillcodeGetRequest : JdRequestBase<JingdongEtmsWaybillcodeGetResponse>
     {
         /// <summary>
         /// 商家订单号
@@ -42,20 +40,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.etms.waybillcode.get"; }
+            get { return "jingdong.etms.waybillcode.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("orderid" ,this.OrderId);
-            paramters.Add("customerid" ,this.CustomerId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("orderid", this.OrderId);
+            paramters.Add("customerid", this.CustomerId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("orderId", this.OrderId);
             RequestValidator.ValidateRequired("customerId", this.CustomerId);

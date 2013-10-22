@@ -7,7 +7,6 @@ Code generate by JdSdkTool.
 
 using System;
 using System.Xml.Serialization;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain

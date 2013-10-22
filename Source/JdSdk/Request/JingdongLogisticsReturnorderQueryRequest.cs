@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 退货入库单查询 Request
     /// </summary>
-    public class JingdongLogisticsReturnorderQueryRequest : IJdRequest<JingdongLogisticsReturnorderQueryResponse>
+    public class JingdongLogisticsReturnorderQueryRequest : JdRequestBase<JingdongLogisticsReturnorderQueryResponse>
     {
         /// <summary>
         /// 要查询的josl退货入库单号
@@ -32,19 +30,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.returnorder.query"; }
+            get { return "jingdong.logistics.returnorder.query"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("receipt_no" ,this.ReceiptNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("receipt_no", this.ReceiptNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("receipt_no", this.ReceiptNo);
         }

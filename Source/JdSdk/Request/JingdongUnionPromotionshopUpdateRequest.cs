@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询相关的店铺名称的店铺推广数据 Request
     /// </summary>
-    public class JingdongUnionPromotionshopUpdateRequest : IJdRequest<JingdongUnionPromotionshopUpdateResponse>
+    public class JingdongUnionPromotionshopUpdateRequest : JdRequestBase<JingdongUnionPromotionshopUpdateResponse>
     {
         /// <summary>
         /// 店铺名称串,如果shopName不填或者没有相匹配的店铺信息则返回默认的推广数据
@@ -43,20 +41,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.promotionshop.update"; }
+            get { return "jingdong.union.promotionshop.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("shopname" ,this.ShopName);
-            paramters.Add("fields" ,this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("shopname", this.ShopName);
+            paramters.Add("fields", this.Fields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

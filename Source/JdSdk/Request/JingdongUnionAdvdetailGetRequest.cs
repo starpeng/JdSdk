@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询店铺推广详情 Request
     /// </summary>
-    public class JingdongUnionAdvdetailGetRequest : IJdRequest<JingdongUnionAdvdetailGetResponse>
+    public class JingdongUnionAdvdetailGetRequest : JdRequestBase<JingdongUnionAdvdetailGetResponse>
     {
         /// <summary>
         /// 计划id
@@ -123,27 +121,27 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.advdetail.get"; }
+            get { return "jingdong.union.advdetail.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("plan_id" ,this.PlanId);
-            paramters.Add("goods_page_size" ,this.GoodsPageSize);
-            paramters.Add("goods_page_index" ,this.GoodsPageIndex);
-            paramters.Add("goods_sort_column" ,this.GoodsSortColumn);
-            paramters.Add("goods_sort" ,this.GoodsSort);
-            paramters.Add("activity_page_size" ,this.ActivityPageSize);
-            paramters.Add("activity_page_index" ,this.ActivityPageIndex);
-            paramters.Add("activity_sort_column" ,this.ActivitySortColumn);
-            paramters.Add("activity_sort" ,this.ActivitySort);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("plan_id", this.PlanId);
+            paramters.Add("goods_page_size", this.GoodsPageSize);
+            paramters.Add("goods_page_index", this.GoodsPageIndex);
+            paramters.Add("goods_sort_column", this.GoodsSortColumn);
+            paramters.Add("goods_sort", this.GoodsSort);
+            paramters.Add("activity_page_size", this.ActivityPageSize);
+            paramters.Add("activity_page_index", this.ActivityPageIndex);
+            paramters.Add("activity_sort_column", this.ActivitySortColumn);
+            paramters.Add("activity_sort", this.ActivitySort);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("plan_id", this.PlanId);
         }

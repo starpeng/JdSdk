@@ -17,9 +17,6 @@
 #endregion CopyRight
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
 
 namespace JdSdk

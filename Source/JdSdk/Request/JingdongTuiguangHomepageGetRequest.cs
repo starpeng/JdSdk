@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获得首页的推广链接信息 Request
     /// </summary>
-    public class JingdongTuiguangHomepageGetRequest : IJdRequest<JingdongTuiguangHomepageGetResponse>
+    public class JingdongTuiguangHomepageGetRequest : JdRequestBase<JingdongTuiguangHomepageGetResponse>
     {
         /// <summary>
         /// 需要返回的字段，
@@ -79,23 +77,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.tuiguang.homepage.get"; }
+            get { return "jingdong.tuiguang.homepage.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("fields" ,this.Fields);
-            paramters.Add("is_mobile" ,this.IsMobile);
-            paramters.Add("is_need_img" ,this.IsNeedImg);
-            paramters.Add("img_size_type" ,this.ImgSizeType);
-            paramters.Add("serial_number" ,this.SerialNumber);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("fields", this.Fields);
+            paramters.Add("is_mobile", this.IsMobile);
+            paramters.Add("is_need_img", this.IsNeedImg);
+            paramters.Add("img_size_type", this.ImgSizeType);
+            paramters.Add("serial_number", this.SerialNumber);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("fields", this.Fields);
         }

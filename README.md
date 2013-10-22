@@ -13,6 +13,11 @@
 
 
 ## 更新记录 ##
+-1.2.0
+>重构代码，接口加入附加参数，以支持随时可能新增的请求参数  
+>Json.Net改为使用dll引用  
+>wares.search接口补充ware_status,start_modified,end_modified请求参数  
+  
 -1.1.6
 >SkuStockUpdateResponse 更改SkuId为可空类型  
 >优惠明细CouponDetail.SkuId改为String类型  

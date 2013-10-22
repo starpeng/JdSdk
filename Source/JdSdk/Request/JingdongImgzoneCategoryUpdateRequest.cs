@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 更新图片分类 Request
     /// </summary>
-    public class JingdongImgzoneCategoryUpdateRequest : IJdRequest<JingdongImgzoneCategoryUpdateResponse>
+    public class JingdongImgzoneCategoryUpdateRequest : JdRequestBase<JingdongImgzoneCategoryUpdateResponse>
     {
         /// <summary>
         /// 要更新的分类ID
@@ -53,21 +51,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.imgzone.category.update"; }
+            get { return "jingdong.imgzone.category.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cate_id" ,this.CateId);
-            paramters.Add("cate_name" ,this.CateName);
-            paramters.Add("parent_cate_id" ,this.ParentCateId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("cate_id", this.CateId);
+            paramters.Add("cate_name", this.CateName);
+            paramters.Add("parent_cate_id", this.ParentCateId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("cate_id", this.CateId);
         }

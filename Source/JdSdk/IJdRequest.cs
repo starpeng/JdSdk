@@ -12,12 +12,12 @@ namespace JdSdk.Request
         /// 获取Jd的API名称。
         /// </summary>
         /// <returns>API名称</returns>
-        string ApiName
+        String ApiName
         {
             get;
         }
 
-        String GetParamJson();        
+        String GetParamJson();
 
         /// <summary>
         /// 提前验证参数。

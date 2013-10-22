@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 商品资料修改（此方法中,不修改的字段请保证添入null或者'null'等,请勿填写为'',可能会引起修改错误） Request
     /// </summary>
-    public class JingdongLogisticsSkuUpdateRequest : IJdRequest<JingdongLogisticsSkuUpdateResponse>
+    public class JingdongLogisticsSkuUpdateRequest : JdRequestBase<JingdongLogisticsSkuUpdateResponse>
     {
         /// <summary>
         /// JOSL商品唯一标识
@@ -295,43 +293,43 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.sku.update"; }
+            get { return "jingdong.logistics.sku.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("goods_no" ,this.GoodsNo);
-            paramters.Add("bar_code" ,this.BarCode);
-            paramters.Add("sku_id" ,this.SkuId);
-            paramters.Add("name" ,this.Name);
-            paramters.Add("goods_abbreviation" ,this.GoodsAbbreviation);
-            paramters.Add("category_id" ,this.CategoryId);
-            paramters.Add("category_name" ,this.CategoryName);
-            paramters.Add("brand_no" ,this.BrandNo);
-            paramters.Add("brand_name" ,this.BrandName);
-            paramters.Add("format" ,this.Format);
-            paramters.Add("color" ,this.Color);
-            paramters.Add("size" ,this.Size);
-            paramters.Add("gross_weight" ,this.GrossWeight);
-            paramters.Add("net_weight" ,this.NetWeight);
-            paramters.Add("size_definition" ,this.SizeDefinition);
-            paramters.Add("suppliers_name" ,this.SuppliersName);
-            paramters.Add("manufacturer" ,this.Manufacturer);
-            paramters.Add("suppliers_no" ,this.SuppliersNo);
-            paramters.Add("product_area" ,this.ProductArea);
-            paramters.Add("length" ,this.Length);
-            paramters.Add("width" ,this.Width);
-            paramters.Add("height" ,this.Height);
-            paramters.Add("volume" ,this.Volume);
-            paramters.Add("is_safe" ,this.IsSafe);
-            paramters.Add("safe_date" ,this.SafeDate);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("goods_no", this.GoodsNo);
+            paramters.Add("bar_code", this.BarCode);
+            paramters.Add("sku_id", this.SkuId);
+            paramters.Add("name", this.Name);
+            paramters.Add("goods_abbreviation", this.GoodsAbbreviation);
+            paramters.Add("category_id", this.CategoryId);
+            paramters.Add("category_name", this.CategoryName);
+            paramters.Add("brand_no", this.BrandNo);
+            paramters.Add("brand_name", this.BrandName);
+            paramters.Add("format", this.Format);
+            paramters.Add("color", this.Color);
+            paramters.Add("size", this.Size);
+            paramters.Add("gross_weight", this.GrossWeight);
+            paramters.Add("net_weight", this.NetWeight);
+            paramters.Add("size_definition", this.SizeDefinition);
+            paramters.Add("suppliers_name", this.SuppliersName);
+            paramters.Add("manufacturer", this.Manufacturer);
+            paramters.Add("suppliers_no", this.SuppliersNo);
+            paramters.Add("product_area", this.ProductArea);
+            paramters.Add("length", this.Length);
+            paramters.Add("width", this.Width);
+            paramters.Add("height", this.Height);
+            paramters.Add("volume", this.Volume);
+            paramters.Add("is_safe", this.IsSafe);
+            paramters.Add("safe_date", this.SafeDate);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("goods_no", this.GoodsNo);
         }

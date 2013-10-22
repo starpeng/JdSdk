@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 订单取消 Request
     /// </summary>
-    public class JingdongLogisticsOrderDeleteRequest : IJdRequest<JingdongLogisticsOrderDeleteResponse>
+    public class JingdongLogisticsOrderDeleteRequest : JdRequestBase<JingdongLogisticsOrderDeleteResponse>
     {
         /// <summary>
         /// JOSL单号
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.order.delete"; }
+            get { return "jingdong.logistics.order.delete"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("receipt_no" ,this.ReceiptNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("receipt_no", this.ReceiptNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("receipt_no", this.ReceiptNo);
         }

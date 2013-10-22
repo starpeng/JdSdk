@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获得商品详情页推广链接信息 Request
     /// </summary>
-    public class JingdongTuiguangWaresDetailGetRequest : IJdRequest<JingdongTuiguangWaresDetailGetResponse>
+    public class JingdongTuiguangWaresDetailGetRequest : JdRequestBase<JingdongTuiguangWaresDetailGetResponse>
     {
         /// <summary>
         /// 需要返回的字段，可选字段：ware_id,title,price,m_url,ware_imgs,skus
@@ -75,23 +73,23 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.tuiguang.wares.detail.get"; }
+            get { return "jingdong.tuiguang.wares.detail.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("fields" ,this.Fields);
-            paramters.Add("sku_ids" ,this.SkuIds);
-            paramters.Add("is_mobile" ,this.IsMobile);
-            paramters.Add("link_type" ,this.LinkType);
-            paramters.Add("img_size_type" ,this.ImgSizeType);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("fields", this.Fields);
+            paramters.Add("sku_ids", this.SkuIds);
+            paramters.Add("is_mobile", this.IsMobile);
+            paramters.Add("link_type", this.LinkType);
+            paramters.Add("img_size_type", this.ImgSizeType);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("sku_ids", this.SkuIds);
         }

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 新增一个商品 Request
     /// </summary>
-    public class WareAddRequest : IJdRequest<WareAddResponse>
+    public class WareAddRequest : JdRequestBase<WareAddResponse>
     {
         /// <summary>
         /// 类目id
@@ -456,56 +454,56 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.add"; }
+            get { return "360buy.ware.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cid" ,this.Cid);
-            paramters.Add("shop_category" ,this.ShopCategory);
-            paramters.Add("title" ,this.Title);
-            paramters.Add("upc_code" ,this.UpcCode);
-            paramters.Add("option_type" ,this.OptionType);
-            paramters.Add("item_num" ,this.ItemNum);
-            paramters.Add("producter" ,this.Producter);
-            paramters.Add("wrap" ,this.Wrap);
-            paramters.Add("length" ,this.Length);
-            paramters.Add("wide" ,this.Wide);
-            paramters.Add("high" ,this.High);
-            paramters.Add("weight" ,this.Weight);
-            paramters.Add("cost_price" ,this.CostPrice);
-            paramters.Add("market_price" ,this.MarketPrice);
-            paramters.Add("jd_price" ,this.JdPrice);
-            paramters.Add("notes" ,this.Notes);
-            paramters.Add("ware_image" ,this.WareImage);
-            paramters.Add("pack_listing" ,this.PackListing);
-            paramters.Add("service" ,this.Service);
-            paramters.Add("stock_num" ,this.StockNum);
-            paramters.Add("property_alias" ,this.PropertyAlias);
-            paramters.Add("attributes" ,this.Attributes);
-            paramters.Add("sku_prices" ,this.SkuPrices);
-            paramters.Add("sku_properties" ,this.SkuProperties);
-            paramters.Add("sku_stocks" ,this.SkuStocks);
-            paramters.Add("outer_id" ,this.OuterId);
-            paramters.Add("trade_no" ,this.TradeNo);
-            paramters.Add("is_pay_first" ,this.IsPayFirst);
-            paramters.Add("is_can_vat" ,this.IsCanVat);
-            paramters.Add("is_imported" ,this.IsImported);
-            paramters.Add("is_health_product" ,this.IsHealthProduct);
-            paramters.Add("is_shelf_life" ,this.IsShelfLife);
-            paramters.Add("shelf_life_days" ,this.ShelfLifeDays);
-            paramters.Add("is_serial_no" ,this.IsSerialNo);
-            paramters.Add("is_appliances_card" ,this.IsAppliancesCard);
-            paramters.Add("is_special_wet" ,this.IsSpecialWet);
-            paramters.Add("ware_big_small_model" ,this.WareBigSmallModel);
-            paramters.Add("ware_pack_type" ,this.WarePackType);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("cid", this.Cid);
+            paramters.Add("shop_category", this.ShopCategory);
+            paramters.Add("title", this.Title);
+            paramters.Add("upc_code", this.UpcCode);
+            paramters.Add("option_type", this.OptionType);
+            paramters.Add("item_num", this.ItemNum);
+            paramters.Add("producter", this.Producter);
+            paramters.Add("wrap", this.Wrap);
+            paramters.Add("length", this.Length);
+            paramters.Add("wide", this.Wide);
+            paramters.Add("high", this.High);
+            paramters.Add("weight", this.Weight);
+            paramters.Add("cost_price", this.CostPrice);
+            paramters.Add("market_price", this.MarketPrice);
+            paramters.Add("jd_price", this.JdPrice);
+            paramters.Add("notes", this.Notes);
+            paramters.Add("ware_image", this.WareImage);
+            paramters.Add("pack_listing", this.PackListing);
+            paramters.Add("service", this.Service);
+            paramters.Add("stock_num", this.StockNum);
+            paramters.Add("property_alias", this.PropertyAlias);
+            paramters.Add("attributes", this.Attributes);
+            paramters.Add("sku_prices", this.SkuPrices);
+            paramters.Add("sku_properties", this.SkuProperties);
+            paramters.Add("sku_stocks", this.SkuStocks);
+            paramters.Add("outer_id", this.OuterId);
+            paramters.Add("trade_no", this.TradeNo);
+            paramters.Add("is_pay_first", this.IsPayFirst);
+            paramters.Add("is_can_vat", this.IsCanVat);
+            paramters.Add("is_imported", this.IsImported);
+            paramters.Add("is_health_product", this.IsHealthProduct);
+            paramters.Add("is_shelf_life", this.IsShelfLife);
+            paramters.Add("shelf_life_days", this.ShelfLifeDays);
+            paramters.Add("is_serial_no", this.IsSerialNo);
+            paramters.Add("is_appliances_card", this.IsAppliancesCard);
+            paramters.Add("is_special_wet", this.IsSpecialWet);
+            paramters.Add("ware_big_small_model", this.WareBigSmallModel);
+            paramters.Add("ware_pack_type", this.WarePackType);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("cid", this.Cid);
             RequestValidator.ValidateRequired("title", this.Title);

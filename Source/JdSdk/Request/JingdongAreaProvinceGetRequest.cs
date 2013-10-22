@@ -6,11 +6,7 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -18,22 +14,19 @@ namespace JdSdk.Request
     /// <summary>
     ///  Request
     /// </summary>
-    public class JingdongAreaProvinceGetRequest : IJdRequest<JingdongAreaProvinceGetResponse>
+    public class JingdongAreaProvinceGetRequest : JdRequestBase<JingdongAreaProvinceGetResponse>
     {
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.area.province.get"; }
+            get { return "jingdong.area.province.get"; }
         }
 
-        public String GetParamJson()
-        {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
-        }
-
-        public void Validate()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
         }
 
+        public override void Validate()
+        {
+        }
     }
 }

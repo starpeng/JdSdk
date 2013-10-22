@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获得指定SKU ID的商品的推广数据 Request
     /// </summary>
-    public class JingdongUnionPromotiongoodUpdateRequest : IJdRequest<JingdongUnionPromotiongoodUpdateResponse>
+    public class JingdongUnionPromotiongoodUpdateRequest : JdRequestBase<JingdongUnionPromotiongoodUpdateResponse>
     {
         public JingdongUnionPromotiongoodUpdateRequest()
         {
@@ -48,20 +46,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
             get { return "jingdong.union.promotiongood.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
+
             paramters.Add("skuid", this.SkuId);
             paramters.Add("fields", this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

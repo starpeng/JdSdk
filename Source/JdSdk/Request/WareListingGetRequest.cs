@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据商品的一些信息查询商品。 Request
     /// </summary>
-    public class WareListingGetRequest : IJdRequest<WareListingGetResponse>
+    public class WareListingGetRequest : JdRequestBase<WareListingGetResponse>
     {
         /// <summary>
         /// 类目id
@@ -89,24 +87,24 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.listing.get"; }
+            get { return "360buy.ware.listing.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cid" ,this.Cid);
-            paramters.Add("start_modified" ,this.StartModified);
-            paramters.Add("end_modified" ,this.EndModified);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
+
+            paramters.Add("cid", this.Cid);
+            paramters.Add("start_modified", this.StartModified);
+            paramters.Add("end_modified", this.EndModified);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
             paramters.Add("fields", this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("page", this.Page);
             RequestValidator.ValidateRequired("page_size", this.PageSize);

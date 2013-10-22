@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     ///  Request
     /// </summary>
-    public class JingdongWosWorklistGetRequest : IJdRequest<JingdongWosWorklistGetResponse>
+    public class JingdongWosWorklistGetRequest : JdRequestBase<JingdongWosWorklistGetResponse>
     {
         /// <summary>
         /// 工单状态(1代表待回复,2代表待确认,3代表已作废,4代表已关闭,5代表已驳回)
@@ -86,24 +84,24 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.wos.worklist.get"; }
+            get { return "jingdong.wos.worklist.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("status" ,this.Status);
-            paramters.Add("order_id" ,this.OrderId);
-            paramters.Add("begin_date" ,this.BeginDate);
-            paramters.Add("end_date" ,this.EndDate);
-            paramters.Add("page_number" ,this.PageNumber);
-            paramters.Add("page_size" ,this.PageSize);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("status", this.Status);
+            paramters.Add("order_id", this.OrderId);
+            paramters.Add("begin_date", this.BeginDate);
+            paramters.Add("end_date", this.EndDate);
+            paramters.Add("page_number", this.PageNumber);
+            paramters.Add("page_size", this.PageSize);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("begin_date", this.BeginDate);
             RequestValidator.ValidateRequired("end_date", this.EndDate);

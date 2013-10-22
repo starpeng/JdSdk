@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据活动ID查询活动推广代码 Request
     /// </summary>
-    public class JingdongUnionActivityCodeGetRequest : IJdRequest<JingdongUnionActivityCodeGetResponse>
+    public class JingdongUnionActivityCodeGetRequest : JdRequestBase<JingdongUnionActivityCodeGetResponse>
     {
         /// <summary>
         /// 活动ID
@@ -32,19 +30,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.activity.code.get"; }
+            get { return "jingdong.union.activity.code.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("activity_id" ,this.ActivityId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("activity_id", this.ActivityId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("activity_id", this.ActivityId);
         }

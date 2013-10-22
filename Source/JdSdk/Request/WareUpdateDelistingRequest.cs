@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 通过api 根据ware_id 商品编号 操作商品下架 Request
     /// </summary>
-    public class WareUpdateDelistingRequest : IJdRequest<WareUpdateDelistingResponse>
+    public class WareUpdateDelistingRequest : JdRequestBase<WareUpdateDelistingResponse>
     {
         /// <summary>
         /// 商品的id
@@ -43,20 +41,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.update.delisting"; }
+            get { return "360buy.ware.update.delisting"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
         }

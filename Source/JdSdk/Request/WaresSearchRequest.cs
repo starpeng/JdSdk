@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据商品的一些信息进行搜索。 Request
     /// </summary>
-    public class WaresSearchRequest : IJdRequest<WaresSearchResponse>
+    public class WaresSearchRequest : JdRequestBase<WaresSearchResponse>
     {
         /// <summary>
         /// 类目id
@@ -97,7 +95,6 @@ namespace JdSdk.Request
             set;
         }
 
-
         /// <summary>
         /// 起始创建时间
         /// </summary>
@@ -132,32 +129,67 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        /// <summary>
+        /// 商品状态
+        /// 1:在售;2:待售
+        /// </summary>
+        /// <example>1</example>
+        [XmlElement("ware_status")]
+        [JsonProperty("ware_status")]
+        public String WareStatus
         {
-            get{ return "360buy.wares.search"; }
+            get;
+            set;
         }
 
-        public String GetParamJson()
+        /// <summary>
+        /// 起始创建时间
+        /// </summary>
+        [XmlElement("start_modified")]
+        [JsonProperty("start_modified")]
+        public Nullable<DateTime> StartModified
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cid" ,this.Cid);
-            paramters.Add("start_price" ,this.StartPrice);
-            paramters.Add("end_price" ,this.EndPrice);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("title" ,this.Title);
-            paramters.Add("order_by" ,this.OrderBy);
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 结束创建时间
+        /// </summary>
+        [XmlElement("end_modified")]
+        [JsonProperty("end_modified")]
+        public Nullable<DateTime> EndModified
+        {
+            get;
+            set;
+        }
+
+        public override String ApiName
+        {
+            get { return "360buy.wares.search"; }
+        }
+
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
+        {
+            paramters.Add("cid", this.Cid);
+            paramters.Add("start_price", this.StartPrice);
+            paramters.Add("end_price", this.EndPrice);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("title", this.Title);
+            paramters.Add("order_by", this.OrderBy);
             paramters.Add("start_time", this.StartTime);
             paramters.Add("end_time", this.EndTime);
             paramters.Add("fields", this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+            paramters.Add("ware_status", this.WareStatus);
+            paramters.Add("start_modified", this.StartModified);
+            paramters.Add("end_modified", this.EndModified);
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("page", this.Page);
             RequestValidator.ValidateRequired("page_size", this.PageSize);
         }
-
     }
 }

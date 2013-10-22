@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获取多订单信息 Request
     /// </summary>
-    public class JingdongLogisticsOrderSearchRequest : IJdRequest<JingdongLogisticsOrderSearchResponse>
+    public class JingdongLogisticsOrderSearchRequest : JdRequestBase<JingdongLogisticsOrderSearchResponse>
     {
         /// <summary>
         /// JOSL唯一单号(多订单请用英文','分割,最大支持200单)
@@ -42,20 +40,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.logistics.order.search"; }
+            get { return "jingdong.logistics.order.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("receipt_nos" ,this.ReceiptNos);
-            paramters.Add("status" ,this.Status);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("receipt_nos", this.ReceiptNos);
+            paramters.Add("status", this.Status);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("receipt_nos", this.ReceiptNos);
         }

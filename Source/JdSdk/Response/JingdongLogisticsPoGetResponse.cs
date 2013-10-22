@@ -6,10 +6,10 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Xml.Serialization;
 using JdSdk.Domain;
+using Newtonsoft.Json;
 
 namespace JdSdk.Response
 {

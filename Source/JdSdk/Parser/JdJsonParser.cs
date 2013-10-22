@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace JdSdk.Parser

@@ -6,19 +6,18 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Xml.Serialization;
 using JdSdk.Domain;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据条件检索订单信息 Request
     /// </summary>
-    public class AfterSearchRequest : IJdRequest<AfterSearchResponse>
+    public class AfterSearchRequest : JdRequestBase<AfterSearchResponse>
     {
         /// <summary>
         /// 查询字段对应Field中的key，查询字段的值对应Field中的value 查询字段键值对，详见“查询字段”
@@ -26,7 +25,7 @@ namespace JdSdk.Request
         /// <example>字段:值;字段:值queryField.setKey(return_id) ;queryField.setValue(11231)</example>
         [XmlElement("query_fields")]
         [JsonProperty("query_fields")]
-        public List < Field> QueryFields
+        public List<Field> QueryFields
         {
             get;
             set;
@@ -67,22 +66,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.after.search"; }
+            get { return "360buy.after.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("query_fields" ,this.QueryFields);
-            paramters.Add("select_fields" ,this.SelectFields);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("query_fields", this.QueryFields);
+            paramters.Add("select_fields", this.SelectFields);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("select_fields", this.SelectFields);
             RequestValidator.ValidateRequired("page", this.Page);

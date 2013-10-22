@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 添加参加促销的sku，最多支持300个SKU，当基于套装促销添加SKU时，最多可设置3个商品的SKU，并且相同商品的次序要一致；当基于赠品促销添加SKU时，赠品SKU只能是1-5个，每个赠品只能赠送1-3个，赠品的总价应低于主商品中的最小京东价。 Request
     /// </summary>
-    public class JingdongSellerPromotionSkuAddRequest : IJdRequest<JingdongSellerPromotionSkuAddResponse>
+    public class JingdongSellerPromotionSkuAddRequest : JdRequestBase<JingdongSellerPromotionSkuAddResponse>
     {
         /// <summary>
         /// 促销编号
@@ -101,25 +99,25 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.sku.add"; }
+            get { return "jingdong.seller.promotion.sku.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("promo_id" ,this.PromoId);
-            paramters.Add("sku_ids" ,this.SkuIds);
-            paramters.Add("jd_prices" ,this.JdPrices);
-            paramters.Add("promo_prices" ,this.PromoPrices);
-            paramters.Add("seq" ,this.Seq);
-            paramters.Add("num" ,this.Num);
-            paramters.Add("bind_type" ,this.BindType);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("promo_id", this.PromoId);
+            paramters.Add("sku_ids", this.SkuIds);
+            paramters.Add("jd_prices", this.JdPrices);
+            paramters.Add("promo_prices", this.PromoPrices);
+            paramters.Add("seq", this.Seq);
+            paramters.Add("num", this.Num);
+            paramters.Add("bind_type", this.BindType);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("promo_id", this.PromoId);
             RequestValidator.ValidateRequired("sku_ids", this.SkuIds);

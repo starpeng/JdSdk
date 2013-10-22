@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据skuId获取商品信息（需所属商家授权） Request
     /// </summary>
-    public class JingdongKuaicheGoodsGetRequest : IJdRequest<JingdongKuaicheGoodsGetResponse>
+    public class JingdongKuaicheGoodsGetRequest : JdRequestBase<JingdongKuaicheGoodsGetResponse>
     {
         /// <summary>
         /// 商品skuid
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.goods.get"; }
+            get { return "jingdong.kuaiche.goods.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("sku_id" ,this.SkuId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("sku_id", this.SkuId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("sku_id", this.SkuId);
         }

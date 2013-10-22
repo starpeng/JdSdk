@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 添加促销道具, 道具类型允许组合，但不允许重复(相同类型的道具，最后一次添加有效，只适用于单品促销) Request
     /// </summary>
-    public class JingdongSellerPromotionPropAddRequest : IJdRequest<JingdongSellerPromotionPropAddResponse>
+    public class JingdongSellerPromotionPropAddRequest : JdRequestBase<JingdongSellerPromotionPropAddResponse>
     {
         /// <summary>
         /// 促销编号
@@ -68,22 +66,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.prop.add"; }
+            get { return "jingdong.seller.promotion.prop.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("promo_id" ,this.PromoId);
-            paramters.Add("type" ,this.Type);
-            paramters.Add("num" ,this.Num);
-            paramters.Add("used_way" ,this.UsedWay);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("promo_id", this.PromoId);
+            paramters.Add("type", this.Type);
+            paramters.Add("num", this.Num);
+            paramters.Add("used_way", this.UsedWay);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("promo_id", this.PromoId);
             RequestValidator.ValidateRequired("type", this.Type);

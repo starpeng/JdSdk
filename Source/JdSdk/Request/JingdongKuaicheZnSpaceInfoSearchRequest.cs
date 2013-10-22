@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据页面id查询该页面下的广告位信息 Request
     /// </summary>
-    public class JingdongKuaicheZnSpaceInfoSearchRequest : IJdRequest<JingdongKuaicheZnSpaceInfoSearchResponse>
+    public class JingdongKuaicheZnSpaceInfoSearchRequest : JdRequestBase<JingdongKuaicheZnSpaceInfoSearchResponse>
     {
         /// <summary>
         /// 页面id
@@ -31,19 +29,19 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.kuaiche.zn.space.info.search"; }
+            get { return "jingdong.kuaiche.zn.space.info.search"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("page_id" ,this.PageId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("page_id", this.PageId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
         }
 

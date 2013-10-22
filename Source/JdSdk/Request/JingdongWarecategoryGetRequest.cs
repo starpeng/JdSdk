@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获取类目。 Request
     /// </summary>
-    public class JingdongWarecategoryGetRequest : IJdRequest<JingdongWarecategoryGetResponse>
+    public class JingdongWarecategoryGetRequest : JdRequestBase<JingdongWarecategoryGetResponse>
     {
         /// <summary>
         /// 类目id，默认为0
@@ -56,21 +54,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.warecategory.get"; }
+            get { return "jingdong.warecategory.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cid" ,this.Cid);
-            paramters.Add("level" ,this.Level);
-            paramters.Add("fields" ,this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("cid", this.Cid);
+            paramters.Add("level", this.Level);
+            paramters.Add("fields", this.Fields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("cid", this.Cid);
             RequestValidator.ValidateRequired("level", this.Level);

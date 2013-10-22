@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 查询相关的活动推广数据 Request
     /// </summary>
-    public class JingdongUnionPromotionactivityQueryRequest : IJdRequest<JingdongUnionPromotionactivityQueryResponse>
+    public class JingdongUnionPromotionactivityQueryRequest : JdRequestBase<JingdongUnionPromotionactivityQueryResponse>
     {
         /// <summary>
         /// 活动名称关键字,如果activity_keywords和activity_categoryId为空或者是没有找到相匹配的结果，则返回默认的广数据
@@ -100,25 +98,25 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.promotionactivity.query"; }
+            get { return "jingdong.union.promotionactivity.query"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("keywords" ,this.Keywords);
-            paramters.Add("categoryid" ,this.CategoryId);
-            paramters.Add("property" ,this.Property);
-            paramters.Add("sort" ,this.Sort);
-            paramters.Add("pageindex" ,this.PageIndex);
-            paramters.Add("pagesize" ,this.PageSize);
-            paramters.Add("fields" ,this.Fields);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("keywords", this.Keywords);
+            paramters.Add("categoryid", this.CategoryId);
+            paramters.Add("property", this.Property);
+            paramters.Add("sort", this.Sort);
+            paramters.Add("pageindex", this.PageIndex);
+            paramters.Add("pagesize", this.PageSize);
+            paramters.Add("fields", this.Fields);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("pageIndex", this.PageIndex);
             RequestValidator.ValidateRequired("pageSize", this.PageSize);

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 通过api 根据商品Id，销售属性值Id设置图片 Request
     /// </summary>
-    public class WarePropimgUpdateRequest : IJdRequest<WarePropimgUpdateResponse>
+    public class WarePropimgUpdateRequest : JdRequestBase<WarePropimgUpdateResponse>
     {
         /// <summary>
         /// 商品的id
@@ -67,22 +65,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.propimg.update"; }
+            get { return "360buy.ware.propimg.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("ware_id" ,this.WareId);
-            paramters.Add("attribute_value_id" ,this.AttributeValueId);
-            paramters.Add("is_main_pic" ,this.IsMainPic);
-            paramters.Add("image_id" ,this.ImageId);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("ware_id", this.WareId);
+            paramters.Add("attribute_value_id", this.AttributeValueId);
+            paramters.Add("is_main_pic", this.IsMainPic);
+            paramters.Add("image_id", this.ImageId);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("ware_id", this.WareId);
             RequestValidator.ValidateRequired("attribute_value_id", this.AttributeValueId);

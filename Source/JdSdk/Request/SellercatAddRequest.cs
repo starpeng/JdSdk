@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 添加卖家自定义类目。 Request
     /// </summary>
-    public class SellercatAddRequest : IJdRequest<SellercatAddResponse>
+    public class SellercatAddRequest : JdRequestBase<SellercatAddResponse>
     {
         /// <summary>
         /// 父类目编号，如果类目为店铺下的一级类目：值等于0，如果类目为子类目，调用获取360buy.warecats.get父类目编号
@@ -68,22 +66,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.sellercat.add"; }
+            get { return "360buy.sellercat.add"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("parent_id" ,this.ParentId);
-            paramters.Add("name" ,this.Name);
-            paramters.Add("is_open" ,this.IsOpen);
-            paramters.Add("is_home_show" ,this.IsHomeShow);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("parent_id", this.ParentId);
+            paramters.Add("name", this.Name);
+            paramters.Add("is_open", this.IsOpen);
+            paramters.Add("is_home_show", this.IsHomeShow);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("parent_id", this.ParentId);
             RequestValidator.ValidateRequired("name", this.Name);

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 上传单张图片 Request
     /// </summary>
-    public class JingdongImgzonePictureUploadRequest : IJdRequest<JingdongImgzonePictureUploadResponse>
+    public class JingdongImgzonePictureUploadRequest : JdRequestBase<JingdongImgzonePictureUploadResponse>
     {
         /// <summary>
         /// 图片二进制文件流，允许png、jpg、gif、jpeg、bmp图片格式，1M以内。
@@ -53,21 +51,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.imgzone.picture.upload"; }
+            get { return "jingdong.imgzone.picture.upload"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("image_data" ,this.ImageData);
-            paramters.Add("picture_cate_id" ,this.PictureCateId);
-            paramters.Add("picture_name" ,this.PictureName);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("image_data", this.ImageData);
+            paramters.Add("picture_cate_id", this.PictureCateId);
+            paramters.Add("picture_name", this.PictureName);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("image_data", this.ImageData);
             RequestValidator.ValidateRequired("picture_cate_id", this.PictureCateId);

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
 using System.Xml;
 using JdSdk.Parser;
 using JdSdk.Request;
-using JdSdk.Domain;
-using System.Text;
-using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 
 namespace JdSdk

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 商家订单备注修改。 Request
     /// </summary>
-    public class OrderVenderRemarkUpdateRequest : IJdRequest<OrderVenderRemarkUpdateResponse>
+    public class OrderVenderRemarkUpdateRequest : JdRequestBase<OrderVenderRemarkUpdateResponse>
     {
         /// <summary>
         /// 订单号
@@ -53,21 +51,21 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.order.vender.remark.update"; }
+            get { return "360buy.order.vender.remark.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("order_id" ,this.OrderId);
-            paramters.Add("remark" ,this.Remark);
-            paramters.Add("trade_no" ,this.TradeNo);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("order_id", this.OrderId);
+            paramters.Add("remark", this.Remark);
+            paramters.Add("trade_no", this.TradeNo);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("order_id", this.OrderId);
             RequestValidator.ValidateRequired("remark", this.Remark);

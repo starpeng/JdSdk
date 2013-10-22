@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 根据商家输入的计划信息新建或修改商家计划 Request
     /// </summary>
-    public class JingdongUnionPlanSaveRequest : IJdRequest<JingdongUnionPlanSaveResponse>
+    public class JingdongUnionPlanSaveRequest : JdRequestBase<JingdongUnionPlanSaveResponse>
     {
         /// <summary>
         /// 计划编号
@@ -98,25 +96,25 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.union.plan.save"; }
+            get { return "jingdong.union.plan.save"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("planid" ,this.PlanId);
-            paramters.Add("planname" ,this.PlanName);
-            paramters.Add("startdate" ,this.StartDate);
-            paramters.Add("enddate" ,this.EndDate);
-            paramters.Add("notes" ,this.Notes);
-            paramters.Add("status" ,this.Status);
-            paramters.Add("category" ,this.Category);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("planid", this.PlanId);
+            paramters.Add("planname", this.PlanName);
+            paramters.Add("startdate", this.StartDate);
+            paramters.Add("enddate", this.EndDate);
+            paramters.Add("notes", this.Notes);
+            paramters.Add("status", this.Status);
+            paramters.Add("category", this.Category);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("planId", this.PlanId);
             RequestValidator.ValidateRequired("planName", this.PlanName);

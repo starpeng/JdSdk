@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 分页查询促销列表，目前可以根据类型、状态进行查询，也支持组合查询 Request
     /// </summary>
-    public class JingdongSellerPromotionListRequest : IJdRequest<JingdongSellerPromotionListResponse>
+    public class JingdongSellerPromotionListRequest : JdRequestBase<JingdongSellerPromotionListResponse>
     {
         /// <summary>
         /// 促销类型，可选值：单品促销（1），赠品促销（4），套装促销（6）
@@ -68,22 +66,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.seller.promotion.list"; }
+            get { return "jingdong.seller.promotion.list"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("type" ,this.Type);
-            paramters.Add("status" ,this.Status);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("size" ,this.Size);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("type", this.Type);
+            paramters.Add("status", this.Status);
+            paramters.Add("page", this.Page);
+            paramters.Add("size", this.Size);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("type", this.Type);
         }

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 更新商家类目 Request
     /// </summary>
-    public class SellercatUpdateRequest : IJdRequest<SellercatUpdateResponse>
+    public class SellercatUpdateRequest : JdRequestBase<SellercatUpdateResponse>
     {
         /// <summary>
         /// 类目ID
@@ -68,22 +66,22 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.sellercat.update"; }
+            get { return "360buy.sellercat.update"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("cid" ,this.Cid);
-            paramters.Add("shop_id" ,this.ShopId);
-            paramters.Add("cat_name" ,this.CatName);
-            paramters.Add("home_show" ,this.HomeShow);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("cid", this.Cid);
+            paramters.Add("shop_id", this.ShopId);
+            paramters.Add("cat_name", this.CatName);
+            paramters.Add("home_show", this.HomeShow);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("cid", this.Cid);
             RequestValidator.ValidateRequired("shop_id", this.ShopId);

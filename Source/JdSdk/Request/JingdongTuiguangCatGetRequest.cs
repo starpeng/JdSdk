@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获得频道页的推广链接信息 Request
     /// </summary>
-    public class JingdongTuiguangCatGetRequest : IJdRequest<JingdongTuiguangCatGetResponse>
+    public class JingdongTuiguangCatGetRequest : JdRequestBase<JingdongTuiguangCatGetResponse>
     {
         /// <summary>
         /// 需要返回的字段，  有以下可选字段：ware_id,title,price,pic_url,commission_fee,click_url,shop_click_url
@@ -141,29 +139,29 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "jingdong.tuiguang.cat.get"; }
+            get { return "jingdong.tuiguang.cat.get"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("fields" ,this.Fields);
-            paramters.Add("a_cid" ,this.ACid);
-            paramters.Add("b_cid" ,this.BCid);
-            paramters.Add("c_cid" ,this.CCid);
-            paramters.Add("is_mobile" ,this.IsMobile);
-            paramters.Add("page" ,this.Page);
-            paramters.Add("page_size" ,this.PageSize);
-            paramters.Add("level" ,this.Level);
-            paramters.Add("is_need_img" ,this.IsNeedImg);
-            paramters.Add("serial_number" ,this.SerialNumber);
-            paramters.Add("img_size_type" ,this.ImgSizeType);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("fields", this.Fields);
+            paramters.Add("a_cid", this.ACid);
+            paramters.Add("b_cid", this.BCid);
+            paramters.Add("c_cid", this.CCid);
+            paramters.Add("is_mobile", this.IsMobile);
+            paramters.Add("page", this.Page);
+            paramters.Add("page_size", this.PageSize);
+            paramters.Add("level", this.Level);
+            paramters.Add("is_need_img", this.IsNeedImg);
+            paramters.Add("serial_number", this.SerialNumber);
+            paramters.Add("img_size_type", this.ImgSizeType);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("a_cid", this.ACid);
             RequestValidator.ValidateRequired("page", this.Page);

@@ -6,19 +6,17 @@ Code generate by JdSdkTool.
 #endregion
 
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JdSdk.Domain;
+using System.Xml.Serialization;
 using JdSdk.Response;
+using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
     /// 获取类目下的属性值信息。 Request
     /// </summary>
-    public class WareGetAttvalueRequest : IJdRequest<WareGetAttvalueResponse>
+    public class WareGetAttvalueRequest : JdRequestBase<WareGetAttvalueResponse>
     {
         /// <summary>
         /// 需返回的字段列表。
@@ -43,20 +41,20 @@ namespace JdSdk.Request
             set;
         }
 
-        public String ApiName
+        public override String ApiName
         {
-            get{ return "360buy.ware.get.attvalue"; }
+            get { return "360buy.ware.get.attvalue"; }
         }
 
-        public String GetParamJson()
+        protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            Dictionary<String, Object> paramters = new Dictionary<string, object>();
-            paramters.Add("fields" ,this.Fields);
-            paramters.Add("avs" ,this.Avs);
-            return JsonConvert.SerializeObject(paramters, JdUtils.GetJsonConverters());
+
+            paramters.Add("fields", this.Fields);
+            paramters.Add("avs", this.Avs);
+
         }
 
-        public void Validate()
+        public override void Validate()
         {
             RequestValidator.ValidateRequired("fields", this.Fields);
             RequestValidator.ValidateRequired("avs", this.Avs);
