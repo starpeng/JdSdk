@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.1.6.zip "1.1.6")
+[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.2.0.zip "1.2.0")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
 
