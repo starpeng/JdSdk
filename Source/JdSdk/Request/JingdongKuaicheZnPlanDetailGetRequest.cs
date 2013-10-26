@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:55.06773 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:43.85907 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -23,7 +26,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("plan_id")]
         [JsonProperty("plan_id")]
-        public Nullable<Int64> PlanId
+        public Int64 PlanId
         {
             get;
             set;
@@ -31,14 +34,12 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.zn.plan.detail.get"; }
+            get{ return "jingdong.kuaiche.zn.plan.detail.get"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("plan_id", this.PlanId);
-
+            paramters.Add("plan_id" ,this.PlanId);
         }
 
         public override void Validate()

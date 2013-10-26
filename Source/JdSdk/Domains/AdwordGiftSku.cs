@@ -1,6 +1,7 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
+Copyright © starpeng@vip.qq.com
 2013-07-29 13:02:46.27892 +08:00
 */
 #endregion
@@ -55,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("number")]
         [JsonProperty("number")]
-        public Nullable<Decimal> Number
+        public Nullable<Decimal> Int64
         {
             get;
             set;

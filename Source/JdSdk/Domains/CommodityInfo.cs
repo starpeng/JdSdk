@@ -1,13 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.17479 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.76947 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -23,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public Nullable<Int64> SkuId
+        public Int64 SkuId
         {
             get;
             set;
@@ -56,7 +57,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("material_url")]
         [JsonProperty("material_url")]
-        public String[] MaterialUrl
+        public List<String> MaterialUrl
         {
             get;
             set;
@@ -89,7 +90,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("price")]
         [JsonProperty("price")]
-        public Nullable<Decimal> Price
+        public Int64 Price
         {
             get;
             set;
@@ -122,7 +123,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_category_id")]
         [JsonProperty("page_category_id")]
-        public Nullable<Int64> PageCategoryId
+        public Int64 PageCategoryId
         {
             get;
             set;
@@ -144,7 +145,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("material_spu")]
         [JsonProperty("material_spu")]
-        public CommoditySpu[] MaterialSpu
+        public List<CommoditySpu> MaterialSpu
         {
             get;
             set;
@@ -155,7 +156,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Int64> Id
+        public Int64 Id
         {
             get;
             set;
@@ -166,7 +167,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("plan_id")]
         [JsonProperty("plan_id")]
-        public Nullable<Int64> PlanId
+        public Int64 PlanId
         {
             get;
             set;
@@ -177,7 +178,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("space_id")]
         [JsonProperty("space_id")]
-        public Nullable<Int64> SpaceId
+        public Int64 SpaceId
         {
             get;
             set;
@@ -188,7 +189,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("review_status")]
         [JsonProperty("review_status")]
-        public Nullable<Decimal> ReviewStatus
+        public Int64 ReviewStatus
         {
             get;
             set;

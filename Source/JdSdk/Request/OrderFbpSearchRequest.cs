@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:34.21152 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:32.11640 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -79,18 +82,16 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "360buy.order.fbp.search"; }
+            get{ return "360buy.order.fbp.search"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("start_date", this.StartDate);
-            paramters.Add("end_date", this.EndDate);
-            paramters.Add("page", this.Page);
-            paramters.Add("page_size", this.PageSize);
-            paramters.Add("optional_fields", this.OptionalFields);
-
+            paramters.Add("start_date" ,this.StartDate);
+            paramters.Add("end_date" ,this.EndDate);
+            paramters.Add("page" ,this.Page);
+            paramters.Add("page_size" ,this.PageSize);
+            paramters.Add("optional_fields" ,this.OptionalFields);
         }
 
         public override void Validate()

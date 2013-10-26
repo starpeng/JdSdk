@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.15479 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.76046 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_index")]
         [JsonProperty("page_index")]
-        public Nullable<Int64> PageIndex
+        public Int64 PageIndex
         {
             get;
             set;
@@ -33,7 +35,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_total")]
         [JsonProperty("page_total")]
-        public Nullable<Int64> PageTotal
+        public Int64 PageTotal
         {
             get;
             set;
@@ -44,7 +46,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_size")]
         [JsonProperty("page_size")]
-        public Nullable<Int64> PageSize
+        public Int64 PageSize
         {
             get;
             set;
@@ -55,7 +57,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("data")]
         [JsonProperty("data")]
-        public IncomeExpenseVO[] Data
+        public List<IncomeExpenseVO> Data
         {
             get;
             set;

@@ -1,13 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:02:04.75727 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.74846 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -107,7 +108,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单状态（英文）
+        /// 订单状态（英文）具体返回值列表请发邮件至jos#jd.com获取
         /// </summary>
         [XmlElement("order_state")]
         [JsonProperty("order_state")]
@@ -118,7 +119,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单状态说明（中文）
+        /// 订单状态说明（中文） 具体返回值列表请发邮件至jos#jd.com获取
         /// </summary>
         [XmlElement("order_state_remark")]
         [JsonProperty("order_state_remark")]
@@ -129,7 +130,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 送货（日期）类型（1-只工作日送货(双休日、假日不用送);2-只双休日、假日送货(工作日不用送);3-工作日、双休日与假日均可送货;其他值-返回“任意时间”
+        /// 送货（日期）类型（1-只工作日送货(双休日、假日不用送);2-只双休日、假日送货(工作日不用送);3-工作日、双休日与假日均可送货;其他值-返回&quot;任意时间&quot;
         /// </summary>
         [XmlElement("delivery_type")]
         [JsonProperty("delivery_type")]
@@ -140,7 +141,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 发票信息“invoice_info: 不需要开具发票”下无需开具发票；其它返回值请正常开具发票
+        /// 发票信息&quot;invoice_info: 不需要开具发票&quot;下无需开具发票；其它返回值请正常开具发票
         /// </summary>
         [XmlElement("invoice_info")]
         [JsonProperty("invoice_info")]
@@ -173,7 +174,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 结单时间       如返回信息为“0001-01-01    00:00:00”和“1970-01-01 00:00:00”，可认为此订单为未完成状态。
+        /// 结单时间       如返回信息为&quot;0001-01-01    00:00:00&quot;和&quot;1970-01-01 00:00:00&quot;，可认为此订单为未完成状态。
         /// </summary>
         [XmlElement("order_end_time")]
         [JsonProperty("order_end_time")]

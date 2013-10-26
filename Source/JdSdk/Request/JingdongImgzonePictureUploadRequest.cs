@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:46.75324 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:41.22592 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -23,14 +26,14 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("image_data")]
         [JsonProperty("image_data")]
-        public Byte[] ImageData
+        public List<byte> ImageData
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 上传到的图片分类ID
+        /// 上传到的图片分类ID，为空上传至 默认分类
         /// </summary>
         [XmlElement("picture_cate_id")]
         [JsonProperty("picture_cate_id")]
@@ -41,7 +44,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 图片名称，不超过64字节
+        /// 图片名称，不超过64字节，为空默认 未命名
         /// </summary>
         [XmlElement("picture_name")]
         [JsonProperty("picture_name")]
@@ -53,23 +56,19 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.imgzone.picture.upload"; }
+            get{ return "jingdong.imgzone.picture.upload"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("image_data", this.ImageData);
-            paramters.Add("picture_cate_id", this.PictureCateId);
-            paramters.Add("picture_name", this.PictureName);
-
+            paramters.Add("image_data" ,this.ImageData);
+            paramters.Add("picture_cate_id" ,this.PictureCateId);
+            paramters.Add("picture_name" ,this.PictureName);
         }
 
         public override void Validate()
         {
             RequestValidator.ValidateRequired("image_data", this.ImageData);
-            RequestValidator.ValidateRequired("picture_cate_id", this.PictureCateId);
-            RequestValidator.ValidateRequired("picture_name", this.PictureName);
         }
 
     }

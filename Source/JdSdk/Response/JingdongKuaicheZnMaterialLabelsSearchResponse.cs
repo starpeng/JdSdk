@@ -1,10 +1,16 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:48.77536 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:43.25004 +08:00
 */
 #endregion
 
+using System;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {

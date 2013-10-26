@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:02:04.77027 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.75146 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -60,6 +62,18 @@ namespace JdSdk.Domain
         [XmlElement("deliveryId")]
         [JsonProperty("deliveryId")]
         public String DeliveryId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 京东运单号
+        /// </summary>
+        /// <example>000989987688</example>
+        [XmlElement("deliveryIdList")]
+        [JsonProperty("deliveryIdList")]
+        public String DeliveryIdList
         {
             get;
             set;

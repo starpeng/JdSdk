@@ -1,6 +1,7 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
+Copyright © starpeng@vip.qq.com
 2013-09-07 18:18:09.00021 +08:00
 */
 #endregion

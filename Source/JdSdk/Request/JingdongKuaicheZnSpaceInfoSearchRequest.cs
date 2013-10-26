@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:55.73677 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:45.07514 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -19,11 +22,11 @@ namespace JdSdk.Request
     public class JingdongKuaicheZnSpaceInfoSearchRequest : JdRequestBase<JingdongKuaicheZnSpaceInfoSearchResponse>
     {
         /// <summary>
-        /// 页面id
+        /// 频道页输入三级类目page_id，所有page_id均通过jingdong.kuaiche.zn.space.page.by.type.search获得
         /// </summary>
         [XmlElement("page_id")]
         [JsonProperty("page_id")]
-        public Nullable<Int64> PageId
+        public Int64 PageId
         {
             get;
             set;
@@ -31,18 +34,17 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.zn.space.info.search"; }
+            get{ return "jingdong.kuaiche.zn.space.info.search"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("page_id", this.PageId);
-
+            paramters.Add("page_id" ,this.PageId);
         }
 
         public override void Validate()
         {
+            RequestValidator.ValidateRequired("page_id", this.PageId);
         }
 
     }

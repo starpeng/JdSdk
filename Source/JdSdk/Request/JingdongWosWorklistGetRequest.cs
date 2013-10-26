@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:02:04.54926 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.54045 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -86,19 +89,17 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.wos.worklist.get"; }
+            get{ return "jingdong.wos.worklist.get"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("status", this.Status);
-            paramters.Add("order_id", this.OrderId);
-            paramters.Add("begin_date", this.BeginDate);
-            paramters.Add("end_date", this.EndDate);
-            paramters.Add("page_number", this.PageNumber);
-            paramters.Add("page_size", this.PageSize);
-
+            paramters.Add("status" ,this.Status);
+            paramters.Add("order_id" ,this.OrderId);
+            paramters.Add("begin_date" ,this.BeginDate);
+            paramters.Add("end_date" ,this.EndDate);
+            paramters.Add("page_number" ,this.PageNumber);
+            paramters.Add("page_size" ,this.PageSize);
         }
 
         public override void Validate()

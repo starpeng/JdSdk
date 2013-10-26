@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.15579 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.76046 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("swift_number")]
         [JsonProperty("swift_number")]
-        public Nullable<Decimal> SwiftNumber
+        public Int64 SwiftNumber
         {
             get;
             set;
@@ -44,7 +46,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("amount")]
         [JsonProperty("amount")]
-        public Nullable<Decimal> Amount
+        public Int64 Amount
         {
             get;
             set;
@@ -55,7 +57,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("in_out_type")]
         [JsonProperty("in_out_type")]
-        public Nullable<Int64> InOutType
+        public Int64 InOutType
         {
             get;
             set;

@@ -1,18 +1,21 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:44.93114 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:37.16669 +08:00
 */
 #endregion
 
+using System;
 using System.Xml.Serialization;
-using JdSdk.Domain;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {
     /// <summary>
-    /// 获取预分配的运单号 Response
+    /// 获取京东物流预分配的运单号    相关文档下载：ERP对接方案【10月16日更新】   京东快递可配送区域 Response
     /// </summary>
     public class JingdongEtmsWaybillcodeGetResponse : JdResponse
     {

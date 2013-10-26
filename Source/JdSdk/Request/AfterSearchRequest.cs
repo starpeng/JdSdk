@@ -1,26 +1,28 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-01-31 10:56:47:237 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:31.50836 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using JdSdk.Domain;
 using JdSdk.Response;
-using Newtonsoft.Json;
 
 namespace JdSdk.Request
 {
     /// <summary>
-    /// 根据条件检索订单信息 Request
+    /// 根据条件检索订单信息（仅适用于京东售后，即由京东代为收取退货商品的售后方式） Request
     /// </summary>
     public class AfterSearchRequest : JdRequestBase<AfterSearchResponse>
     {
         /// <summary>
-        /// 查询字段对应Field中的key，查询字段的值对应Field中的value 查询字段键值对，详见“查询字段”
+        /// 查询字段对应Field中的key，查询字段的值对应Field中的value  查询字段键值对，详见“查询字段”
         /// </summary>
         /// <example>字段:值;字段:值queryField.setKey(return_id) ;queryField.setValue(11231)</example>
         [XmlElement("query_fields")]
@@ -68,17 +70,15 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "360buy.after.search"; }
+            get{ return "360buy.after.search"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("query_fields", this.QueryFields);
-            paramters.Add("select_fields", this.SelectFields);
-            paramters.Add("page", this.Page);
-            paramters.Add("page_size", this.PageSize);
-
+            paramters.Add("query_fields" ,this.QueryFields);
+            paramters.Add("select_fields" ,this.SelectFields);
+            paramters.Add("page" ,this.Page);
+            paramters.Add("page_size" ,this.PageSize);
         }
 
         public override void Validate()

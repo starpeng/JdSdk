@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:46.14721 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:40.61988 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -97,20 +100,18 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.imgzone.picture.query"; }
+            get{ return "jingdong.imgzone.picture.query"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("picture_id", this.PictureId);
-            paramters.Add("picture_cate_id", this.PictureCateId);
-            paramters.Add("picture_name", this.PictureName);
-            paramters.Add("start_date", this.StartDate);
-            paramters.Add("end_date", this.EndDate);
-            paramters.Add("page_num", this.PageNum);
-            paramters.Add("page_size", this.PageSize);
-
+            paramters.Add("picture_id" ,this.PictureId);
+            paramters.Add("picture_cate_id" ,this.PictureCateId);
+            paramters.Add("picture_name" ,this.PictureName);
+            paramters.Add("start_date" ,this.StartDate);
+            paramters.Add("end_date" ,this.EndDate);
+            paramters.Add("page_num" ,this.PageNum);
+            paramters.Add("page_size" ,this.PageSize);
         }
 
         public override void Validate()

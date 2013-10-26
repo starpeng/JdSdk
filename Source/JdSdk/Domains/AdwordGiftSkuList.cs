@@ -1,6 +1,7 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
+Copyright © starpeng@vip.qq.com
 2013-09-07 15:02:04.80127 +08:00
 */
 #endregion
@@ -55,7 +56,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("number")]
         [JsonProperty("number")]
-        public Int64 Number
+        public Int64 Int64
         {
             get;
             set;

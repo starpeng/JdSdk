@@ -1,13 +1,16 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:53.71965 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:42.03597 +08:00
 */
 #endregion
 
+using System;
 using System.Xml.Serialization;
-using JdSdk.Domain;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {
@@ -21,7 +24,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("list")]
         [JsonProperty("list")]
-        public BillDetailVO[] List
+        public List<BillDetailVO> List
         {
             get;
             set;

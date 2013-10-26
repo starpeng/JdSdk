@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.17979 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.77147 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Int64> Id
+        public Int64 Id
         {
             get;
             set;
@@ -55,7 +57,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("page_id")]
         [JsonProperty("page_id")]
-        public Nullable<Int64> PageId
+        public Int64 PageId
         {
             get;
             set;
@@ -66,7 +68,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("width")]
         [JsonProperty("width")]
-        public Nullable<Decimal> Width
+        public Int64 Width
         {
             get;
             set;
@@ -77,7 +79,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("height")]
         [JsonProperty("height")]
-        public Nullable<Decimal> Height
+        public Int64 Height
         {
             get;
             set;
@@ -88,7 +90,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("traffic")]
         [JsonProperty("traffic")]
-        public Nullable<Decimal> Traffic
+        public Int64 Traffic
         {
             get;
             set;
@@ -99,7 +101,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("style")]
         [JsonProperty("style")]
-        public Nullable<Decimal> Style
+        public Int64 Style
         {
             get;
             set;
@@ -110,18 +112,18 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Int64> Type
+        public Int64 Type
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 广告位状态
+        /// 广告位状态 1:能投放 2:不能投放
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Int64> Status
+        public Int64 Status
         {
             get;
             set;

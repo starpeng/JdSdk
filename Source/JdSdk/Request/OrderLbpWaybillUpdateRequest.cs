@@ -1,6 +1,7 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
+Copyright © starpeng@vip.qq.com
 2013-07-29 23:18:26.41326 +08:00
 */
 #endregion
@@ -72,12 +73,10 @@ namespace JdSdk.Request
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
             paramters.Add("order_id", this.OrderId);
             paramters.Add("logistics_id", this.LogisticsId);
             paramters.Add("waybill", this.Waybill);
             paramters.Add("trade_no", this.TradeNo);
-
         }
 
         public override void Validate()

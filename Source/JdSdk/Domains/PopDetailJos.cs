@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.16979 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.76346 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("reuslt_code")]
         [JsonProperty("reuslt_code")]
-        public Nullable<Decimal> ReusltCode
+        public Int64 ReusltCode
         {
             get;
             set;

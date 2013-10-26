@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.17179 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.76647 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("wgroup_id")]
         [JsonProperty("wgroup_id")]
-        public Nullable<Int64> WgroupId
+        public Int64 WgroupId
         {
             get;
             set;
@@ -55,7 +57,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("search_num")]
         [JsonProperty("search_num")]
-        public Nullable<Int64> SearchNum
+        public Int64 SearchNum
         {
             get;
             set;
@@ -66,29 +68,29 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("base_price")]
         [JsonProperty("base_price")]
-        public Nullable<Decimal> BasePrice
+        public Int64 BasePrice
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 历史平均出价
+        /// 历史平均出价 暂时无法获取，预计两周后上线
         /// </summary>
         [XmlElement("avg_price")]
         [JsonProperty("avg_price")]
-        public Nullable<Decimal> AvgPrice
+        public Int64 AvgPrice
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 历史成交价格
+        /// 历史成交价格  暂时无法获取，预计两周后上线
         /// </summary>
         [XmlElement("avg_deal_price")]
         [JsonProperty("avg_deal_price")]
-        public Nullable<Decimal> AvgDealPrice
+        public Int64 AvgDealPrice
         {
             get;
             set;
@@ -99,7 +101,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Int64> Type
+        public Int64 Type
         {
             get;
             set;

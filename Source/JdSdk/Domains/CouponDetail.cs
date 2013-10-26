@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-01-31 10:56:47:855 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.74746 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -29,7 +31,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 优惠类型:20-套装优惠, 29-团购优惠, 30-单品促销优惠, 35-满返满送(返现)
+        /// 优惠类型:        20-套装优惠, 28-闪团优惠, 29-团购优惠, 30-单品促销优惠, 35-满返满送(返现);41-京东券优惠;52-礼品卡优惠,100-店铺优惠
         /// </summary>
         [XmlElement("coupon_type")]
         [JsonProperty("coupon_type")]
@@ -51,7 +53,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 京东sku编号
+        /// 京东sku编号      (优惠类型是:35-满返满送(返现) 100-店铺优惠,sku_id值为””)
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]

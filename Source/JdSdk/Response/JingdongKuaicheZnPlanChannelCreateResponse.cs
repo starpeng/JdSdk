@@ -1,10 +1,16 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:48.97837 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:43.45305 +08:00
 */
 #endregion
 
+using System;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {
@@ -13,5 +19,16 @@ namespace JdSdk.Response
     /// </summary>
     public class JingdongKuaicheZnPlanChannelCreateResponse : JdResponse
     {
+        /// <summary>
+        /// 返回信息描述
+        /// </summary>
+        [XmlElement("result_status")]
+        [JsonProperty("result_status")]
+        public ResultStatus ResultStatus
+        {
+            get;
+            set;
+        }
+
     }
 }

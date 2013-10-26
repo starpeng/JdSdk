@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-01-31 10:56:42:173 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:32.31841 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -53,16 +56,14 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "360buy.order.vender.remark.update"; }
+            get{ return "360buy.order.vender.remark.update"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("order_id", this.OrderId);
-            paramters.Add("remark", this.Remark);
-            paramters.Add("trade_no", this.TradeNo);
-
+            paramters.Add("order_id" ,this.OrderId);
+            paramters.Add("remark" ,this.Remark);
+            paramters.Add("trade_no" ,this.TradeNo);
         }
 
         public override void Validate()

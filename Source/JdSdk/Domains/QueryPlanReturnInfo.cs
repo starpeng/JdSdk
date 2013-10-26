@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.17979 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.77247 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Int64> Id
+        public Int64 Id
         {
             get;
             set;
@@ -44,7 +46,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("space_id")]
         [JsonProperty("space_id")]
-        public Nullable<Int64> SpaceId
+        public Int64 SpaceId
         {
             get;
             set;
@@ -55,7 +57,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Int64> Type
+        public Int64 Type
         {
             get;
             set;
@@ -66,7 +68,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("budget")]
         [JsonProperty("budget")]
-        public Nullable<Decimal> Budget
+        public Int64 Budget
         {
             get;
             set;
@@ -77,7 +79,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("total_budget")]
         [JsonProperty("total_budget")]
-        public Nullable<Decimal> TotalBudget
+        public Int64 TotalBudget
         {
             get;
             set;
@@ -88,7 +90,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("mode")]
         [JsonProperty("mode")]
-        public Nullable<Decimal> Mode
+        public Int64 Mode
         {
             get;
             set;
@@ -99,7 +101,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Int64> Status
+        public Int64 Status
         {
             get;
             set;
@@ -121,7 +123,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("allow_split")]
         [JsonProperty("allow_split")]
-        public Nullable<Decimal> AllowSplit
+        public Int64 AllowSplit
         {
             get;
             set;
@@ -187,18 +189,18 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("show_type")]
         [JsonProperty("show_type")]
-        public Nullable<Int64> ShowType
+        public Int64 ShowType
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 当天的竞价状态：1竞价成功，2:竞价失败,3:未排期
+        /// 当天的竞价状态：1竞价成功，2:竞价失败,3:未排期 只有&quot;status&quot;为6时，才会有bid_status_字段
         /// </summary>
         [XmlElement("bid_status")]
         [JsonProperty("bid_status")]
-        public Nullable<Decimal> BidStatus
+        public Int64 BidStatus
         {
             get;
             set;

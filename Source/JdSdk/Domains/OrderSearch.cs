@@ -1,13 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-01-31 10:56:47:857 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.74746 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -30,7 +31,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 查询订单的数量
+        /// 结果总数,所有订单数
         /// </summary>
         [XmlElement("order_total")]
         [JsonProperty("order_total")]

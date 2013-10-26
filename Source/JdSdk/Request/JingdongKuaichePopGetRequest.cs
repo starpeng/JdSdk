@@ -1,12 +1,17 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:54.45469 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:42.64200 +08:00
 */
 #endregion
 
 using System;
+using System.Xml.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
 using JdSdk.Response;
 
 namespace JdSdk.Request
@@ -16,15 +21,14 @@ namespace JdSdk.Request
     /// </summary>
     public class JingdongKuaichePopGetRequest : JdRequestBase<JingdongKuaichePopGetResponse>
     {
+
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.pop.get"; }
+            get{ return "jingdong.kuaiche.pop.get"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-
         }
 
         public override void Validate()

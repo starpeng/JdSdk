@@ -1,13 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:02:04.77827 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.76547 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -55,7 +56,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 素材播放的日期（格式为8位的整形日期），如果showType为2，则不能为空；       showType为1，该值不传，表示在整个投放计划排期内进行播放。
+        /// 素材播放的日期（格式为8位的整形日期），如果showType为2，则不能为空；   showType为1，该值不传，表示在整个投放计划排期内进行播放。
         /// </summary>
         /// <example>[20130808,20130809]</example>
         [XmlElement("showDays")]

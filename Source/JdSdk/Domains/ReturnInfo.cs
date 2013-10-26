@@ -1,13 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-01-31 10:56:47:858 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.74346 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -52,7 +53,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 收货状态:待收获WAITING、已收货RECEIVED
+        /// 收货状态:待收货WAITING、已收货RECEIVED
         /// </summary>
         [XmlElement("receive_state")]
         [JsonProperty("receive_state")]

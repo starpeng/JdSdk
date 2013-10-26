@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:54.16068 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:42.43899 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -23,7 +26,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public Int64 SkuId
+        public String SkuId
         {
             get;
             set;
@@ -31,14 +34,12 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.goods.get"; }
+            get{ return "jingdong.kuaiche.goods.get"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("sku_id", this.SkuId);
-
+            paramters.Add("sku_id" ,this.SkuId);
         }
 
         public override void Validate()

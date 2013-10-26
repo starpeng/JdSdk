@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:48.97737 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:43.45205 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -31,14 +34,12 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.zn.plan.channel.create"; }
+            get{ return "jingdong.kuaiche.zn.plan.channel.create"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("plan_info", this.PlanInfo);
-
+            paramters.Add("plan_info" ,this.PlanInfo);
         }
 
         public override void Validate()

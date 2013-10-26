@@ -1,13 +1,14 @@
-﻿#region head comment
+#region head comment
 /*
 Code generate by JdSdkTool.
-2013-01-31 10:56:47:853 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.74546 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -19,7 +20,7 @@ namespace JdSdk.Domain
     public class OrderInfo : JdObject
     {
         /// <summary>
-        /// 订单数据
+        /// 订单id, 默认必须返回
         /// </summary>
         [XmlElement("order_id")]
         [JsonProperty("order_id")]
@@ -30,7 +31,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单id
+        /// 商家id
         /// </summary>
         [XmlElement("vender_id")]
         [JsonProperty("vender_id")]
@@ -41,7 +42,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 支付方式
+        /// 支付方式（1货到付款, 2邮局汇款, 3自提, 4在线支付, 5公司转账, 6银行转账）
         /// </summary>
         [XmlElement("pay_type")]
         [JsonProperty("pay_type")]
@@ -74,7 +75,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单结算金额
+        /// 订单货款金额（订单总金额-商家优惠金额）
         /// </summary>
         [XmlElement("order_seller_price")]
         [JsonProperty("order_seller_price")]
@@ -107,7 +108,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单状态（英文）
+        /// 订单状态（英文）具体返回值列表请发邮件至jos#jd.com获取
         /// </summary>
         [XmlElement("order_state")]
         [JsonProperty("order_state")]
@@ -118,7 +119,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单状态说明（中文）
+        /// 订单状态说明（中文）具体返回值列表请发邮件至jos#jd.com获取
         /// </summary>
         [XmlElement("order_state_remark")]
         [JsonProperty("order_state_remark")]
@@ -129,7 +130,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 送货（日期）类型
+        /// 送货（日期）类型（1-只工作日送货(双休日、假日不用送);2-只双休日、假日送货(工作日不用送);3-工作日、双休日与假日均可送货;其他值-返回“任意时间”）
         /// </summary>
         [XmlElement("delivery_type")]
         [JsonProperty("delivery_type")]
@@ -140,7 +141,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 发票信息
+        /// 发票信息        “invoice_info:  不需要开具发票”下无需开具发票；其它返回值请正常开具发票
         /// </summary>
         [XmlElement("invoice_info")]
         [JsonProperty("invoice_info")]
@@ -173,7 +174,7 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 结单时间
+        /// 结单时间        如返回信息为“0001-01-01  00:00:00”和“1970-01-01 00:00:00”，可认为此订单为未完成状态。
         /// </summary>
         [XmlElement("order_end_time")]
         [JsonProperty("order_end_time")]
@@ -206,20 +207,20 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单商家优惠列表
+        /// 订单优惠列表
         /// </summary>
-        [XmlElement("coupon_detail_list")]
-        [JsonProperty("coupon_detail_list")]
+        [XmlElement("couponDetailList")]
+        [JsonProperty("couponDetailList")]
         public List<CouponDetail> CouponDetailList
         {
             get;
             set;
         }
 
-
         /// <summary>
         /// 换货订单标识 0:不是换货订单,1:换货订单(默认不返回)
         /// </summary>
+        /// <example>1</example>
         [XmlElement("return_order")]
         [JsonProperty("return_order")]
         public String ReturnOrder
@@ -251,17 +252,6 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 订单更新时间
-        /// </summary>
-        [XmlElement("modified")]
-        [JsonProperty("modified")]
-        public String Modified
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// 余额支付金额
         /// </summary>
         [XmlElement("balance_used")]
@@ -273,8 +263,9 @@ namespace JdSdk.Domain
         }
 
         /// <summary>
-        /// 付款确认时间 如果没有付款时间 默认返回0001-01-01 00:00:00
+        /// 付款确认时间如果没有付款时间默认返回0001-01-01 00:00:00
         /// </summary>
+        /// <example>2013-08-19 15:24:43</example>
         [XmlElement("payment_confirm_time")]
         [JsonProperty("payment_confirm_time")]
         public String PaymentConfirmTime

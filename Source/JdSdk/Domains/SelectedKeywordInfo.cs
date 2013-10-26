@@ -1,12 +1,14 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:56.17679 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:50.77047 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace JdSdk.Domain
@@ -22,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("id")]
         [JsonProperty("id")]
-        public Nullable<Int64> Id
+        public Int64 Id
         {
             get;
             set;
@@ -33,7 +35,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("plan_id")]
         [JsonProperty("plan_id")]
-        public Nullable<Int64> PlanId
+        public Int64 PlanId
         {
             get;
             set;
@@ -88,7 +90,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("price")]
         [JsonProperty("price")]
-        public Nullable<Decimal> Price
+        public Int64 Price
         {
             get;
             set;
@@ -99,7 +101,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Int64> Type
+        public Int64 Type
         {
             get;
             set;
@@ -110,7 +112,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("base_price")]
         [JsonProperty("base_price")]
-        public Nullable<Decimal> BasePrice
+        public Int64 BasePrice
         {
             get;
             set;

@@ -1,18 +1,64 @@
-﻿JdSdk
+JdSdk
 =====
 
 京东开放平台.NET版sdk 
 
-[最新版下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.2.0.zip "1.2.0")
+[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.0.zip "1.3.0")
+
+[最新版源码下载](https://github.com/starpeng/JdSdk/archive/master.zip "Surce ")
 
 [问题反馈](https://github.com/starpeng/JdSdk/issues/new "问题反馈")
-
+>使用Github中的Issue和Pull Request来反馈问题。  
+>如果仅是提交问题，请使用[Issue](https://github.com/starpeng/JdSdk/issues/new "问题提交")  
+>如您已修正问题代码，并愿分享代码，请使用[Pull Request](https://github.com/starpeng/JdSdk/compare/ "代码提交")  
 
 交流QQ群：[236361019](http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab "236361019")
 <a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="SDK交流" title="SDK交流"></a>
 
 
 ## 更新记录 ##
+-1.3.0  
+新增接口
+>获取工单列表   jingdong.wos.worklist.get  
+>获取工单信息  jingdong.wos.workinfo.get  
+>获取二级业务类型列表   jingdong.wos.subbiztypelist.get  
+>商家回复工单 jingdong.rest.workorder.reply  
+>更新图片 jingdong.imgzone.picture.update  
+>替换图片 jingdong.imgzone.picture.replace  
+>查询图片空间用户信息 jingdong.imgzone.userinfo.query  
+>查询图片是否被引用 jingdong.imgzone.picture.isreferenced  
+>FBP订单检索  360buy.order.fbp.search   
+>FBP获取单个订单  360buy.order.fbp.get  
+>删单申请 jingdong.order.orderDelete.apply  
+>查询商家备注 jingdong.order.venderRemark.queryByOrderId  
+>青龙全程跟踪查询接口  jingdong.etms.trace.get  
+>设置商品限购区域 360buy.ware.area.limit.update  
+>查询商品限购区域 360buy.ware.area.limit.search  
+>修改商品关联版式 360buy.ware.template.update  
+>删除商品关联版式 360buy.ware.template.delete    
+>查询关联版式id以及名称 360buy.ware.template.ids.names.get   
+>查询关联版式详情 360buy.ware.template.get   
+>设置关联版式到商品 360buy.ware.template.to.wares.update  
+>面向用户服务（类目服务） http://help.jd.com/jos/question-627.html
+>面向用户服务（商品服务）接口 http://help.jd.com/jos/question-628.html  
+>京东快车新增修改类2接口 http://help.jd.com/jos/question-813.html  
+>数据罗盘、店铺数据9接口 http://help.jd.com/jos/question-878.html  
+>面向卖家服务新增商品关联版式6个接口	 http://help.jd.com/jos/question-877.html  
+>售后服务10接口 http://help.jd.com/jos/question-568.html  
+>咚咚服务11接口 http://help.jd.com/jos/question-879.html  
+>   
+
+
+ 
+变更接口  
+>购买该商品的人最终购买了 jingdong.ware.buytobuy.list.get  
+>浏览过该商品的人最终购买了 jingdong.ware.browsetobuy.list.get  
+>获得商品最佳购买组合 jingdong.ware.combine.list.get  
+>获得商品组合套装  jingdong.ware.packs.get  
+>获取京东物流运单号接口 jingdong.etms.waybillcode.get  
+>京东物流接单接口  jingdong.etms.waybill.send  
+  
+  
 -1.2.0
 >重构代码，接口加入附加参数，以支持随时可能新增的请求参数  
 >Json.Net改为使用dll引用  

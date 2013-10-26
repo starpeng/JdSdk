@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:53.51364 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:41.83195 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -23,7 +26,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("in_out_type")]
         [JsonProperty("in_out_type")]
-        public Nullable<Int64> InOutType
+        public Int64 InOutType
         {
             get;
             set;
@@ -34,7 +37,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("type")]
         [JsonProperty("type")]
-        public Nullable<Int64> Type
+        public Int64 Type
         {
             get;
             set;
@@ -45,7 +48,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("check_type")]
         [JsonProperty("check_type")]
-        public Nullable<Int64> CheckType
+        public Int64 CheckType
         {
             get;
             set;
@@ -56,7 +59,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_index")]
         [JsonProperty("page_index")]
-        public Nullable<Int64> PageIndex
+        public Int64 PageIndex
         {
             get;
             set;
@@ -67,7 +70,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_size")]
         [JsonProperty("page_size")]
-        public Nullable<Int64> PageSize
+        public Int64 PageSize
         {
             get;
             set;
@@ -75,18 +78,16 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.account.income_expense.search"; }
+            get{ return "jingdong.kuaiche.account.income_expense.search"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("in_out_type", this.InOutType);
-            paramters.Add("type", this.Type);
-            paramters.Add("check_type", this.CheckType);
-            paramters.Add("page_index", this.PageIndex);
-            paramters.Add("page_size", this.PageSize);
-
+            paramters.Add("in_out_type" ,this.InOutType);
+            paramters.Add("type" ,this.Type);
+            paramters.Add("check_type" ,this.CheckType);
+            paramters.Add("page_index" ,this.PageIndex);
+            paramters.Add("page_size" ,this.PageSize);
         }
 
         public override void Validate()

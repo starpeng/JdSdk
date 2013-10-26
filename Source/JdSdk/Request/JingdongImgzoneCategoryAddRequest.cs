@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-09-07 15:01:45.13315 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:39.60383 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -42,15 +45,13 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.imgzone.category.add"; }
+            get{ return "jingdong.imgzone.category.add"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("cate_name", this.CateName);
-            paramters.Add("parent_cate_id", this.ParentCateId);
-
+            paramters.Add("cate_name" ,this.CateName);
+            paramters.Add("parent_cate_id" ,this.ParentCateId);
         }
 
         public override void Validate()

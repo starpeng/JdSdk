@@ -1,15 +1,18 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-2013-08-02 16:22:55.27274 +08:00
+Copyright © starpeng@vip.qq.com
+2013-10-26 10:25:44.06208 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -30,7 +33,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 投放模式：2:买断,3:cpc
+        /// 投放模式2：买断（cpd按日）  3：cpc按点击
         /// </summary>
         [XmlElement("mode")]
         [JsonProperty("mode")]
@@ -45,7 +48,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Nullable<Int64> Status
+        public Int64 Status
         {
             get;
             set;
@@ -67,7 +70,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("begin")]
         [JsonProperty("begin")]
-        public Nullable<Decimal> Begin
+        public Int64 Begin
         {
             get;
             set;
@@ -78,7 +81,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("end")]
         [JsonProperty("end")]
-        public Nullable<Decimal> End
+        public Int64 End
         {
             get;
             set;
@@ -89,7 +92,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_size")]
         [JsonProperty("page_size")]
-        public Nullable<Int64> PageSize
+        public Int64 PageSize
         {
             get;
             set;
@@ -100,7 +103,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("page_index")]
         [JsonProperty("page_index")]
-        public Nullable<Int64> PageIndex
+        public Int64 PageIndex
         {
             get;
             set;
@@ -108,21 +111,19 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "jingdong.kuaiche.zn.plan.list.search"; }
+            get{ return "jingdong.kuaiche.zn.plan.list.search"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("plan_name", this.PlanName);
-            paramters.Add("mode", this.Mode);
-            paramters.Add("status", this.Status);
-            paramters.Add("is_query_by_status", this.IsQueryByStatus);
-            paramters.Add("begin", this.Begin);
-            paramters.Add("end", this.End);
-            paramters.Add("page_size", this.PageSize);
-            paramters.Add("page_index", this.PageIndex);
-
+            paramters.Add("plan_name" ,this.PlanName);
+            paramters.Add("mode" ,this.Mode);
+            paramters.Add("status" ,this.Status);
+            paramters.Add("is_query_by_status" ,this.IsQueryByStatus);
+            paramters.Add("begin" ,this.Begin);
+            paramters.Add("end" ,this.End);
+            paramters.Add("page_size" ,this.PageSize);
+            paramters.Add("page_index" ,this.PageIndex);
         }
 
         public override void Validate()
