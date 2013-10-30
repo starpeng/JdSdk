@@ -73,7 +73,7 @@ namespace JdSdk.Domain
         /// <example>000989987688</example>
         [XmlElement("deliveryIdList")]
         [JsonProperty("deliveryIdList")]
-        public String DeliveryIdList
+        public List<String> DeliveryIdList
         {
             get;
             set;

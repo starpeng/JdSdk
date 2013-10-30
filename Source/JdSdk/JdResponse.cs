@@ -12,12 +12,12 @@ namespace JdSdk
         /// </summary>
         [XmlElement("code")]
         [JsonProperty("code")]
-        public string ErrCode { get; set; }
+        public String ErrCode { get; set; }
 
         /// <summary>
         /// 错误信息
         /// </summary>
-        public string ErrMsg
+        public String ErrMsg
         {
             get
             {
@@ -32,29 +32,29 @@ namespace JdSdk
 
         [XmlElement("zh_desc")]
         [JsonProperty("zh_desc")]
-        public string ZhErrMsg { get; set; }
+        public String ZhErrMsg { get; set; }
 
         /// <summary>
         /// 英文错误信息
         /// </summary>
         [XmlElement("en_desc")]
         [JsonProperty("en_desc")]
-        public string EnErrMsg { get; set; }
+        public String EnErrMsg { get; set; }
 
         /// <summary>
         /// 响应原始内容
         /// </summary>
-        public string Body { get; set; }
+        public String Body { get; set; }
 
         /// <summary>
         /// HTTP GET请求的URL
         /// </summary>
-        public string ReqUrl { get; set; }
+        public String ReqUrl { get; set; }
 
         /// <summary>
         /// 响应结果是否错误
         /// </summary>
-        public bool IsError
+        public virtual Boolean IsError
         {
             get
             {

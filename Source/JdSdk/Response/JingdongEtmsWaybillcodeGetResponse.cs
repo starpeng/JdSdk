@@ -29,6 +29,5 @@ namespace JdSdk.Response
             get;
             set;
         }
-
     }
 }

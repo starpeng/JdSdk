@@ -26,7 +26,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("preNum")]
         [JsonProperty("preNum")]
-        public String PreNum
+        public Int32 PreNum
         {
             get;
             set;
@@ -50,15 +50,15 @@ namespace JdSdk.Request
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-            paramters.Add("prenum" ,this.PreNum);
-            paramters.Add("customercode" ,this.CustomerCode);
+            paramters.Add("preNum", this.PreNum);
+            paramters.Add("customerCode", this.CustomerCode);
         }
 
         public override void Validate()
         {
-            RequestValidator.ValidateRequired("preNum", this.PreNum);
+            RequestValidator.ValidateMaxValue("preNum", this.PreNum, 100);
+            RequestValidator.ValidateMinValue("preNum", this.PreNum, 0);
             RequestValidator.ValidateRequired("customerCode", this.CustomerCode);
         }
-
     }
 }

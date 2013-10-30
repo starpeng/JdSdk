@@ -1,4 +1,4 @@
-JdSdk
+﻿JdSdk
 =====
 
 京东开放平台.NET版sdk 
@@ -17,6 +17,10 @@ JdSdk
 
 
 ## 更新记录 ##
+-1.3.1
+>接口jingdong.etms.waybillcode.get 修正  
+
+
 -1.3.0  
 新增接口
 >获取工单列表   jingdong.wos.worklist.get  
