@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.0.zip "1.3.0")
+[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.2.zip "1.3.2")
 
 [最新版源码下载](https://github.com/starpeng/JdSdk/archive/master.zip "Surce ")
 
@@ -17,6 +17,10 @@
 
 
 ## 更新记录 ##
+-1.3.2
+>类型OrderItem文档中商品编号ware_id，实测实际为ware  
+
+
 -1.3.1
 >接口jingdong.etms.waybillcode.get 修正  
 

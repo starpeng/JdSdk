@@ -21,8 +21,8 @@ namespace JdSdk.Domain
         /// <summary>
         /// 商品编号
         /// </summary>
-        [XmlElement("ware_id")]
-        [JsonProperty("ware_id")]
+        [XmlElement("ware")]
+        [JsonProperty("ware")]
         public Int64 WareId
         {
             get;
