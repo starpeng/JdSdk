@@ -20,14 +20,17 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace JdSdk
 {
     public class OAuth
     {
-        //private const string LoginUrl = "http://auth.360buy.com/login.do";
-        private string authorizeUrl = "http://auth.360buy.com/oauth/authorize";
-        private string accessTokenUrl = "http://auth.360buy.com/oauth/token";
+        //private const String LoginUrl = "http://auth.360buy.com/login.do";
+        private String authorizeUrl = "http://auth.360buy.com/oauth/authorize";
+        private String accessTokenUrl = "http://auth.360buy.com/oauth/token";
+        //private Regex tokenRegex = new Regex("^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$");
+        private Regex tokenRegex = new Regex("^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$");
 
         /// <summary>
         /// 授权码获取地址
@@ -63,7 +66,7 @@ namespace JdSdk
         /// <summary>
         /// 获取App Key
         /// </summary>
-        public string AppKey
+        public String AppKey
         {
             get;
             internal set;
@@ -71,7 +74,7 @@ namespace JdSdk
         /// <summary>
         /// 获取App Secret
         /// </summary>
-        public string AppSecret
+        public String AppSecret
         {
             get;
             internal set;
@@ -80,7 +83,7 @@ namespace JdSdk
         /// <summary>
         /// 获取Access Token
         /// </summary>
-        public string AccessToken
+        public String AccessToken
         {
             get;
             internal set;
@@ -89,7 +92,7 @@ namespace JdSdk
         /// <summary>
         /// 获取或设置回调地址
         /// </summary>
-        public string CallbackUrl
+        public String CallbackUrl
         {
             get;
             set;
@@ -98,7 +101,7 @@ namespace JdSdk
         /// <summary>
         /// Refresh Token 似乎目前没用
         /// </summary>
-        public string RefreshToken
+        public String RefreshToken
         {
             get;
             internal set;
@@ -110,11 +113,11 @@ namespace JdSdk
         /// <param name="appKey"></param>
         /// <param name="appSecret"></param>
         /// <param name="callbackUrl"></param>
-        public OAuth(string appKey, string appSecret, string callbackUrl = "http://jos.mylifeon.net/OAuth/login")
+        public OAuth(String appKey, String appSecret, String callbackUrl = "http://jos.mylifeon.net/OAuth/login")
         {
             this.AppKey = appKey;
             this.AppSecret = appSecret;
-            this.AccessToken = string.Empty;
+            this.AccessToken = String.Empty;
             this.CallbackUrl = callbackUrl;
         }
 
@@ -125,13 +128,13 @@ namespace JdSdk
         /// <param name="appSecret"></param>
         /// <param name="accessToken"></param>
         /// <param name="refreshToken"></param>
-        public OAuth(string appKey, string appSecret, string accessToken, string refreshToken = null)
+        public OAuth(String appKey, String appSecret, String accessToken, String refreshToken = null)
         {
             this.AppKey = appKey;
             this.AppSecret = appSecret;
             this.AccessToken = accessToken;
             this.CallbackUrl = "http://jos.mylifeon.net/OAuth/login";
-            this.RefreshToken = refreshToken ?? string.Empty;
+            this.RefreshToken = refreshToken ?? String.Empty;
         }
 
         /// <summary>
@@ -141,7 +144,7 @@ namespace JdSdk
         /// <returns></returns>
         public String GetAuthorizationUrl()
         {
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            Dictionary<String, String> parameters = new Dictionary<String, String>();
             parameters.Add("response_type", "code");
             parameters.Add("client_id", this.AppKey);
             parameters.Add("redirect_uri", this.CallbackUrl);
@@ -163,7 +166,7 @@ namespace JdSdk
 
         #region 停用代码
         /*
-        public String GetAuthorizationCode(string passport, string password)
+        public String GetAuthorizationCode(String passport, String password)
         {
             CookieContainer cookieContainer = new CookieContainer();
             var authorUrl = GetAuthorizationUrl();
@@ -180,7 +183,7 @@ namespace JdSdk
             req.CookieContainer = cookieContainer;
             req.Referer = loginRefUrl;
 
-            Dictionary<string, string> loginParameters = new Dictionary<string, string>();
+            Dictionary<String, String> loginParameters = new Dictionary<String, String>();
             loginParameters.Add("j_username", passport);
             loginParameters.Add("j_password", password);
             byte[] postData = Encoding.UTF8.GetBytes(WebUtils.BuildQuery(loginParameters));
@@ -231,9 +234,9 @@ namespace JdSdk
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public AccessToken GetAccessTokenByAuthorizationCode(string code)
+        public AccessToken GetAccessTokenByAuthorizationCode(String code)
         {
-            return GetAccessToken(GrantType.AuthorizationCode, new Dictionary<string, string> { 
+            return GetAccessToken(GrantType.AuthorizationCode, new Dictionary<String, String> { 
 				{"code",code},
 				{"redirect_uri", CallbackUrl}
 			});
@@ -246,7 +249,7 @@ namespace JdSdk
         /// <param name="passport"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public AccessToken GetAccessTokenByPassword(string passport, string password)
+        public AccessToken GetAccessTokenByPassword(String passport, String password)
         {
             if (String.IsNullOrEmpty(passport))
                 throw new ArgumentException("不能为空", "passport");
@@ -254,7 +257,7 @@ namespace JdSdk
             if (String.IsNullOrEmpty(password))
                 throw new ArgumentException("不能为空", "password");
 
-            return GetAccessToken(GrantType.Password, new Dictionary<string, string> { 
+            return GetAccessToken(GrantType.Password, new Dictionary<String, String> { 
 				{"username",passport},
 				{"password", EncryptPassword(password)}
 			});
@@ -265,14 +268,35 @@ namespace JdSdk
         /// </summary>
         /// <param name="refreshToken"></param>
         /// <returns></returns>
-        public AccessToken GetAccessTokenByRefreshToken(string refreshToken)
+        public AccessToken GetAccessTokenByRefreshToken(String refreshToken)
         {
-            return GetAccessToken(GrantType.RefreshToken, new Dictionary<string, string> { 
+            return GetAccessToken(GrantType.RefreshToken, new Dictionary<String, String> { 
 				{"refresh_token",refreshToken}
 			});
         }
 
-        private AccessToken GetAccessToken(GrantType type, Dictionary<string, string> parameters)
+        /// <summary>
+        /// 根据访问令牌获取AccessToken
+        /// </summary>
+        /// <param name="accessToken">访问令牌</param>
+        /// <param name="expiresIn">过期时间(秒)</param>
+        /// <returns></returns>
+        public AccessToken GetAccessTokenByAccessToken(String accessToken, Int32 expiresIn = 31104000)
+        {
+            AccessToken token = new AccessToken();
+            if (!tokenRegex.IsMatch(accessToken))
+                throw new Exception("accessToken格式不正确！");
+
+            if (expiresIn < 0 || expiresIn > 31104000)
+                throw new Exception("expiresIn有效范围为0-31104000！");
+
+            token.Token = accessToken;
+            token.ExpiresIn = expiresIn;
+            token.CreateTime = DateTime.Now;
+            return token;
+        }
+
+        private AccessToken GetAccessToken(GrantType type, Dictionary<String, String> parameters)
         {
             parameters.Add("client_id", AppKey);
             parameters.Add("client_secret", AppSecret);
@@ -294,7 +318,7 @@ namespace JdSdk
 
             WebUtils webUtil = new WebUtils();
             var response = DoAccessTokenPost(parameters);
-            if (!string.IsNullOrEmpty(response))
+            if (!String.IsNullOrEmpty(response))
             {
                 AccessToken token = JsonConvert.DeserializeObject<AccessToken>(response);
                 token.CreateTime = DateTime.Now;
@@ -307,7 +331,7 @@ namespace JdSdk
             }
         }
 
-        public string DoAccessTokenPost(IDictionary<string, string> parameters)
+        public String DoAccessTokenPost(IDictionary<String, String> parameters)
         {
             String url = AccessTokenUrl;
             if (url.Contains("?"))
@@ -342,7 +366,7 @@ namespace JdSdk
             return WebUtils.GetResponseAsString(rsp, encoding);
         }
 
-        public HttpWebRequest GetWebRequest(string url, string method)
+        public HttpWebRequest GetWebRequest(String url, String method)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             req.ServicePoint.Expect100Continue = false;
