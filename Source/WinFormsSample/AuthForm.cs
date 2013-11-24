@@ -71,7 +71,12 @@ namespace WinFormsSample
                 return;
             }
 
-            AccessToken accessToken = oauth.GetAccessTokenByAuthorizationCode(txtAuthCode.Text.Trim());
+            if (oauth == null)
+            {
+                oauth = new OAuth(this.AppKey, this.AppSecret);
+            }
+
+            AccessToken accessToken = oauth.GetAccessTokenByAccessToken(txtAuthCode.Text.Trim());
             if (accessToken == null)
             {
                 Utility.ShowError("获取AccessToken失败，原因未知！");
@@ -107,6 +112,8 @@ namespace WinFormsSample
             this.AppSecret = txtAppSecret.Text.Trim();
             String callBackUrl = "urn:ietf:wg:oauth:2.0:oob";
             oauth = new OAuth(this.AppKey, this.AppSecret, callBackUrl);
+            oauth.AuthorizeUrl = AppContext.AuthorizeUrl;
+            oauth.AccessTokenUrl = AppContext.AccessTokenUrl;
             Utility.Run(oauth.GetAuthorizationUrl(), null);
             Console.WriteLine("打开授权网页！");
         }

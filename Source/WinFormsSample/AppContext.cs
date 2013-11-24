@@ -30,6 +30,8 @@ namespace WinFormsSample
         private static Configuration _config;
 
         public readonly static String ServerURL = "http://gw.api.sandbox.360buy.com/routerjson";
+        public readonly static String AuthorizeUrl = "http://auth.sandbox.360buy.com/oauth/authorize";
+        public readonly static String AccessTokenUrl = "http://auth.sandbox.360buy.com/oauth/token";
 
         static AppContext()
         {

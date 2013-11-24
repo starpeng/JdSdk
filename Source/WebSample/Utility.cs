@@ -42,7 +42,7 @@ namespace WebSample
 
         public static Boolean IsAccessTokenValid(AccessToken accessToken)
         {
-            return (accessToken != null) && (accessToken.CreateTime.AddMilliseconds(accessToken.ExpiresIn) > DateTime.Now);
+            return (accessToken != null) && (accessToken.CreateTime.AddSeconds(accessToken.ExpiresIn) > DateTime.Now);
         }
 
     }
