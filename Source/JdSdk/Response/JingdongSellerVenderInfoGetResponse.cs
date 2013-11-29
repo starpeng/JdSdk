@@ -23,7 +23,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("vender_info_result")]
         [JsonProperty("vender_info_result")]
-        public List<VenderInfo> VenderInfoResult
+        public VenderInfo VenderInfoResult
         {
             get;
             set;

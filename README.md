@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.3.zip "1.3.3")
+[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.4.zip "1.3.4")
 
 [最新版源码下载](https://github.com/starpeng/JdSdk/archive/master.zip "Surce ")
 
@@ -17,6 +17,9 @@
 
 
 ## 更新记录 ##
+-1.3.4
+>jingdong.seller.vender.info.get返回的不是数组    
+
 -1.3.2
 >类型OrderItem文档中商品编号ware_id，实测实际为ware  
 
