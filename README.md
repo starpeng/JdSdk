@@ -17,6 +17,9 @@
 
 
 ## 更新记录 ##
+-1.3.5
+>修正接口jingdong.imgzone.picture.upload  传入图片数据参数ImageData为Byte[]    
+
 -1.3.4
 >jingdong.seller.vender.info.get返回的不是数组    
 

@@ -26,7 +26,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("image_data")]
         [JsonProperty("image_data")]
-        public List<byte> ImageData
+        public Byte[] ImageData
         {
             get;
             set;

@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+</style>
+</head>
+<body>
+<h1>JdSdk</h1>
+
+<p>京东开放平台.NET版sdk </p>
+
+<p><a href="https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.2.zip" title="1.3.2">最新版DLL下载</a></p>
+
+<p><a href="https://github.com/starpeng/JdSdk/archive/master.zip" title="Surce ">最新版源码下载</a></p>
+
+<p><a href="https://github.com/starpeng/JdSdk/issues/new" title="问题反馈">问题反馈</a></p>
+
+<blockquote>
+<p>使用Github中的Issue和Pull Request来反馈问题。<br><br>
+如果仅是提交问题，请使用<a href="https://github.com/starpeng/JdSdk/issues/new" title="问题提交">Issue</a><br><br>
+如您已修正问题代码，并愿分享代码，请使用<a href="https://github.com/starpeng/JdSdk/compare/" title="代码提交">Pull Request</a>  </p>
+</blockquote>
+
+<p>交流QQ群：<a href="http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab" title="236361019">236361019</a><br><a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab"><img border="0" src="https://github-camo.global.ssl.fastly.net/615c9901677f501582b6057efc9396b3ed27dc29/687474703a2f2f7075622e69647171696d672e636f6d2f7770612f696d616765732f67726f75702e706e67" alt="SDK交流" title="SDK交流" style="max-width:100%;"></a></p>
+
+<h2>更新记录</h2>
+
+<p>-1.3.2</p>
+
+<blockquote>
+<p>类型OrderItem文档中商品编号ware_id，实测实际为ware  </p>
+</blockquote>
+
+<p>-1.3.1</p>
+
+<blockquote>
+<p>接口jingdong.etms.waybillcode.get 修正  </p>
+</blockquote>
+
+<p>-1.3.0<br><br>
+新增接口</p>
+
+<blockquote>
+<p>获取工单列表   jingdong.wos.worklist.get<br><br>
+获取工单信息  jingdong.wos.workinfo.get<br><br>
+获取二级业务类型列表   jingdong.wos.subbiztypelist.get<br><br>
+商家回复工单 jingdong.rest.workorder.reply<br><br>
+更新图片 jingdong.imgzone.picture.update<br><br>
+替换图片 jingdong.imgzone.picture.replace<br><br>
+查询图片空间用户信息 jingdong.imgzone.userinfo.query<br><br>
+查询图片是否被引用 jingdong.imgzone.picture.isreferenced<br><br>
+FBP订单检索  360buy.order.fbp.search<br><br>
+FBP获取单个订单  360buy.order.fbp.get<br><br>
+删单申请 jingdong.order.orderDelete.apply<br><br>
+查询商家备注 jingdong.order.venderRemark.queryByOrderId<br><br>
+青龙全程跟踪查询接口  jingdong.etms.trace.get<br><br>
+设置商品限购区域 360buy.ware.area.limit.update<br><br>
+查询商品限购区域 360buy.ware.area.limit.search<br><br>
+修改商品关联版式 360buy.ware.template.update<br><br>
+删除商品关联版式 360buy.ware.template.delete<br><br>
+查询关联版式id以及名称 360buy.ware.template.ids.names.get<br><br>
+查询关联版式详情 360buy.ware.template.get<br><br>
+设置关联版式到商品 360buy.ware.template.to.wares.update<br><br>
+面向用户服务（类目服务） <a href="http://help.jd.com/jos/question-627.html">http://help.jd.com/jos/question-627.html</a><br>
+面向用户服务（商品服务）接口 <a href="http://help.jd.com/jos/question-628.html">http://help.jd.com/jos/question-628.html</a><br><br>
+京东快车新增修改类2接口 <a href="http://help.jd.com/jos/question-813.html">http://help.jd.com/jos/question-813.html</a><br><br>
+数据罗盘、店铺数据9接口 <a href="http://help.jd.com/jos/question-878.html">http://help.jd.com/jos/question-878.html</a><br><br>
+面向卖家服务新增商品关联版式6个接口    <a href="http://help.jd.com/jos/question-877.html">http://help.jd.com/jos/question-877.html</a><br><br>
+售后服务10接口 <a href="http://help.jd.com/jos/question-568.html">http://help.jd.com/jos/question-568.html</a><br><br>
+咚咚服务11接口 <a href="http://help.jd.com/jos/question-879.html">http://help.jd.com/jos/question-879.html</a>  </p>
+</blockquote>
+
+<p>变更接口  </p>
+
+<blockquote>
+<p>购买该商品的人最终购买了 jingdong.ware.buytobuy.list.get<br><br>
+浏览过该商品的人最终购买了 jingdong.ware.browsetobuy.list.get<br><br>
+获得商品最佳购买组合 jingdong.ware.combine.list.get<br><br>
+获得商品组合套装  jingdong.ware.packs.get<br><br>
+获取京东物流运单号接口 jingdong.etms.waybillcode.get<br><br>
+京东物流接单接口  jingdong.etms.waybill.send  </p>
+</blockquote>
+
+<p>-1.2.0</p>
+
+<blockquote>
+<p>重构代码，接口加入附加参数，以支持随时可能新增的请求参数<br><br>
+Json.Net改为使用dll引用<br><br>
+wares.search接口补充ware_status,start_modified,end_modified请求参数  </p>
+</blockquote>
+
+<p>-1.1.6</p>
+
+<blockquote>
+<p>SkuStockUpdateResponse 更改SkuId为可空类型<br><br>
+优惠明细CouponDetail.SkuId改为String类型  </p>
+</blockquote>
+
+<p>-1.1.5</p>
+
+<blockquote>
+<p>修改一些数据类型。<br><br>
+根据ware_id 商品编号 修改商品信息接口，去掉部分参数的必须验证   </p>
+</blockquote>
+
+<p>-1.1.4</p>
+
+<blockquote>
+<p>SOP,LBP,SOPL服务接口中的流水号设置为非必须参数。  </p>
+</blockquote>
+
+<p>-1.1.3</p>
+
+<blockquote>
+<p>更新库存接口SkuId修改为可空类型   </p>
+</blockquote>
+
+<ul>
+<li>
+<p>1.1.2</p>
+
+<blockquote>
+<p>京东快车 13个接口<br><br>
+促销服务14个接口<br><br>
+物流服务19个接口<br><br>
+地址库接口共5个<br><br>
+京东快车新增4接口<br><br>
+图片空间6接口<br><br>
+订购关系查询 jingdong.vas.subscribe.get<br><br>
+获取预分配的运单号jingdong.etms.waybillcode.get<br><br>
+提交运单信息 jingdong.etms.waybill.send<br><br>
+获取类目信息 jingdong.union.categoryinfo.search<br><br>
+保存计划信息 jingdong.union.plan.save<br><br>
+获取计划基本信息 jingdong.union.planbaseinfo.get<br><br>
+根据pin返回供应商简码和三级分类列表 jingdong.userCategory3.info.get<br>
+若干接口同步修改</p>
+</blockquote>
+</li>
+<li>
+<p>1.1.1</p>
+
+<blockquote>
+<p>360buy.order.search，360buy.order.get支持返回运单号、物流公司、增值税发票</p>
+</blockquote>
+</li>
+<li>
+<p>1.1.0</p>
+
+<blockquote>
+<p>将部分京东文档中为Number，明显为整形字段的由原来的Decimal替换成换成Int64。</p>
+</blockquote>
+</li>
+<li>
+<p>1.0.9</p>
+
+<blockquote>
+<p>增加13个直通车接口</p>
+</blockquote>
+</li>
+<li>
+<p>1.0.8</p>
+
+<blockquote>
+<p>修正获取上下架商品接口的错误</p>
+</blockquote>
+</li>
+<li><p>1.0.7</p></li>
+</ul><blockquote>
+<p>####新增接口<br>
+商家信息接口 jingdong.seller.vender.info.get<br><br>
+海外购发货接口 360buy.overseas.order.sop.delivery<br><br>
+海外购出库接口 360buy.overseas.order.sop.outstorage<br><br>
+SOPL修改运单号 360buy.order.sopl.waybill.update<br><br>
+LBP修改运单号 360buy.order.lbp.waybill.update<br><br>
+CPS服务共18个接口 （接口名-略）<br><br>
+根据SKUID获取商品价格 jingdong.ware.price.get  </p>
+
+<p>####更新接口<br>
+获取商品促销信息的接口 jingdong.ware.promotionInfo.get<br><br>
+SOP修改运单号 360buy.order.sop.waybill.update<br><br>
+检索商品信息接口  360buy.wares.search<br><br>
+根据商品ID查询单个商品的详细信息 360buy.ware.get<br><br>
+批量获取商品信息 360buy.wares.list.get<br><br>
+检索商品信息接口  360buy.wares.search<br><br>
+上架商品 360buy.ware.listing.get<br><br>
+下架商品 360buy.ware.delisting.get  </p>
+</blockquote>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
