@@ -3,7 +3,7 @@
 
 京东开放平台.NET版sdk 
 
-[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.4.zip "1.3.4")
+[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.3.6.zip "1.3.6")
 
 [最新版源码下载](https://github.com/starpeng/JdSdk/archive/master.zip "Surce ")
 
@@ -17,6 +17,9 @@
 
 
 ## 更新记录 ##
+-1.3.5
+>修正接口jingdong.imgzone.category.query 查询参数修改为可空类型    
+
 -1.3.5
 >修正接口jingdong.imgzone.picture.upload  传入图片数据参数ImageData为Byte[]    
 
