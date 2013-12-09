@@ -79,7 +79,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("created")]
         [JsonProperty("created")]
-        public Nullable<DateTime> Created
+        public String Created
         {
             get;
             set;
@@ -90,7 +90,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("modified")]
         [JsonProperty("modified")]
-        public Nullable<DateTime> Modified
+        public String Modified
         {
             get;
             set;
