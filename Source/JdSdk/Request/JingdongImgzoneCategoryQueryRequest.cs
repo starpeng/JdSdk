@@ -27,7 +27,7 @@ namespace JdSdk.Request
         /// <example>1</example>
         [XmlElement("cate_id")]
         [JsonProperty("cate_id")]
-        public Int64 CateId
+        public Nullable<Int64> CateId
         {
             get;
             set;
@@ -51,7 +51,7 @@ namespace JdSdk.Request
         /// <example>1</example>
         [XmlElement("parent_cate_id")]
         [JsonProperty("parent_cate_id")]
-        public Int64 ParentCateId
+        public Nullable<Int64> ParentCateId
         {
             get;
             set;
