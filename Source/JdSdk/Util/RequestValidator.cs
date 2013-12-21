@@ -7,30 +7,30 @@ namespace JdSdk
     /// </summary>
     public sealed class RequestValidator
     {
-        private const string ERR_CODE_PARAM_MISSING = "40";
-        private const string ERR_CODE_PARAM_INVALID = "41";
-        private const string ERR_MSG_PARAM_MISSING = "client-error:Missing required arguments:{0}";
-        private const string ERR_MSG_PARAM_INVALID = "client-error:Invalid arguments:{0}";
+        private const String ERR_CODE_PARAM_MISSING = "40";
+        private const String ERR_CODE_PARAM_INVALID = "41";
+        private const String ERR_MSG_PARAM_MISSING = "验证错误(JdSdk):缺少必须的参数:{0}";
+        private const String ERR_MSG_PARAM_INVALID = "验证错误(JdSdk):无效的参数:{0}";
 
         /// <summary>
         /// 验证参数是否为空。
         /// </summary>
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
-        public static void ValidateRequired(string name, object value)
+        public static void ValidateRequired(String name, Object value)
         {
             if (value == null)
             {
-                throw new JdException(ERR_CODE_PARAM_MISSING, string.Format(ERR_MSG_PARAM_MISSING, name));
+                throw new JdException(ERR_CODE_PARAM_MISSING, String.Format(ERR_MSG_PARAM_MISSING, name));
             }
             else
             {
-                if (value.GetType() == typeof(string))
+                if (value.GetType() == typeof(String))
                 {
-                    string strValue = value as string;
-                    if (string.IsNullOrEmpty(strValue))
+                    String strValue = value as String;
+                    if (String.IsNullOrEmpty(strValue))
                     {
-                        throw new JdException(ERR_CODE_PARAM_MISSING, string.Format(ERR_MSG_PARAM_MISSING, name));
+                        throw new JdException(ERR_CODE_PARAM_MISSING, String.Format(ERR_MSG_PARAM_MISSING, name));
                     }
                 }
             }
@@ -42,11 +42,11 @@ namespace JdSdk
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
         /// <param name="maxLength">最大长度</param>
-        public static void ValidateMaxLength(string name, string value, int maxLength)
+        public static void ValidateMaxLength(String name, String value, int maxLength)
         {
             if (value != null && value.Length > maxLength)
             {
-                throw new JdException(ERR_CODE_PARAM_INVALID, string.Format(ERR_MSG_PARAM_INVALID, name));
+                throw new JdException(ERR_CODE_PARAM_INVALID, String.Format(ERR_MSG_PARAM_INVALID, name));
             }
         }
 
@@ -56,11 +56,11 @@ namespace JdSdk
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
         /// <param name="maxLength">最大长度</param>
-        public static void ValidateMaxLength(string name, FileItem value, int maxLength)
+        public static void ValidateMaxLength(String name, FileItem value, int maxLength)
         {
             if (value != null && value.GetContent() != null && value.GetContent().Length > maxLength)
             {
-                throw new JdException(ERR_CODE_PARAM_INVALID, string.Format(ERR_MSG_PARAM_INVALID, name));
+                throw new JdException(ERR_CODE_PARAM_INVALID, String.Format(ERR_MSG_PARAM_INVALID, name));
             }
         }
 
@@ -70,14 +70,14 @@ namespace JdSdk
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
         /// <param name="maxSize">最大列表长度</param>
-        public static void ValidateMaxListSize(string name, string value, int maxSize)
+        public static void ValidateMaxListSize(String name, String value, int maxSize)
         {
             if (value != null)
             {
-                string[] data = value.Split(',');
+                String[] data = value.Split(',');
                 if (data != null && data.Length > maxSize)
                 {
-                    throw new JdException(ERR_CODE_PARAM_INVALID, string.Format(ERR_MSG_PARAM_INVALID, name));
+                    throw new JdException(ERR_CODE_PARAM_INVALID, String.Format(ERR_MSG_PARAM_INVALID, name));
                 }
             }
         }
@@ -88,11 +88,11 @@ namespace JdSdk
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
         /// <param name="minLength">最小长度</param>
-        public static void ValidateMinLength(string name, string value, int minLength)
+        public static void ValidateMinLength(String name, String value, int minLength)
         {
             if (value != null && value.Length < minLength)
             {
-                throw new JdException(ERR_CODE_PARAM_INVALID, string.Format(ERR_MSG_PARAM_INVALID, name));
+                throw new JdException(ERR_CODE_PARAM_INVALID, String.Format(ERR_MSG_PARAM_INVALID, name));
             }
         }
 
@@ -102,11 +102,11 @@ namespace JdSdk
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
         /// <param name="maxValue">最大值</param>
-        public static void ValidateMaxValue(string name, Nullable<long> value, long maxValue)
+        public static void ValidateMaxValue(String name, Nullable<long> value, long maxValue)
         {
             if (value != null && value > maxValue)
             {
-                throw new JdException(ERR_CODE_PARAM_INVALID, string.Format(ERR_MSG_PARAM_INVALID, name));
+                throw new JdException(ERR_CODE_PARAM_INVALID, String.Format(ERR_MSG_PARAM_INVALID, name));
             }
         }
 
@@ -116,11 +116,11 @@ namespace JdSdk
         /// <param name="name">参数名</param>
         /// <param name="value">参数值</param>
         /// <param name="minValue">最小值</param>
-        public static void ValidateMinValue(string name, Nullable<long> value, long minValue)
+        public static void ValidateMinValue(String name, Nullable<long> value, long minValue)
         {
             if (value != null && value < minValue)
             {
-                throw new JdException(ERR_CODE_PARAM_INVALID, string.Format(ERR_MSG_PARAM_INVALID, name));
+                throw new JdException(ERR_CODE_PARAM_INVALID, String.Format(ERR_MSG_PARAM_INVALID, name));
             }
         }
     }

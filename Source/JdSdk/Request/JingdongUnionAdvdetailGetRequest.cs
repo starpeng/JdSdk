@@ -35,7 +35,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("goods_page_size")]
         [JsonProperty("goods_page_size")]
-        public Nullable<Decimal> GoodsPageSize
+        public Nullable<Int64> GoodsPageSize
         {
             get;
             set;
@@ -46,7 +46,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("goods_page_index")]
         [JsonProperty("goods_page_index")]
-        public Nullable<Decimal> GoodsPageIndex
+        public Nullable<Int64> GoodsPageIndex
         {
             get;
             set;
@@ -81,7 +81,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("activity_page_size")]
         [JsonProperty("activity_page_size")]
-        public Nullable<Decimal> ActivityPageSize
+        public Nullable<Int64> ActivityPageSize
         {
             get;
             set;
@@ -92,7 +92,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("activity_page_index")]
         [JsonProperty("activity_page_index")]
-        public Nullable<Decimal> ActivityPageIndex
+        public Nullable<Int64> ActivityPageIndex
         {
             get;
             set;

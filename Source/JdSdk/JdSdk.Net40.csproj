@@ -126,8 +126,12 @@
     <Compile Include="Domains\CategoryCommisionVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\ChatLog.cs" />
-    <Compile Include="Domains\ChatSession.cs" />
+    <Compile Include="Domains\ChatLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\ChatSession.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\CmsActivityWare.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -146,7 +150,9 @@
     <Compile Include="Domains\EffectReportSafVo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\Evaluation.cs" />
+    <Compile Include="Domains\Evaluation.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\FavoriteWare.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <Compile Include="Domains\MasterBillVo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\MaterialLabelVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\MaterialVO.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -240,18 +249,24 @@
     <Compile Include="Domains\PageInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\PassLog.cs" />
+    <Compile Include="Domains\PassLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\PlanDetailInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\PlanInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\PlanInfoJSON.cs" />
+    <Compile Include="Domains\PlanInfoJSON.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\PlanInfoVO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\PlanJsonJSON.cs" />
+    <Compile Include="Domains\PlanJsonJSON.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\PlanListVO .cs">
       <SubType>Code</SubType>
     </Compile>
@@ -268,6 +283,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\ProcessResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromoPropVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\PromoSkuVO.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domains\PromoteWare.cs">
@@ -420,13 +441,21 @@
     <Compile Include="Domains\VenderInfoResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\Waiter.cs" />
-    <Compile Include="Domains\WaiterDailyEvaStat.cs" />
-    <Compile Include="Domains\WaiterDailyStat.cs" />
+    <Compile Include="Domains\Waiter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WaiterDailyEvaStat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domains\WaiterDailyStat.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\Ware.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\WareAreaLimit.cs" />
+    <Compile Include="Domains\WareAreaLimit.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\WareAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -442,7 +471,9 @@
     <Compile Include="Domains\WarePropimg.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domains\WareTemplate.cs" />
+    <Compile Include="Domains\WareTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domains\WindowAdvDetail.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -480,16 +511,60 @@
     <Compile Include="Request\DeliveryLogisticsGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongAfsserviceAlltaskGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceFinishedtaskGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceFreightmessageGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceOriginalorderidGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceReceivetaskGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceServicedetailListRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceServiceinfoGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceServicelogGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceUnresolvedtaskGetRequest.cs" />
-    <Compile Include="Request\JingdongAfsserviceWaitprocesstaskGetRequest.cs" />
+    <Compile Include="Request\JingdongAfsserviceAlltaskGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceCategoryGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceFinishedtaskGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceFreightmessageGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceHistoryGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceMajorcategoryGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceMessagesystemGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceOriginalorderidGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceReceivetaskGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceRefundinfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceServicedetailListRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceServiceinfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceServicelogGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceUnpackinginfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceUnresolvedtaskGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceWaitauditGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceWaitfetchGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongAfsserviceWaitprocesstaskGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongAnotherbuyrecommendWareGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -511,10 +586,63 @@
     <Compile Include="Request\JingdongCombinerecommendWareGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongDataserviceShopsalesbydayGetRequest.cs" />
-    <Compile Include="Request\JingdongDataserviceShopsalesbymonthGetRequest.cs" />
-    <Compile Include="Request\JingdongDataserviceShopsalesbyweekGetRequest.cs" />
-    <Compile Include="Request\JingdongEtmsTraceGetRequest.cs" />
+    <Compile Include="Request\JingdongDataserviceShoppvtop15bydayGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShoppvtop15bymonthGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShoppvtop15byweekGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopsalesbydayGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopsalesbymonthGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopsalesbyweekGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopsalestop15bydayGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopsalestop15bymonthGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopsalestop15byweekGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopuvtop15bydayGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopuvtop15bymonthGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopuvtop15byweekGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopvistop15bydayGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopvistop15bymonthGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopvistop15byweekGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopvoltop15bydayGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopvoltop15bymonthGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongDataserviceShopvoltop15byweekGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongEtmsTraceGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongEtmsWaybillcodeGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -551,17 +679,39 @@
     <Compile Include="Request\JingdongImgzoneUserinfoQueryRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongImPopChatlogFuzzyQueryRequest.cs" />
-    <Compile Include="Request\JingdongImPopChatlogGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopConsultAvgwaittimeGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopEvaluationlistGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopEvaluationstatGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopGroupinfoGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopPasslogGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopReplystatGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopSessionlistGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopUnreplystatGetRequest.cs" />
-    <Compile Include="Request\JingdongImPopWaiterOnlinetimeStatGetRequest.cs" />
+    <Compile Include="Request\JingdongImPopChatlogFuzzyQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopChatlogGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopConsultAvgwaittimeGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopEvaluationlistGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopEvaluationstatGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopGroupinfoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopPasslogGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopReplystatGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopSessionlistGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopUnreplystatGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongImPopWaiterOnlinetimeStatGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongKuaicheAccountGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -592,7 +742,9 @@
     <Compile Include="Request\JingdongKuaicheZnPlanChannelCreateRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongKuaicheZnPlanChannelModifyRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnPlanChannelModifyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongKuaicheZnPlanDetailGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -602,8 +754,12 @@
     <Compile Include="Request\JingdongKuaicheZnPlanSearchCreateRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongKuaicheZnPlanSearchModifyRequest.cs" />
-    <Compile Include="Request\JingdongKuaicheZnScheduleAvailableSearchRequest.cs" />
+    <Compile Include="Request\JingdongKuaicheZnPlanSearchModifyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongKuaicheZnScheduleAvailableSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongKuaicheZnScheduleBidDetailSearchRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -673,8 +829,15 @@
     <Compile Include="Request\JingdongLogisticsWarehouseListRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongOrderOrderDeleteApplyRequest.cs" />
-    <Compile Include="Request\JingdongOrderVenderRemarkQueryByOrderIdRequest.cs" />
+    <Compile Include="Request\JingdongOrderOrderDeleteApplyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongOrderVenderRemarkQueryByOrderIdRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongPopVenderCenerVenderBrandQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongRegioninfoGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -703,6 +866,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Request\JingdongSellerPromotionListRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongSellerPromotionOrdermodeAddRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongSellerPromotionOrdermodeListRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Request\JingdongSellerPromotionPropAddRequest.cs">
@@ -807,13 +976,24 @@
     <Compile Include="Request\JingdongVasSubscribeGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Request\JingdongVenderShopQueryRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWareattributesGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongWareBasebookGetRequest.cs" />
-    <Compile Include="Request\JingdongWareBaseproductGetRequest.cs" />
-    <Compile Include="Request\JingdongWareBasevideoGetRequest.cs" />
-    <Compile Include="Request\JingdongWareBookbigfieldGetRequest.cs" />
+    <Compile Include="Request\JingdongWareBasebookGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareBaseproductGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareBasevideoGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareBookbigfieldGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWareBrowsetobuyListGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -823,7 +1003,9 @@
     <Compile Include="Request\JingdongWarecategoryGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongWareCatelogyAttributeListGetRequest.cs" />
+    <Compile Include="Request\JingdongWareCatelogyAttributeListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWareCombineListGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -836,29 +1018,51 @@
     <Compile Include="Request\JingdongWarePriceGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongWareProductbigfieldGetRequest.cs" />
-    <Compile Include="Request\JingdongWareProductCatelogyListGetRequest.cs" />
-    <Compile Include="Request\JingdongWareProductDetailSearchListGetRequest.cs" />
-    <Compile Include="Request\JingdongWareProductimageGetRequest.cs" />
-    <Compile Include="Request\JingdongWareProductSearchListGetRequest.cs" />
-    <Compile Include="Request\JingdongWareProductsortGetRequest.cs" />
-    <Compile Include="Request\JingdongWareProductStockListGetRequest.cs" />
+    <Compile Include="Request\JingdongWareProductbigfieldGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareProductCatelogyListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareProductDetailSearchListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareProductimageGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareProductSearchListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareProductsortGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareProductStockListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWarePromotionInfoGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongWarePromotionSearchCatelogyListRequest.cs" />
+    <Compile Include="Request\JingdongWarePromotionSearchCatelogyListRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWareSearchRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongWareSelectedProvinceListGetRequest.cs" />
-    <Compile Include="Request\JingdongWareSkuSearchListGetRequest.cs" />
+    <Compile Include="Request\JingdongWareSelectedProvinceListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\JingdongWareSkuSearchListGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWaresSearchbycidRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Request\JingdongWaresSearchRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\JingdongWareVideobigfieldGetRequest.cs" />
+    <Compile Include="Request\JingdongWareVideobigfieldGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\JingdongWosSubbiztypelistGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -949,8 +1153,12 @@
     <Compile Include="Request\WareAddRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\WareAreaLimitSearchRequest.cs" />
-    <Compile Include="Request\WareAreaLimitUpdateRequest.cs" />
+    <Compile Include="Request\WareAreaLimitSearchRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareAreaLimitUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\WarecatsGetRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1008,12 +1216,24 @@
     <Compile Include="Request\WaresSearchRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Request\WareTemplateAddRequest.cs" />
-    <Compile Include="Request\WareTemplateDeleteRequest.cs" />
-    <Compile Include="Request\WareTemplateGetRequest.cs" />
-    <Compile Include="Request\WareTemplateIdsNamesGetRequest.cs" />
-    <Compile Include="Request\WareTemplateToWaresUpdateRequest.cs" />
-    <Compile Include="Request\WareTemplateUpdateRequest.cs" />
+    <Compile Include="Request\WareTemplateAddRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareTemplateDeleteRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareTemplateGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareTemplateIdsNamesGetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareTemplateToWaresUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Request\WareTemplateUpdateRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request\WareUpdateDelistingRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1032,16 +1252,60 @@
     <Compile Include="Response\DeliveryLogisticsGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongAfsserviceAlltaskGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceFinishedtaskGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceFreightmessageGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceOriginalorderidGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceReceivetaskGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceServicedetailListResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceServiceinfoGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceServicelogGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceUnresolvedtaskGetResponse.cs" />
-    <Compile Include="Response\JingdongAfsserviceWaitprocesstaskGetResponse.cs" />
+    <Compile Include="Response\JingdongAfsserviceAlltaskGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceCategoryGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceFinishedtaskGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceFreightmessageGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceHistoryGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceMajorcategoryGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceMessagesystemGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceOriginalorderidGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceReceivetaskGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceRefundinfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceServicedetailListResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceServiceinfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceServicelogGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceUnpackinginfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceUnresolvedtaskGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceWaitauditGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceWaitfetchGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongAfsserviceWaitprocesstaskGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongAnotherbuyrecommendWareGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1063,10 +1327,63 @@
     <Compile Include="Response\JingdongCombinerecommendWareGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongDataserviceShopsalesbydayGetResponse.cs" />
-    <Compile Include="Response\JingdongDataserviceShopsalesbymonthGetResponse.cs" />
-    <Compile Include="Response\JingdongDataserviceShopsalesbyweekGetResponse.cs" />
-    <Compile Include="Response\JingdongEtmsTraceGetResponse.cs" />
+    <Compile Include="Response\JingdongDataserviceShoppvtop15bydayGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShoppvtop15bymonthGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShoppvtop15byweekGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopsalesbydayGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopsalesbymonthGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopsalesbyweekGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopsalestop15bydayGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopsalestop15bymonthGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopsalestop15byweekGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopuvtop15bydayGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopuvtop15bymonthGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopuvtop15byweekGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopvistop15bydayGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopvistop15bymonthGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopvistop15byweekGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopvoltop15bydayGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopvoltop15bymonthGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongDataserviceShopvoltop15byweekGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongEtmsTraceGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongEtmsWaybillcodeGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1103,17 +1420,39 @@
     <Compile Include="Response\JingdongImgzoneUserinfoQueryResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongImPopChatlogFuzzyQueryResponse.cs" />
-    <Compile Include="Response\JingdongImPopChatlogGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopConsultAvgwaittimeGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopEvaluationlistGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopEvaluationstatGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopGroupinfoGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopPasslogGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopReplystatGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopSessionlistGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopUnreplystatGetResponse.cs" />
-    <Compile Include="Response\JingdongImPopWaiterOnlinetimeStatGetResponse.cs" />
+    <Compile Include="Response\JingdongImPopChatlogFuzzyQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopChatlogGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopConsultAvgwaittimeGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopEvaluationlistGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopEvaluationstatGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopGroupinfoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopPasslogGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopReplystatGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopSessionlistGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopUnreplystatGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongImPopWaiterOnlinetimeStatGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongKuaicheAccountGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1144,7 +1483,9 @@
     <Compile Include="Response\JingdongKuaicheZnPlanChannelCreateResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongKuaicheZnPlanChannelModifyResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnPlanChannelModifyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongKuaicheZnPlanDetailGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1154,8 +1495,12 @@
     <Compile Include="Response\JingdongKuaicheZnPlanSearchCreateResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongKuaicheZnPlanSearchModifyResponse.cs" />
-    <Compile Include="Response\JingdongKuaicheZnScheduleAvailableSearchResponse.cs" />
+    <Compile Include="Response\JingdongKuaicheZnPlanSearchModifyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongKuaicheZnScheduleAvailableSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongKuaicheZnScheduleBidDetailSearchResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1225,8 +1570,15 @@
     <Compile Include="Response\JingdongLogisticsWarehouseListResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongOrderOrderDeleteApplyResponse.cs" />
-    <Compile Include="Response\JingdongOrderVenderRemarkQueryByOrderIdResponse.cs" />
+    <Compile Include="Response\JingdongOrderOrderDeleteApplyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongOrderVenderRemarkQueryByOrderIdResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongPopVenderCenerVenderBrandQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongRegioninfoGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1255,6 +1607,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Response\JingdongSellerPromotionListResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongSellerPromotionOrdermodeAddResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongSellerPromotionOrdermodeListResponse.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Response\JingdongSellerPromotionPropAddResponse.cs">
@@ -1359,13 +1717,24 @@
     <Compile Include="Response\JingdongVasSubscribeGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Response\JingdongVenderShopQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWareattributesGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongWareBasebookGetResponse.cs" />
-    <Compile Include="Response\JingdongWareBaseproductGetResponse.cs" />
-    <Compile Include="Response\JingdongWareBasevideoGetResponse.cs" />
-    <Compile Include="Response\JingdongWareBookbigfieldGetResponse.cs" />
+    <Compile Include="Response\JingdongWareBasebookGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareBaseproductGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareBasevideoGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareBookbigfieldGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWareBrowsetobuyListGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1375,7 +1744,9 @@
     <Compile Include="Response\JingdongWarecategoryGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongWareCatelogyAttributeListGetResponse.cs" />
+    <Compile Include="Response\JingdongWareCatelogyAttributeListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWareCombineListGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1388,29 +1759,51 @@
     <Compile Include="Response\JingdongWarePriceGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongWareProductbigfieldGetResponse.cs" />
-    <Compile Include="Response\JingdongWareProductCatelogyListGetResponse.cs" />
-    <Compile Include="Response\JingdongWareProductDetailSearchListGetResponse.cs" />
-    <Compile Include="Response\JingdongWareProductimageGetResponse.cs" />
-    <Compile Include="Response\JingdongWareProductSearchListGetResponse.cs" />
-    <Compile Include="Response\JingdongWareProductsortGetResponse.cs" />
-    <Compile Include="Response\JingdongWareProductStockListGetResponse.cs" />
+    <Compile Include="Response\JingdongWareProductbigfieldGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareProductCatelogyListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareProductDetailSearchListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareProductimageGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareProductSearchListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareProductsortGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareProductStockListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWarePromotionInfoGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongWarePromotionSearchCatelogyListResponse.cs" />
+    <Compile Include="Response\JingdongWarePromotionSearchCatelogyListResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWareSearchResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongWareSelectedProvinceListGetResponse.cs" />
-    <Compile Include="Response\JingdongWareSkuSearchListGetResponse.cs" />
+    <Compile Include="Response\JingdongWareSelectedProvinceListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\JingdongWareSkuSearchListGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWaresSearchbycidResponse.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Response\JingdongWaresSearchResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\JingdongWareVideobigfieldGetResponse.cs" />
+    <Compile Include="Response\JingdongWareVideobigfieldGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\JingdongWosSubbiztypelistGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1501,8 +1894,12 @@
     <Compile Include="Response\WareAddResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\WareAreaLimitSearchResponse.cs" />
-    <Compile Include="Response\WareAreaLimitUpdateResponse.cs" />
+    <Compile Include="Response\WareAreaLimitSearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareAreaLimitUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\WarecatsGetResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1560,12 +1957,24 @@
     <Compile Include="Response\WaresSearchResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Response\WareTemplateAddResponse.cs" />
-    <Compile Include="Response\WareTemplateDeleteResponse.cs" />
-    <Compile Include="Response\WareTemplateGetResponse.cs" />
-    <Compile Include="Response\WareTemplateIdsNamesGetResponse.cs" />
-    <Compile Include="Response\WareTemplateToWaresUpdateResponse.cs" />
-    <Compile Include="Response\WareTemplateUpdateResponse.cs" />
+    <Compile Include="Response\WareTemplateAddResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareTemplateDeleteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareTemplateGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareTemplateIdsNamesGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareTemplateToWaresUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Response\WareTemplateUpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Response\WareUpdateDelistingResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1575,6 +1984,8 @@
     <Compile Include="Response\WareUpdateResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UniversalRequest.cs" />
+    <Compile Include="UniversalResponse.cs" />
     <Compile Include="Util\FileItem.cs" />
     <Compile Include="Util\RequestValidator.cs" />
     <Compile Include="Util\JdUtils.cs" />

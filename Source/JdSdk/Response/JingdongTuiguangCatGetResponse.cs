@@ -9,6 +9,7 @@ Copyright © starpeng@vip.qq.com
 using System.Xml.Serialization;
 using JdSdk.Domain;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JdSdk.Response
 {
@@ -22,7 +23,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("tuiguang_ware")]
         [JsonProperty("tuiguang_ware")]
-        public PromoteWare[] TuiguangWare
+        public List<PromoteWare> TuiguangWare
         {
             get;
             set;

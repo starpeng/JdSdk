@@ -9,6 +9,7 @@ Copyright © starpeng@vip.qq.com
 using System;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JdSdk.Domain
 {
@@ -23,7 +24,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("goods_list")]
         [JsonProperty("goods_list")]
-        public JosGoodsVO[] GoodsList
+        public List<JosGoodsVO> GoodsList
         {
             get;
             set;

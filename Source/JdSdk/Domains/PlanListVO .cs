@@ -9,6 +9,7 @@ Copyright © starpeng@vip.qq.com
 using System;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JdSdk.Domain
 {
@@ -34,7 +35,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("planList")]
         [JsonProperty("planList")]
-        public UnionPlan[] PlanList
+        public List<UnionPlan> PlanList
         {
             get;
             set;

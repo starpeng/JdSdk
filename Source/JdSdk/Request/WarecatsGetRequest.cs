@@ -45,8 +45,6 @@ namespace JdSdk.Request
 
         public override void Validate()
         {
-            RequestValidator.ValidateRequired("fields", this.Fields);
         }
-
     }
 }

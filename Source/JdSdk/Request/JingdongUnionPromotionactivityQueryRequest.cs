@@ -93,7 +93,7 @@ namespace JdSdk.Request
         /// <example>activity_pk,activity_name,activity_url,activity_width,activity_height,activity_start,activity_end,activity_shopName,activity_mainCategory,activity_commRatio,totalCount</example>
         [XmlElement("fields")]
         [JsonProperty("fields")]
-        public Nullable<Decimal> Fields
+        public String Fields
         {
             get;
             set;

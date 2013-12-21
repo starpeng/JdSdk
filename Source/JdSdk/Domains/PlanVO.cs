@@ -9,6 +9,7 @@ Copyright © starpeng@vip.qq.com
 using System;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JdSdk.Domain
 {
@@ -69,7 +70,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("categoryCommision")]
         [JsonProperty("categoryCommision")]
-        public UnionCategoryCommision[] CategoryCommision
+        public List<UnionCategoryCommision> CategoryCommision
         {
             get;
             set;
@@ -80,7 +81,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("planGoods")]
         [JsonProperty("planGoods")]
-        public GoodsVO[] PlanGoods
+        public List<GoodsVO> PlanGoods
         {
             get;
             set;
@@ -91,7 +92,7 @@ namespace JdSdk.Domain
         /// </summary>
         [XmlElement("planActivity")]
         [JsonProperty("planActivity")]
-        public UnionPlanActivity[] PlanActivity
+        public List<UnionPlanActivity> PlanActivity
         {
             get;
             set;

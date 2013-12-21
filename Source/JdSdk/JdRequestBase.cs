@@ -36,6 +36,9 @@ namespace JdSdk.Request
             }
         }
 
+        /// <summary>
+        /// API方法名称
+        /// </summary>
         public abstract string ApiName
         {
             get;

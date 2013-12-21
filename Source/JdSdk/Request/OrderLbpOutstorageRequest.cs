@@ -1,16 +1,17 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-Copyright © starpeng@vip.qq.com
-2013-01-31 10:56:46:427 +08:00
+2013-12-21 15:53:08.42523 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
@@ -26,18 +27,6 @@ namespace JdSdk.Request
         [XmlElement("order_id")]
         [JsonProperty("order_id")]
         public String OrderId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 发货类型，默认是1
-        /// </summary>
-        /// <example>1</example>
-        [XmlElement("send_type")]
-        [JsonProperty("send_type")]
-        public Int32 SendType
         {
             get;
             set;
@@ -91,28 +80,24 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "360buy.order.lbp.outstorage"; }
+            get{ return "360buy.order.lbp.outstorage"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("order_id", this.OrderId);
-            paramters.Add("send_type", this.SendType);
-            paramters.Add("package_num", this.PackageNum);
-            paramters.Add("logistics_id", this.LogisticsId);
-            paramters.Add("waybill", this.Waybill);
-            paramters.Add("trade_no", this.TradeNo);
-
+            paramters.Add("order_id" ,this.OrderId);
+            paramters.Add("package_num" ,this.PackageNum);
+            paramters.Add("logistics_id" ,this.LogisticsId);
+            paramters.Add("waybill" ,this.Waybill);
+            paramters.Add("trade_no" ,this.TradeNo);
         }
 
         public override void Validate()
         {
             RequestValidator.ValidateRequired("order_id", this.OrderId);
-            RequestValidator.ValidateRequired("send_type", this.SendType);
             RequestValidator.ValidateRequired("package_num", this.PackageNum);
             RequestValidator.ValidateRequired("logistics_id", this.LogisticsId);
-            //RequestValidator.ValidateRequired("trade_no", this.TradeNo);
+            RequestValidator.ValidateRequired("waybill", this.Waybill);
         }
 
     }

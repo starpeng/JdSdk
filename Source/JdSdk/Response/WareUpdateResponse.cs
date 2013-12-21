@@ -1,16 +1,15 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-Copyright © starpeng@vip.qq.com
-2013-06-03 12:29:14.10093 +08:00
+2013-12-21 15:53:18.50639 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Domain;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {
@@ -35,7 +34,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public Int64 WareId
+        public Nullable<Int64> WareId
         {
             get;
             set;
@@ -52,28 +51,5 @@ namespace JdSdk.Response
             set;
         }
 
-        /// <summary>
-        /// 用户自行输入的类目属性ID串 结构："pid1|pid2|pid3",属性的pid调用360buy.ware.get.attribute取得, 输入类型input_type=3即输入
-        /// </summary>
-        /// <example>String</example>
-        [XmlElement("input_pids")]
-        [JsonProperty("input_pids")]
-        public String InputPids
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 用户自行输入的属性值,结构:"输入值|输入值2|输入值3"
-        /// </summary>
-        /// <example>String</example>
-        [XmlElement("input_strs")]
-        [JsonProperty("input_strs")]
-        public String InputStrs
-        {
-            get;
-            set;
-        }
     }
 }

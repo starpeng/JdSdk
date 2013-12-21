@@ -83,7 +83,7 @@ namespace JdSdk
             return this.mimeType;
         }
 
-        public byte[] GetContent()
+        public Byte[] GetContent()
         {
             if (this.content == null && this.fileInfo != null && this.fileInfo.Exists)
             {

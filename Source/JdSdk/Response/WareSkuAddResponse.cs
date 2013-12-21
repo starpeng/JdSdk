@@ -1,19 +1,20 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-Copyright © starpeng@vip.qq.com
-2013-01-31 10:56:42:375 +08:00
+2013-12-21 15:53:15.85591 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {
     /// <summary>
-    /// 通过api 增加sku信息 Response
+    /// 通过api   增加sku信息 Response
     /// </summary>
     public class WareSkuAddResponse : JdResponse
     {
@@ -22,7 +23,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("sku_id")]
         [JsonProperty("sku_id")]
-        public Int64 SkuId
+        public String SkuId
         {
             get;
             set;

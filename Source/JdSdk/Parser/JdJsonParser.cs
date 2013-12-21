@@ -29,6 +29,7 @@ namespace JdSdk.Parser
             if (rsp != null)
             {
                 rsp.Body = body;
+                rsp.Json = json;
             }
 
             return rsp;

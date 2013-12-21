@@ -73,7 +73,7 @@ namespace JdSdk.Request
         /// <example>report_skuId,report_itemNum,report_shopName,report_itemPrice,report_commRatio,report_sourceType,report_orderNo,report_unionId,report_commision,report_itemName,report_orderStatus,totalCount</example>
         [XmlElement("fields")]
         [JsonProperty("fields")]
-        public Nullable<Decimal> Fields
+        public String Fields
         {
             get;
             set;

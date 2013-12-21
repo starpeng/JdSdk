@@ -93,7 +93,7 @@ namespace JdSdk.Request
         /// <example>good_pk,good_skuId,good_shopName,good_name,good_price,good_praiseDegree,good_targetUrl,good_shopUrl,good_materialUrl,good_commRatio,good_commision,good_promQuantity,good_startDate,good_endDate,totalCount</example>
         [XmlElement("fields")]
         [JsonProperty("fields")]
-        public Nullable<Decimal> Fields
+        public String Fields
         {
             get;
             set;

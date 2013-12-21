@@ -1,14 +1,15 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-Copyright © starpeng@vip.qq.com
-2013-06-03 12:29:13.69390 +08:00
+2013-12-21 15:53:18.09733 +08:00
 */
 #endregion
 
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using JdSdk.Domain;
 
 namespace JdSdk.Response
 {
@@ -33,7 +34,7 @@ namespace JdSdk.Response
         /// </summary>
         [XmlElement("ware_id")]
         [JsonProperty("ware_id")]
-        public Int64 WareId
+        public Nullable<Int64> WareId
         {
             get;
             set;

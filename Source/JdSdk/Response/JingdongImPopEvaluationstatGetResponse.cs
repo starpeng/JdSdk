@@ -25,7 +25,7 @@ namespace JdSdk.Response
         /// <example></example>
         [XmlElement("WaiterDailyEvaStat")]
         [JsonProperty("WaiterDailyEvaStat")]
-        public WaiterDailyEvaStat[] WaiterDailyEvaStat
+        public List<WaiterDailyEvaStat> WaiterDailyEvaStat
         {
             get;
             set;

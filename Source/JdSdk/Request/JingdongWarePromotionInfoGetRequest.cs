@@ -24,7 +24,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("skuId")]
         [JsonProperty("skuId")]
-        public Int64 SkuId
+        public String SkuId
         {
             get;
             set;
@@ -35,7 +35,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("webSite")]
         [JsonProperty("webSite")]
-        public Decimal WebSite
+        public Int64 WebSite
         {
             get;
             set;
@@ -46,7 +46,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("origin")]
         [JsonProperty("origin")]
-        public Decimal Origin
+        public Int64 Origin
         {
             get;
             set;
@@ -55,6 +55,12 @@ namespace JdSdk.Request
         public override String ApiName
         {
             get { return "jingdong.ware.promotionInfo.get"; }
+        }
+
+        public JingdongWarePromotionInfoGetRequest()
+        {
+            WebSite = 1;
+            Origin = 1;
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)

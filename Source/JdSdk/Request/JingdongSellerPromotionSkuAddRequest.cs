@@ -94,7 +94,7 @@ namespace JdSdk.Request
         /// <example>1</example>
         [XmlElement("bind_type")]
         [JsonProperty("bind_type")]
-        public List<String> BindType
+        public List<Int64> BindType
         {
             get;
             set;

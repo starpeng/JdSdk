@@ -25,7 +25,7 @@ namespace JdSdk.Response
         /// <example></example>
         [XmlElement("ChatSession")]
         [JsonProperty("ChatSession")]
-        public ChatSession[] ChatSession
+        public List<ChatSession> ChatSession
         {
             get;
             set;

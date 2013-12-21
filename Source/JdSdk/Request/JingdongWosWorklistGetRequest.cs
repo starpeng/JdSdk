@@ -26,7 +26,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("status")]
         [JsonProperty("status")]
-        public Int64 Status
+        public Nullable<Int64> Status
         {
             get;
             set;
@@ -37,7 +37,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("order_id")]
         [JsonProperty("order_id")]
-        public Int64 OrderId
+        public Nullable<Int64> OrderId
         {
             get;
             set;

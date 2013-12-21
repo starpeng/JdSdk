@@ -1,21 +1,22 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-Copyright © starpeng@vip.qq.com
-2013-04-03 12:45:17.20732 +08:00
+2013-12-21 15:53:11.94158 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
     /// <summary>
-    /// 更新商家类目 Request
+    /// 更新商家自定义店内分类 Request
     /// </summary>
     public class SellercatUpdateRequest : JdRequestBase<SellercatUpdateResponse>
     {
@@ -26,18 +27,6 @@ namespace JdSdk.Request
         [XmlElement("cid")]
         [JsonProperty("cid")]
         public String Cid
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 卖家店铺的编号
-        /// </summary>
-        /// <example>96</example>
-        [XmlElement("shop_id")]
-        [JsonProperty("shop_id")]
-        public String ShopId
         {
             get;
             set;
@@ -56,7 +45,7 @@ namespace JdSdk.Request
         }
 
         /// <summary>
-        /// 是否在首页展示商品（false，前台不展示，true前台展示）
+        /// 是否在首页展示分类（false，前台不展示，true前台展示）
         /// </summary>
         /// <example>false</example>
         [XmlElement("home_show")]
@@ -69,23 +58,19 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "360buy.sellercat.update"; }
+            get{ return "360buy.sellercat.update"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("cid", this.Cid);
-            paramters.Add("shop_id", this.ShopId);
-            paramters.Add("cat_name", this.CatName);
-            paramters.Add("home_show", this.HomeShow);
-
+            paramters.Add("cid" ,this.Cid);
+            paramters.Add("cat_name" ,this.CatName);
+            paramters.Add("home_show" ,this.HomeShow);
         }
 
         public override void Validate()
         {
             RequestValidator.ValidateRequired("cid", this.Cid);
-            RequestValidator.ValidateRequired("shop_id", this.ShopId);
         }
 
     }

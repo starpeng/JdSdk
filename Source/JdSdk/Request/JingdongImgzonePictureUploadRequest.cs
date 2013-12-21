@@ -37,7 +37,7 @@ namespace JdSdk.Request
         /// </summary>
         [XmlElement("picture_cate_id")]
         [JsonProperty("picture_cate_id")]
-        public Int64 PictureCateId
+        public Nullable<Int64> PictureCateId
         {
             get;
             set;

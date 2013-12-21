@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace JdSdk
 {
+    /// <summary>
+    /// 京东接口返回数据
+    /// </summary>
     [Serializable]
     public abstract class JdResponse
     {
@@ -45,6 +49,13 @@ namespace JdSdk
         /// 响应原始内容
         /// </summary>
         public String Body { get; set; }
+
+
+        /// <summary>
+        /// 响应的JSON object
+        /// </summary>
+        public JObject Json { get; set; }
+
 
         /// <summary>
         /// HTTP GET请求的URL

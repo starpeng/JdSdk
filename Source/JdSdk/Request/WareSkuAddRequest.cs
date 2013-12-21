@@ -1,21 +1,22 @@
 #region head comment
 /*
 Code generate by JdSdkTool.
-Copyright © starpeng@vip.qq.com
-2013-01-31 10:56:42:375 +08:00
+2013-12-21 15:53:15.85491 +08:00
 */
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
-using JdSdk.Response;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using JdSdk.Domain;
+using JdSdk.Response;
 
 namespace JdSdk.Request
 {
     /// <summary>
-    /// 通过api 增加sku信息 Request
+    /// 通过api   增加sku信息 Request
     /// </summary>
     public class WareSkuAddRequest : JdRequestBase<WareSkuAddResponse>
     {
@@ -68,6 +69,17 @@ namespace JdSdk.Request
         }
 
         /// <summary>
+        /// sku外部id
+        /// </summary>
+        [XmlElement("outer_id")]
+        [JsonProperty("outer_id")]
+        public String OuterId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         [XmlElement("trade_no")]
@@ -80,18 +92,17 @@ namespace JdSdk.Request
 
         public override String ApiName
         {
-            get { return "360buy.ware.sku.add"; }
+            get{ return "360buy.ware.sku.add"; }
         }
 
         protected override void PrepareParam(IDictionary<String, Object> paramters)
         {
-
-            paramters.Add("ware_id", this.WareId);
-            paramters.Add("attributes", this.Attributes);
-            paramters.Add("jd_price", this.JdPrice);
-            paramters.Add("stock_num", this.StockNum);
-            paramters.Add("trade_no", this.TradeNo);
-
+            paramters.Add("ware_id" ,this.WareId);
+            paramters.Add("attributes" ,this.Attributes);
+            paramters.Add("jd_price" ,this.JdPrice);
+            paramters.Add("stock_num" ,this.StockNum);
+            paramters.Add("outer_id" ,this.OuterId);
+            paramters.Add("trade_no" ,this.TradeNo);
         }
 
         public override void Validate()
