@@ -14,6 +14,12 @@ JdSdk
 
 交流QQ群：[236361019](http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab "236361019")
 <a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="SDK交流" title="SDK交流"></a>
+  
+  
+  
+源码托管地址：  
+[GitHub：https://github.com/starpeng/JdSdk/](https://github.com/starpeng/JdSdk/)  
+[京东：https://code.jd.com/starpeng/JdSdk.NET](https://code.jd.com/starpeng/JdSdk.NET)  
 
 
 ## 更新记录 ##
