@@ -35,7 +35,23 @@ namespace JdSdk
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            if (reader.ValueType == typeof(Int64))
+            {
+                DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+                Int64 lTime = Int64.Parse(reader.Value.ToString() + "0000000");
+                TimeSpan toNow = new TimeSpan(lTime);
+                return dtStart.Add(toNow);
+            }
+
+            DateTime dt = new DateTime();
+            if (DateTime.TryParse(reader.Value.ToString(), out dt))
+            {
+                return dt;
+            }
+            else
+            {
+                throw new Exception(String.Format("{0}:{1}转换成DateTime失败！", reader.Path, reader.Value));
+            }
         }
 
         public override bool CanConvert(Type objectType)

@@ -1,5 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JdSdk.Parser
 {
@@ -17,7 +19,7 @@ namespace JdSdk.Parser
                 JObject data = (JObject)json.First.First;
                 if (data != null)
                 {
-                    rsp = data.ToObject<T>();
+                    rsp = data.ToObject<T>(GetJsonSerializer());
                 }
             }
 
@@ -34,5 +36,19 @@ namespace JdSdk.Parser
 
             return rsp;
         }
+
+        private static JsonSerializer _jsonSerializer = null;
+        public static JsonSerializer GetJsonSerializer()
+        {
+            if (_jsonSerializer == null)
+            {
+                JsonSerializerSettings settings = new JsonSerializerSettings();
+                settings.Converters = new List<JsonConverter>(JdUtils.GetJsonConverters());
+                _jsonSerializer = JsonSerializer.Create(settings);
+            }
+
+            return _jsonSerializer;
+        }
+
     }
 }
