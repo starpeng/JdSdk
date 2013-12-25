@@ -18,5 +18,15 @@ namespace JdSdk.Response
     /// </summary>
     public class JingdongVenderShopQueryResponse : JdResponse
     {
+        /// <summary>
+        /// 店铺信息
+        /// </summary>
+        [XmlElement("shop_jos_result")]
+        [JsonProperty("shop_jos_result")]
+        public ShopJosResult ShopJosResult
+        {
+            get;
+            set;
+        }
     }
 }

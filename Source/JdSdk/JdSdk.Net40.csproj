@@ -480,6 +480,7 @@
     <Compile Include="Domains\WorkOrderResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\ShopJosResult.cs" />
     <Compile Include="JdRequestBase.cs" />
     <Compile Include="Parser\DateTimeConverter.cs" />
     <Compile Include="DefaultJdClient.cs" />

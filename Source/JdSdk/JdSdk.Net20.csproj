@@ -382,6 +382,7 @@
     <Compile Include="Domains\ShopCategory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domains\ShopJosResult.cs" />
     <Compile Include="Domains\ShopSafVo.cs">
       <SubType>Code</SubType>
     </Compile>

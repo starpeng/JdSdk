@@ -3,7 +3,7 @@ JdSdk
 
 京东开放平台.NET版sdk 
 
-[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.4.0.zip "1.4.0")
+[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.4.1.zip "1.4.1")
 
 [最新版源码下载](https://github.com/starpeng/JdSdk/archive/master.zip "Surce ")
 
@@ -23,6 +23,10 @@ JdSdk
 
 
 ## 更新记录 ##
+
+-1.4.1
+>  jingdong.vender.shop.query 补充响应实体   
+
 -1.4.0
 >新增接口UniversalRequest作为通用的一个接口访问，可以使用该接口访问任何接口，需要自行指定ApiName和通过AddParam增加参数。  
 >Respone中加入Json属性，为接口返回数据的JSON object,可以自行进行值的获取和解析。  
