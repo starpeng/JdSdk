@@ -37,10 +37,10 @@ namespace JdSdk
         {
             if (reader.ValueType == typeof(Int64))
             {
-                DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
-                Int64 lTime = Int64.Parse(reader.Value.ToString() + "0000000");
-                TimeSpan toNow = new TimeSpan(lTime);
-                return dtStart.Add(toNow);
+                //DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+                DateTime dtStart = new DateTime(1970, 1, 1);
+                Int64 lTime = (Int64)reader.Value;
+                return dtStart.AddMilliseconds(lTime);
             }
 
             DateTime dt = new DateTime();

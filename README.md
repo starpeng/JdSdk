@@ -26,6 +26,7 @@ JdSdk
 
 -1.4.1
 >  jingdong.vender.shop.query 补充响应实体   
+>  加入对京东长整形时间类型的反序列化  
 
 -1.4.0
 >新增接口UniversalRequest作为通用的一个接口访问，可以使用该接口访问任何接口，需要自行指定ApiName和通过AddParam增加参数。  
