@@ -3,7 +3,7 @@ JdSdk
 
 京东开放平台.NET版sdk 
 
-[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.4.1.zip "1.4.1")
+[最新版DLL下载](https://github.com/starpeng/JdSdk/raw/master/Releases/JdSdk.NET%201.4.2.zip "1.4.2")
 
 [最新版源码下载](https://github.com/starpeng/JdSdk/archive/master.zip "Surce ")
 
@@ -23,6 +23,8 @@ JdSdk
 
 
 ## 更新记录 ##
+-1.4.2
+>  OrderInfo缺少的属性补入  
 
 -1.4.1
 >  jingdong.vender.shop.query 补充响应实体   
