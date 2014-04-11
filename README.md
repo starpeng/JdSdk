@@ -15,6 +15,10 @@ JdSdk
 交流QQ群：[236361019](http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab "236361019")
 <a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=cf2359d5237e19515d77680427f38b46dc3d2dfa4ef596c21edbc1205413efab"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="SDK交流" title="SDK交流"></a>
   
+.NET技术交流QQ群：[43315956](http://wp.qq.com/wpa/qunwpa?idkey=bdc05b54b35dd4d88b39ef3e9f887997177a8192a90b73fdf76909c1307c7d98 "43315956")
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=bdc05b54b35dd4d88b39ef3e9f887997177a8192a90b73fdf76909c1307c7d98"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="NET技术交流QQ群" title="NET技术交流QQ群"></a>  
+  
+  
   
   
 源码托管地址：  
